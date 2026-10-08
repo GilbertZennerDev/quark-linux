@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quark Code-Landkarte</title>
+<style>
+:root{
+  --bg:#f6f2ea; --card:#fffdf8; --ink:#1f2a24; --muted:#5d6a62; --line:#e0d8c8;
+  --accent:#2f6b4f; --accent-soft:#e1efe7; --warn:#a4561c; --warn-soft:#f6e6d6;
+  --code:#efe9db; --blue:#2c5d8a; --blue-soft:#e0ebf5;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#14191600; --bg:#141916; --card:#1b221e; --ink:#e8efe9; --muted:#9aa89f; --line:#2c3730;
+    --accent:#6fcf9f; --accent-soft:#1d3329; --warn:#e8a46a; --warn-soft:#3a2b1d;
+    --code:#242d28; --blue:#8fbfe8; --blue-soft:#1d2d3b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141916; --card:#1b221e; --ink:#e8efe9; --muted:#9aa89f; --line:#2c3730;
+  --accent:#6fcf9f; --accent-soft:#1d3329; --warn:#e8a46a; --warn-soft:#3a2b1d;
+  --code:#242d28; --blue:#8fbfe8; --blue-soft:#1d2d3b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Segoe UI",system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header{padding:56px 0 24px}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:.3em 0 .4em;font-family:Georgia,"Times New Roman",serif}
+h2{font-family:Georgia,serif;font-size:1.7rem;margin:2.4em 0 .3em}
+h3{margin:0 0 .2em;font-size:1.05rem}
+p{margin:.5em 0}
+.lead{color:var(--muted);font-size:1.1rem;max-width:62ch}
+code,.path{font-family:Consolas,"JetBrains Mono",monospace;font-size:.88em}
+code{background:var(--code);padding:.1em .4em;border-radius:5px}
+.path{color:var(--accent);font-weight:700;word-break:break-all}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+nav a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.9rem;background:var(--card)}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
+.card .why{color:var(--muted);margin:.2em 0 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.t-img{background:var(--accent-soft);color:var(--accent)}
+.t-tool{background:var(--blue-soft);color:var(--blue)}
+.t-doc{background:var(--code);color:var(--muted)}
+.t-gen{background:var(--warn-soft);color:var(--warn)}
+.tree{background:var(--code);border-radius:14px;padding:16px 18px;overflow-x:auto;font:.86rem/1.55 Consolas,monospace;white-space:pre;border:1px solid var(--line)}
+.tree b{color:var(--accent)}
+.tree i{color:var(--muted);font-style:normal}
+.flow{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start}
+.num{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700}
+.note{border-left:4px solid var(--warn);background:var(--warn-soft);padding:12px 16px;border-radius:0 12px 12px 0;margin:14px 0}
+.ok{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 12px 12px 0;margin:14px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.95rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--code)}
+tr:last-child td{border-bottom:0}
+footer{margin-top:60px;color:var(--muted);font-size:.9rem}
+@media (max-width:560px){
+  body{font-size:16px}
+  .step{grid-template-columns:34px 1fr}
+  .num{width:34px;height:34px}
+  th,td{padding:8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Quark Linux · Code-Landkarte</div>
+  <h1>Wo liegt was, und was macht es?</h1>
+  <p class="lead">Quark ist eine winzige Linux-VM (1,6 MB). Diese Seite sagt dir bei jeder Datei, wo sie liegt und wofür sie da ist. Alle Pfade gelten ab <span class="path">C:\Dev\my-own-vms\quark-linux</span>.</p>
+  <nav>
+    <a href="#bild">Das große Bild</a>
+    <a href="#baum">Ordnerbaum</a>
+    <a href="#bau">Baupläne</a>
+    <a href="#image">Im Image</a>
+    <a href="#werkzeuge">Werkzeuge</a>
+    <a href="#experiment">Experimente</a>
+    <a href="#doku">Doku &amp; Berichte</a>
+    <a href="#web">Webseite</a>
+    <a href="#ablauf">Ablauf</a>
+  </nav>
+</header>
+
+<h2 id="bild">Das große Bild</h2>
+<p>Stell dir einen Lego-Bausatz vor. Es gibt drei Dinge:</p>
+<div class="grid">
+  <div class="card"><h3>1. Die Bauanleitung</h3><p class="why"><span class="path">Dockerfile</span>, <span class="path">kernel.cfg</span>, <span class="path">busybox.applets</span>. Sie sagen, aus welchen Teilen die VM gebaut wird.</p></div>
+  <div class="card"><h3>2. Die Zutaten</h3><p class="why">Alles in <span class="path">rootfs/</span>. Das sind unsere eigenen Skripte und kleinen Einstellungsdateien, die in die VM hineinkommen.</p></div>
+  <div class="card"><h3>3. Das Ergebnis</h3><p class="why">Zwei Dateien in <span class="path">dist/</span>: <code>vmlinuz</code> (der Kernel) und <code>initramfs.cpio.xz</code> (alles andere). Zusammen 1.601.476 Byte.</p></div>
+</div>
+<p>Dazu kommen Werkzeuge zum Starten und Testen (<span class="path">run.ps1</span>, <span class="path">test.ps1</span>) und Dateien zum Lesen (Berichte, Notizen).</p>
+
+<h2 id="baum">Der Ordnerbaum</h2>
+<div class="tree"><b>quark-linux/</b>
+├─ <b>Dockerfile</b>              <i>← Bauplan: baut Kernel, BusyBox, SSH und packt alles</i>
+├─ <b>kernel.cfg</b>              <i>← die ~40 Kernel-Schalter (an/aus)</i>
+├─ <b>busybox.applets</b>         <i>← welche BusyBox-Befehle drin sind</i>
+├─ <b>rootfs/</b>                 <i>← alles, was ins Innere der VM kommt</i>
+│  ├─ init                     <i>← das erste Programm beim Start (PID 1)</i>
+│  ├─ bin/  q, wifi            <i>← Befehle für den Benutzer</i>
+│  ├─ etc/  passwd group shells profile apk-repositories
+│  └─ usr/lib/quark/  bootstrap install use remove udhcpc.script
+├─ <b>run.ps1</b>                 <i>← VM in QEMU starten</i>
+├─ <b>test.ps1</b>                <i>← 10 Prüfungen, ob alles geht</i>
+├─ <b>kexp/</b>                   <i>← Kernel-Experimente (Größenvergleiche)</i>
+│  ├─ Dockerfile, build.sh
+│  └─ cfg/  base A B C C2 .cfg  + große erzeugte Dateien
+├─ <b>dist/</b>                   <i>← Ergebnis (wird gebaut, nicht in Git)</i>
+├─ README.md  NOTES.md  summary.md
+├─ report.html  weltrekord.html  Quark Linux Rekordbericht.html (+ _files)
+├─ CODE-MAP.html              <i>← diese Seite</i>
+└─ .gitignore  .gitattributes</div>
+<div class="note"><b>Die Webseite ist umgezogen.</b> Der Ordner <span class="path">site/</span> hier ist nur noch die alte Kopie. Die echte Webseite liegt jetzt in <span class="path">C:\Dev\WebApps\quark-site</span>. Mehr dazu im Abschnitt <a href="#web">Webseite</a>.</div>
+
+<h2 id="bau">Die Baupläne</h2>
+<p>Mit diesen drei Dateien entsteht das Ergebnis. Gebaut wird mit <code>docker build --output dist .</code>.</p>
+
+<div class="card">
+  <h3><span class="path">Dockerfile</span> <span class="tag t-img">Bauplan</span></h3>
+  <p>Das ist die wichtigste Datei. Sie arbeitet in Stufen, wie eine Fließbandstraße:</p>
+  <table>
+    <tr><th>Stufe</th><th>Was passiert</th></tr>
+    <tr><td><code>tools</code></td><td>Alpine 3.22 mit Compiler und Hilfsprogrammen. Das ist nur die Werkbank und kommt nicht ins Ergebnis.</td></tr>
+    <tr><td><code>busybox</code></td><td>Lädt BusyBox 1.36.1 und schaltet nur die Befehle aus <span class="path">busybox.applets</span> ein. Bricht ab, wenn einer fehlt. Danach <code>strip</code> (verkleinern).</td></tr>
+    <tr><td><code>dropbear</code></td><td>Lädt Dropbear 2025.88 (der SSH-Server), statisch gebaut und ohne unnötige Teile.</td></tr>
+    <tr><td><code>kernel</code></td><td>Lädt Linux 6.6, startet mit <code>make tinyconfig</code> (fast alles aus) und schaltet die Optionen aus <span class="path">kernel.cfg</span> ein. Ergebnis: <code>bzImage</code>.</td></tr>
+    <tr><td><code>pack</code></td><td>Kopiert <span class="path">rootfs/</span> dazu, legt BusyBox und Dropbear hinein, schreibt <code>/etc/quark/apk.pin</code> (Name und Prüfsumme des Paketmanagers), kopiert die Alpine-Schlüssel und packt alles mit <code>cpio | xz -9e</code> zur <code>initramfs.cpio.xz</code>.</td></tr>
+    <tr><td>Ende</td><td>Eine leere Stufe (<code>scratch</code>), die nur <code>vmlinuz</code> und <code>initramfs.cpio.xz</code> enthält. Die landen in <span class="path">dist/</span>.</td></tr>
+  </table>
+  <p class="why">Der Paketmanager <code>apk</code> ist absichtlich <b>nicht</b> im Image. Er wird erst zur Laufzeit geholt (siehe <code>q</code>). Darum bleibt die VM so klein. Nur seine Prüfsumme ist eingebaut.</p>
+</div>
+
+<div class="card">
+  <h3><span class="path">kernel.cfg</span> <span class="tag t-img">Einstellungen</span></h3>
+  <p>Eine Zeile pro Schalter. <code>-e</code> heißt einschalten, <code>-d</code> heißt ausschalten. Zum Beispiel <code>-e VIRTIO_NET</code> (virtuelle Netzwerkkarte) oder <code>-d IPV6</code> (spart Platz). Der Kernel macht rund 80 % der Gesamtgröße aus. Hier wird also am meisten gespart.</p>
+</div>
+
+<div class="card">
+  <h3><span class="path">busybox.applets</span> <span class="tag t-img">Liste</span></h3>
+  <p>Die Befehle, die BusyBox können muss: <code>sh</code>, <code>ls</code>, <code>mount</code>, <code>ip</code>, <code>udhcpc</code>, <code>wget</code>, <code>tar</code>, <code>sha256sum</code> und so weiter. Steht hier etwas, das BusyBox nicht kennt, bricht der Bau ab. So fällt ein Tippfehler sofort auf.</p>
+</div>
+
+<h2 id="image">Was im Image steckt: der Ordner rootfs/</h2>
+<p>Alles hier drin landet <b>in der VM</b>. Der Ordnerbaum entspricht dem Dateibaum in der VM.</p>
+
+<div class="card">
+  <h3><span class="path">rootfs/init</span> <span class="tag t-img">Start</span></h3>
+  <p>Das erste Programm, das der Kernel startet. Es erledigt der Reihe nach:</p>
+  <ol>
+    <li>BusyBox-Befehle einrichten und die Systemordner einhängen (<code>/proc</code>, <code>/sys</code>, <code>/dev</code>, <code>/tmp</code>).</li>
+    <li>Den Namen <code>quark</code> setzen und die Netzwerkkarten einschalten.</li>
+    <li>Im Hintergrund per DHCP eine Adresse holen und den SSH-Server (<code>dropbear</code>) starten.</li>
+    <li>Den Hinweis ausgeben und eine Shell öffnen. Wenn du sie schließt, öffnet sich gleich eine neue.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h3><span class="path">rootfs/bin/q</span> <span class="tag t-img">Befehl</span></h3>
+  <p>Das Herzstück für Benutzer. <code>q nano notes.txt</code> installiert nano, startet es und löscht es wieder. Ablauf im Skript:</p>
+  <ol>
+    <li>Eine Sperre setzen (<code>/run/q.lock</code>), damit nicht zwei <code>q</code> gleichzeitig laufen.</li>
+    <li><code>bootstrap</code>: <code>apk</code> holen.</li>
+    <li><code>install</code>: Paket samt Zubehör laden.</li>
+    <li><code>use</code>: Programm starten.</li>
+    <li><code>remove</code>: Paket löschen. Am Ende wird auch <code>apk</code> wieder gelöscht.</li>
+  </ol>
+  <p class="why">Schreibweise: <code>q paket[:programm] [Argumente]</code>, zum Beispiel <code>q jq:jq --version</code>. Mit <code>q -s Begriff</code> suchst du Pakete.</p>
+</div>
+
+<div class="card">
+  <h3><span class="path">rootfs/bin/wifi</span> <span class="tag t-img">Befehl</span></h3>
+  <p>Gleicher Trick für WLAN: <code>wpa_supplicant</code> installieren, starten, wieder entfernen. Der Dienst läuft dann weiter. Gedacht für echte Hardware mit WLAN-Treiber. Das ist bisher <b>ungetestet</b>, weil die VM keine WLAN-Karte hat.</p>
+</div>
+
+<div class="card">
+  <h3><span class="path">rootfs/usr/lib/quark/</span> <span class="tag t-img">Helfer</span></h3>
+  <p>Kleine Skripte, die <code>q</code> und <code>wifi</code> benutzen. Normale Benutzer rufen sie nicht direkt auf.</p>
+  <table>
+    <tr><th>Datei</th><th>Aufgabe</th></tr>
+    <tr><td><code>bootstrap</code></td><td>Lädt <code>apk.static</code> aus dem Alpine-Spiegel nach <code>/tmp</code>. Prüft die SHA-256-Prüfsumme gegen <code>/etc/quark/apk.pin</code>. Stimmt sie nicht, bricht es ab.</td></tr>
+    <tr><td><code>install</code></td><td>Führt <code>apk add</code> aus. Jedes Paket bekommt eine eigene Sammelgruppe (<code>.q-&lt;name&gt;</code>), damit man es später sauber löschen kann.</td></tr>
+    <tr><td><code>use</code></td><td>Prüft, ob das Programm da ist, und startet es.</td></tr>
+    <tr><td><code>remove</code></td><td>Löscht die Sammelgruppe samt allem, was sonst niemand braucht.</td></tr>
+    <tr><td><code>udhcpc.script</code></td><td>Wird vom DHCP-Client aufgerufen. Setzt IP-Adresse, Standardroute und DNS (<code>/etc/resolv.conf</code>).</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3><span class="path">rootfs/etc/</span> <span class="tag t-img">Einstellungen</span></h3>
+  <table>
+    <tr><th>Datei</th><th>Inhalt</th></tr>
+    <tr><td><code>passwd</code>, <code>group</code></td><td>Nur der Benutzer <code>root</code>, ohne Passwort. Wer rein will, kommt über den weitergeleiteten Port nur von deinem eigenen Rechner (127.0.0.1) hinein.</td></tr>
+    <tr><td><code>shells</code></td><td>Erlaubte Shells (nur <code>/bin/sh</code>).</td></tr>
+    <tr><td><code>profile</code></td><td>Die Eingabeaufforderung <code>quark#</code>.</td></tr>
+    <tr><td><code>apk-repositories</code></td><td>Die Alpine-Quellen (main, community). Beim Bau wird die Datei nach <code>etc/apk/repositories</code> verschoben.</td></tr>
+  </table>
+</div>
+
+<div class="ok"><b>Eigener SSH-Schlüssel:</b> Legst du eine Datei <code>rootfs/authorized_keys</code> an, packt der Bau sie nach <code>/root/.ssh/</code>. Dann kommst du mit Schlüssel statt ohne Passwort hinein.</div>
+
+<h2 id="werkzeuge">Werkzeuge zum Starten und Testen</h2>
+<div class="card">
+  <h3><span class="path">run.ps1</span> <span class="tag t-tool">PowerShell 7</span></h3>
+  <p>Startet die VM in QEMU: 128 MB RAM, SSH erreichbar auf <code>127.0.0.1:2222</code>, Netzwerk über die Rechnerverbindung. Ctrl+C beendet die VM sauber von außen. Ohne diesen Schutz würde Ctrl+C in der VM landen und den Kernel abstürzen lassen. Zusätzlich sorgt ein <code>try/finally</code> dafür, dass kein QEMU-Prozess im Hintergrund hängen bleibt.</p>
+  <p class="why">Wichtig: QEMU braucht <code>-machine microvm,acpi=off</code>. Auf der Standardmaschine <code>pc</code> startet das Image nicht.</p>
+</div>
+<div class="card">
+  <h3><span class="path">test.ps1</span> <span class="tag t-tool">PowerShell 7</span></h3>
+  <p>Startet die VM ohne Fenster, steuert sie über die serielle Leitung und prüft: Größe, Start, Kernel, Arbeitsspeicher, BusyBox, DHCP, SSH und den kompletten <code>q</code>-Ablauf (installieren, ausführen, aufräumen). Dauer etwa 15 Sekunden. Schalter: <code>-SkipNetwork</code> (ohne Internet), <code>-Package</code> (anderes Testpaket), <code>-SshPort</code>, <code>-KeepOpen</code> (VM danach offen lassen).</p>
+</div>
+
+<h2 id="experiment">Der Ordner kexp/ (Experimente)</h2>
+<p>Hier wurde ausprobiert, wie klein der Kernel werden kann. Er gehört <b>nicht</b> zum fertigen Image.</p>
+<table>
+  <tr><th>Datei</th><th>Aufgabe</th></tr>
+  <tr><td><span class="path">kexp/Dockerfile</span></td><td>Werkbank mit Linux 6.6 unter <code>/k</code>.</td></tr>
+  <tr><td><span class="path">kexp/build.sh</span></td><td>Baut den Kernel mit einer Variante aus <code>cfg/</code> und legt Ergebnis und Größe daneben. Aufruf: <code>build.sh &lt;datei.cfg&gt;</code>.</td></tr>
+  <tr><td><span class="path">kexp/cfg/*.cfg</span></td><td>Varianten der Kernel-Schalter (<code>base</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>C2</code>) zum Größenvergleich. <code>base.cfg</code> nutzt zum Beispiel PCI und eine Intel-Netzwerkkarte, <code>kernel.cfg</code> nutzt dagegen die schlanke microvm-Variante.</td></tr>
+  <tr><td><span class="path">kexp/cfg/*.bzImage, *.vmlinux, *.out.config</span> <span class="tag t-gen">erzeugt</span></td><td>Ergebnisse der Experimente. Das sind große Dateien (die <code>.vmlinux</code> haben über 10 MB). Man kann sie bei Bedarf neu erzeugen.</td></tr>
+  <tr><td><span class="path">kexp/cfg/boot.log</span> <span class="tag t-gen">erzeugt</span></td><td>Startprotokoll eines Experiments. NOTES.md warnt: nicht als endgültiges Startprotokoll zitieren.</td></tr>
+</table>
+
+<h2 id="doku">Doku und Berichte (zum Lesen)</h2>
+<table>
+  <tr><th>Datei</th><th>Inhalt</th></tr>
+  <tr><td><span class="path">README.md</span> <span class="tag t-doc">Doku</span></td><td>Kurzanleitung: bauen, starten, testen, QEMU-Hinweise, Größenaufteilung.</td></tr>
+  <tr><td><span class="path">NOTES.md</span> <span class="tag t-doc">Doku</span></td><td>Stand, Messwerte, offene Punkte und Hinweise (Stand 2026-10-06).</td></tr>
+  <tr><td><span class="path">summary.md</span> <span class="tag t-doc">Doku</span></td><td>Ausführliche Zusammenfassung mit den Größenmessungen.</td></tr>
+  <tr><td><span class="path">report.html</span> <span class="tag t-doc">Bericht</span></td><td>Der Rekordbericht als gestaltete Seite.</td></tr>
+  <tr><td><span class="path">weltrekord.html</span> <span class="tag t-doc">Bericht</span></td><td>Die Weltrekord-Fassung der Seite, älter als die Produktseite.</td></tr>
+  <tr><td><span class="path">Quark Linux Rekordbericht.html</span> und der Ordner <span class="path">..._files</span> <span class="tag t-gen">Kopie</span></td><td>Im Browser gespeicherte Kopie des Berichts mit Schrift- und Skriptresten. Zum Lesen reicht <code>report.html</code>. Die Kopie kannst du bei Bedarf löschen.</td></tr>
+</table>
+
+<h2>Kleine Hilfsdateien</h2>
+<table>
+  <tr><th>Datei</th><th>Aufgabe</th></tr>
+  <tr><td><span class="path">.gitignore</span></td><td>Hält <code>dist/</code> (Ergebnis) und <code>site/ZUGANG.txt</code> (Passwort) aus Git heraus.</td></tr>
+  <tr><td><span class="path">.gitattributes</span></td><td>Erzwingt Unix-Zeilenenden (<code>eol=lf</code>). Ohne das würden Windows-Zeilenenden die Shell-Skripte in der VM kaputt machen.</td></tr>
+</table>
+
+<h2 id="web">Die Webseite (jetzt woanders)</h2>
+<div class="card">
+  <h3><span class="path">C:\Dev\WebApps\quark-site</span> <span class="tag t-tool">Webseite</span></h3>
+  <table>
+    <tr><th>Datei</th><th>Aufgabe</th></tr>
+    <tr><td><code>public/index.html</code></td><td>Die Produktseite.</td></tr>
+    <tr><td><code>Caddyfile</code></td><td>Kleiner Webserver mit Passwortschutz (Basic-Auth) und <code>noindex</code>.</td></tr>
+    <tr><td><code>Dockerfile</code>, <code>docker-compose.yml</code></td><td>Packen die Seite in einen Container, der am gemeinsamen Netz <code>feierblum_default</code> hängt.</td></tr>
+    <tr><td><code>deploy.ps1</code></td><td>Aktualisiert den Server (<code>git pull</code> und neu bauen).</td></tr>
+    <tr><td><code>SERVER-SETUP.md</code></td><td>Einmalige Erstinstallation.</td></tr>
+    <tr><td><code>ZUGANG.txt</code></td><td>Das Passwort. Nur lokal, nicht in Git.</td></tr>
+  </table>
+  <p class="why">Läuft auf https://quark-linux.workflowsolved.com und liegt auf dem Server unter <code>/opt/quark-site</code>.</p>
+</div>
+
+<h2 id="ablauf">Alles zusammen: vom Code zur laufenden VM</h2>
+<div class="flow">
+  <div class="step"><div class="num">1</div><div><b>Bauen.</b> <code>docker build --output dist .</code> liest <span class="path">Dockerfile</span>, <span class="path">kernel.cfg</span>, <span class="path">busybox.applets</span> und <span class="path">rootfs/</span>. Heraus kommen <code>dist/vmlinuz</code> und <code>dist/initramfs.cpio.xz</code>.</div></div>
+  <div class="step"><div class="num">2</div><div><b>Starten.</b> <code>pwsh run.ps1</code> startet QEMU mit diesen beiden Dateien. Der Kernel entpackt das initramfs in den Arbeitsspeicher.</div></div>
+  <div class="step"><div class="num">3</div><div><b>Hochfahren.</b> Der Kernel startet <span class="path">rootfs/init</span>. Das richtet die Systemordner ein, holt per DHCP eine Adresse und startet SSH und die Shell.</div></div>
+  <div class="step"><div class="num">4</div><div><b>Benutzen.</b> Du tippst <code>q jq:jq --version</code>. Das Skript <span class="path">bin/q</span> ruft nacheinander <code>bootstrap</code>, <code>install</code>, <code>use</code> und <code>remove</code> aus <span class="path">usr/lib/quark/</span> auf.</div></div>
+  <div class="step"><div class="num">5</div><div><b>Prüfen.</b> <code>pwsh test.ps1</code> macht die Schritte 2 bis 4 automatisch und meldet 10 von 10 Prüfungen.</div></div>
+</div>
+
+<div class="note"><b>Gut zu wissen:</b> Alles läuft nur im Arbeitsspeicher. Nach dem Ausschalten ist alles weg, auch installierte Programme. Das ist Absicht und ein Teil dessen, was die VM so klein macht.</div>
+
+<footer>
+  Erstellt am 2026-10-08 aus dem tatsächlichen Dateibestand. Die Experimente A, B, C und C2 habe ich nur nach Dateinamen eingeordnet, ihre genauen Unterschiede habe ich nicht einzeln geprüft.
+</footer>
+
+</div>
+</body>
+</html>

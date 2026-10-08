@@ -1,0 +1,3 @@
+#!/bin/sh
+# remove <pkg> - delete it and every dependency nothing else needs
+exec apk del -q --no-progress ".q-$1"

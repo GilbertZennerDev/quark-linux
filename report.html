@@ -1,0 +1,342 @@
+<title>Quark Linux Rekordbericht</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: Fachbericht mit Randspalte. Links Messwert-Etiketten, rechts Fließtext. Die Hero-Zahl wird von einem maßstäblichen Streifen unterlegt. */
+:root {
+  --paper: #eef1f5;
+  --paper-2: #e2e7ee;
+  --ink: #0d1520;
+  --ink-soft: #435063;
+  --rule: #b9c2cf;
+  --blue: #1b3dff;
+  --blue-ink: #ffffff;
+  --term-bg: #0d1520;
+  --term-fg: #d7e0ee;
+  --term-dim: #7f8da3;
+  --ok: #0e7a4d;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b121b; --paper-2: #131d2a; --ink: #e8edf4; --ink-soft: #9aa8bb; --rule: #2a3748;
+    --blue: #6f86ff; --blue-ink: #0b121b; --term-bg: #060b12; --term-fg: #d7e0ee; --term-dim: #6f7e94; --ok: #4fd69a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0b121b; --paper-2: #131d2a; --ink: #e8edf4; --ink-soft: #9aa8bb; --rule: #2a3748;
+  --blue: #6f86ff; --blue-ink: #0b121b; --term-bg: #060b12; --term-fg: #d7e0ee; --term-dim: #6f7e94; --ok: #4fd69a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.125rem; line-height: 1.6; padding-inline: 1rem; }
+.wrap { max-width: 72rem; margin-inline: auto; }
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* Kopfzeile */
+.mast { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; padding-block: 1.25rem; border-bottom: 2px solid var(--ink);
+  font-family: var(--mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.mast b { font-weight: 600; }
+
+/* Hero */
+.hero { padding-block: 3rem 2rem; }
+.kicker { font-family: var(--mono); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin: 0 0 1rem; }
+.hero h1 { font-family: var(--display); font-weight: 900; line-height: .82; margin: 0; letter-spacing: -.01em; text-transform: uppercase;
+  font-size: clamp(5.5rem, 24vw, 21rem); display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .12em; }
+.hero h1 .unit { font-size: .38em; color: var(--blue); }
+.lede { font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.3; max-width: 38ch; margin: 1.5rem 0 0; text-wrap: balance; }
+.lede em { font-style: italic; }
+.claim { display: inline-flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: center; margin-top: 2rem; padding: .7rem 1rem; background: var(--blue); color: var(--blue-ink);
+  font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Maßstabsstreifen */
+.strip { margin-top: 3rem; }
+.strip-label { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.strip-bar { position: relative; height: 3.5rem; margin-top: .5rem; border: 2px solid var(--ink); background:
+  repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--rule) calc(10% - 1px) 10%); }
+.strip-bar i { position: absolute; left: 0; top: 0; bottom: 0; width: .8%; min-width: 4px; background: var(--blue); }
+.strip-note { display: flex; justify-content: space-between; gap: 1rem; margin-top: .6rem; font-size: .95rem; color: var(--ink-soft); }
+.strip-note b { color: var(--blue); font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+
+/* Abschnitte mit Randspalte */
+section { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1.5rem 3rem; padding-block: 3.5rem; border-top: 2px solid var(--ink); margin-top: 3rem; }
+.side { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); line-height: 1.5; }
+.side b { display: block; color: var(--ink); font-weight: 600; margin-bottom: .35rem; }
+.main { min-width: 0; }
+h2 { font-family: var(--display); font-weight: 900; text-transform: uppercase; line-height: .95; margin: 0 0 1.25rem; font-size: clamp(2.4rem, 6vw, 4.5rem); text-wrap: balance; }
+.main p { max-width: 62ch; margin: 0 0 1.1rem; }
+.pull { font-size: clamp(1.4rem, 2.8vw, 2.1rem); line-height: 1.25; font-style: italic; max-width: 30ch; padding-left: 1.25rem; border-left: 6px solid var(--blue); margin: 1.75rem 0; text-wrap: balance; }
+
+/* Größenvergleich */
+.cmp { display: grid; gap: 1.1rem; margin-top: 1.75rem; }
+.cmp-row { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) auto; gap: .5rem 1rem; align-items: center; }
+.cmp-row .name { font-size: 1rem; line-height: 1.3; }
+.cmp-row .name small { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--ink-soft); text-transform: uppercase; }
+.track { height: 1.5rem; background: var(--paper-2); }
+.track i { display: block; height: 100%; background: var(--ink); }
+.cmp-row.me .track i { background: var(--blue); }
+.cmp-row .val { font-family: var(--mono); font-size: .85rem; font-variant-numeric: tabular-nums; text-align: right; min-width: 9rem; }
+.cmp-row .val b { font-weight: 600; color: var(--blue); }
+.fine { font-family: var(--mono); font-size: .72rem; letter-spacing: .03em; color: var(--ink-soft); margin-top: 1.25rem; max-width: 70ch; }
+
+/* Anatomie */
+.stack { display: flex; height: 4.5rem; border: 2px solid var(--ink); margin: 1.75rem 0 .75rem; }
+.stack div { display: flex; align-items: center; padding-inline: .8rem; font-family: var(--mono); font-size: .8rem; font-weight: 600; white-space: nowrap; overflow: hidden; }
+.stack .k { width: 80.4%; background: var(--ink); color: var(--paper); }
+.stack .r { width: 19.6%; background: var(--blue); color: var(--blue-ink); }
+.legend { display: flex; flex-wrap: wrap; gap: .4rem 2rem; font-family: var(--mono); font-size: .78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+table { border-collapse: collapse; width: 100%; font-size: 1rem; }
+.tbl { overflow-x: auto; margin-top: 1.5rem; }
+th, td { text-align: left; padding: .65rem .8rem .65rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400; border-bottom: 2px solid var(--ink); }
+td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: .9rem; }
+
+/* Terminal */
+.term { background: var(--term-bg); color: var(--term-fg); font-family: var(--mono); font-size: .85rem; line-height: 1.7; padding: 1.25rem 1.4rem; overflow-x: auto; margin: 1.5rem 0; border-top: 6px solid var(--blue); }
+.term pre { margin: 0; font: inherit; }
+.term .d { color: var(--term-dim); }
+.term .p { color: var(--blue); font-weight: 600; }
+.term .g { color: var(--ok); }
+.term .cmd { color: #ffffff; }
+
+/* Kennzahlen */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0; border-top: 2px solid var(--ink); border-left: 1px solid var(--rule); margin-top: 1.75rem; }
+.fact { padding: 1rem 1.1rem 1.2rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.fact b { display: block; font-family: var(--display); font-weight: 900; font-size: 3.4rem; line-height: .95; font-variant-numeric: tabular-nums; }
+.fact span { display: block; margin-top: .4rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* Tests */
+.checks { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0 2.5rem; }
+.checks li { display: flex; gap: .8rem; padding: .6rem 0; border-bottom: 1px solid var(--rule); font-size: 1rem; line-height: 1.35; }
+.checks li::before { content: "PASS"; flex: none; font-family: var(--mono); font-size: .65rem; font-weight: 600; letter-spacing: .08em; color: var(--ok); padding-top: .25rem; }
+
+/* Grenzen */
+.limits { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .9rem; max-width: 64ch; }
+.limits li { padding-left: 1.4rem; position: relative; }
+.limits li::before { content: ""; position: absolute; left: 0; top: .7em; width: .7rem; height: 2px; background: var(--blue); }
+.limits b { font-weight: 600; }
+
+.cta { background: var(--blue); color: var(--blue-ink); padding: clamp(1.5rem, 5vw, 3.5rem); margin-top: 3.5rem; }
+.cta h2 { margin-bottom: .75rem; }
+.cta p { max-width: 52ch; margin: 0; font-size: 1.3rem; line-height: 1.35; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; padding-block: 1.75rem 3rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+
+@media (max-width: 760px) {
+  section { grid-template-columns: minmax(0, 1fr); gap: .75rem; padding-block: 2.5rem; margin-top: 2rem; }
+  .cmp-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .cmp-row .track { grid-column: 1 / -1; grid-row: 2; }
+  .stack div { font-size: .68rem; padding-inline: .5rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .strip-bar i, .track i { animation: grow 1.1s cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+</style>
+
+<div class="wrap">
+
+<div class="mast">
+  <span><b>Quark Linux</b> &middot; Rekordbericht</span>
+  <span>Messung vom 6. Oktober 2026</span>
+  <span>Linux 6.6 &middot; BusyBox 1.36.1 &middot; Dropbear 2025.88</span>
+</div>
+
+<header class="hero">
+  <p class="kicker">Neuer Rekord: die kleinste brauchbare VM</p>
+  <h1><span>1,6</span><span class="unit">MB</span></h1>
+  <p class="lede">Eine vollständige Linux-VM mit Netzwerk, SSH und Paketinstallation auf Abruf. <em>Das ist nur wenig mehr als eine Diskette fasst (1,44 MB).</em></p>
+  <div class="claim"><span>Kleinste mir bekannte VM mit Netzwerk, SSH und Paketmanager</span><span>&middot; reproduzierbar gemessen</span></div>
+
+  <div class="strip" aria-label="Maßstabsvergleich: Quark Linux gegen eine Alpine-ISO">
+    <div class="strip-label"><span>Maßstab 1 : 1</span><span>Breite = 200 MB (Alpine-Standard-ISO, gerundet)</span></div>
+    <div class="strip-bar"><i></i></div>
+    <div class="strip-note"><span>Der blaue Streifen links ist Quark Linux.</span><b>0,8 %</b></div>
+  </div>
+</header>
+
+<section>
+  <div class="side"><b>These</b>Warum das zählt</div>
+  <div class="main">
+    <h2>Fast nichts. Aber kein Spielzeug.</h2>
+    <p>Kleine Linux-Images gibt es seit Jahrzehnten. Die meisten sparen, indem sie etwas weglassen: das Netzwerk, die Fernwartung oder die Möglichkeit, Software nachzuladen. Dann ist die VM klein und taugt zu nichts.</p>
+    <p>Quark Linux geht anders vor. Es liefert nur das mit, was man braucht, um sich <em>alles Weitere zu holen</em>: einen Kernel, eine Shell, eine Netzwerkverbindung, einen SSH-Server und einen Paketmanager. Programme sind nicht installiert. Sie werden geholt, wenn man sie braucht, und danach wieder entfernt.</p>
+    <div class="pull">Ein Kernel, eine Shell, eine Leitung nach draußen. Der Rest ist ein Befehl.</div>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Größe</b>Einordnung<br>Richtwerte, gerundet, nicht von uns gemessen</div>
+  <div class="main">
+    <h2>Zwei Größenordnungen darunter</h2>
+    <p>Die Vergleichswerte sind übliche Größen von Standard-Abbildern. Maßgeblich ist nur die erste Zeile, die im Projekt gemessen wurde.</p>
+    <div class="cmp">
+      <div class="cmp-row me">
+        <div class="name">Quark Linux<small>Kernel + initramfs</small></div>
+        <div class="track"><i style="width:.8%;min-width:4px"></i></div>
+        <div class="val"><b>1,6 MB</b></div>
+      </div>
+      <div class="cmp-row">
+        <div class="name">Alpine Linux<small>Standard-ISO</small></div>
+        <div class="track"><i style="width:100%"></i></div>
+        <div class="val">ca. 200 MB &middot; <b>125&times;</b></div>
+      </div>
+      <div class="cmp-row">
+        <div class="name">Ubuntu<small>Cloud-Abbild</small></div>
+        <div class="track"><i style="width:100%"></i></div>
+        <div class="val">ca. 600 MB &middot; <b>375&times;</b></div>
+      </div>
+      <div class="cmp-row">
+        <div class="name">Eine übliche Desktop-VM<small>Festplatte inkl. System</small></div>
+        <div class="track"><i style="width:100%"></i></div>
+        <div class="val">ca. 25 GB &middot; <b>15 600&times;</b></div>
+      </div>
+    </div>
+    <p class="fine">Die Balken sind auf 200 MB gekappt, damit Quark überhaupt sichtbar bleibt. Gegen 600 MB wäre der blaue Balken 0,27 % breit, gegen 25 GB 0,006 %. Faktoren: Vergleichswert geteilt durch 1,6 MB.</p>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Anatomie</b>1 601 476 Byte<br>gemessen</div>
+  <div class="main">
+    <h2>Der Kernel ist das Gewicht</h2>
+    <p>Vier Fünftel des Images sind der Linux-Kernel. Er wurde aus <code>make tinyconfig</code> aufgebaut und um gerade 40 Optionen ergänzt: Netzwerk, virtio, Dateisperren für <code>apk</code>, Serieller Port. Alles andere fehlt.</p>
+    <div class="stack" role="img" aria-label="Kernel 1,29 MB, initramfs 0,31 MB">
+      <div class="k">vmlinuz &middot; 1,29 MB</div>
+      <div class="r">0,31</div>
+    </div>
+    <div class="legend"><span>vmlinuz 1 288 336 B (80,4 %)</span><span>initramfs.cpio.xz 313 140 B (19,6 %)</span></div>
+
+    <div class="tbl"><table>
+      <thead><tr><th>Baustein</th><th>Rolle</th><th>Größe</th></tr></thead>
+      <tbody>
+        <tr><td>Linux 6.6, tinyconfig + 40 Optionen</td><td>Kernel, bzImage mit xz</td><td class="n">1 288 336 B</td></tr>
+        <tr><td>BusyBox 1.36.1, statisch (musl)</td><td>Shell, Werkzeuge, DHCP, wget</td><td class="n">346 000 B<br>ca. 182 KB mit xz</td></tr>
+        <tr><td>Dropbear 2025.88, statisch</td><td>SSH-Server</td><td class="n">383 832 B<br>ca. 177 KB mit xz</td></tr>
+        <tr><td>apk-tools-static</td><td>Paketmanager, kommt erst beim Start in den RAM</td><td class="n">0 B im Image</td></tr>
+      </tbody>
+    </table></div>
+    <p class="fine">BusyBox und Dropbear sind hier einzeln komprimiert gemessen. Im initramfs werden sie gemeinsam komprimiert, daher ist die Summe der Einzelwerte größer als 313 KB. Entpackt ist das Root-Dateisystem 834 798 B groß.</p>
+
+    <div class="pull">Weiter schrumpfen heißt, das Netzwerk oder SSH zu opfern. Dann kann die VM nichts mehr nachladen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Bedienung</b>Ein Befehl<br>installieren, ausführen, entfernen</div>
+  <div class="main">
+    <h2>Nichts installiert. Alles verfügbar.</h2>
+    <p>Der Befehl <code>q</code> holt ein Paket samt Abhängigkeiten, führt es aus und löscht es wieder. Die VM bleibt so klein, wie sie gestartet ist. Beim Start ist <code>apk</code> bewusst noch gar nicht vorhanden. Der Download wird per sha256-Prüfsumme gegen einen festen Wert geprüft.</p>
+    <div class="term"><pre><span class="d">BusyBox v1.36.1 built-in shell (ash)</span>
+
+<span class="p">quark#</span> <span class="cmd">q jq:jq --version</span>
+<span class="d">[installiert jq und Abhängigkeiten, führt aus, entfernt]</span>
+jq-1.8.2
+<span class="p">quark#</span> <span class="cmd">q nano notes.txt</span>
+<span class="p">quark#</span> <span class="cmd">q -s term</span>   <span class="d"># Pakete suchen</span></pre></div>
+    <p class="fine">Der <code>q jq:jq</code>-Lauf dauert im Test 3,5 Sekunden vom Aufruf bis zum entfernten Paket.</p>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Messwerte</b>QEMU 11.1.0, <code>microvm</code>, 128 MB RAM</div>
+  <div class="main">
+    <h2>Kaltstart in 3,6 Sekunden</h2>
+    <div class="facts">
+      <div class="fact"><b>3,6 s</b><span>Boot bis zur Shell</span></div>
+      <div class="fact"><b>128 MB</b><span>RAM, davon 116 MB frei nach Kernelstart</span></div>
+      <div class="fact"><b>3,5 s</b><span>q jq: installieren, ausführen, entfernen</span></div>
+      <div class="fact"><b>10/10</b><span>Tests bestanden in 13,5 s</span></div>
+    </div>
+    <p style="margin-top:1.75rem">Der Kernel startet ohne PCI und ACPI. Die virtuelle Netzwerkkarte hängt direkt am virtio-mmio-Bus. Das spart rund 100 KB. Weitere 120 KB sparten entfernte Systemaufrufe und Netzwerkoptionen. Insgesamt schrumpfte der Kernel von 1 439 376 auf 1 288 336 Byte.</p>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Beweis</b>Testsuite<br><code>pwsh test.ps1</code></div>
+  <div class="main">
+    <h2>Zehn Prüfungen. Zehn bestanden.</h2>
+    <p>Die Testsuite startet die VM frisch, prüft jede Fähigkeit von außen und räumt am Ende auf. Wer das Ergebnis anzweifelt, startet sie selbst.</p>
+    <ul class="checks">
+      <li>Image kleiner als 2 MB</li>
+      <li>VM bootet bis zur Shell</li>
+      <li>Kernel meldet sich korrekt</li>
+      <li>Arbeitsspeicher wie erwartet</li>
+      <li>BusyBox läuft</li>
+      <li>DHCP vergibt eine Adresse</li>
+      <li>SSH-Banner über 127.0.0.1:2222</li>
+      <li>apk ist beim Start nicht vorhanden</li>
+      <li>q jq:jq installiert, führt aus, entfernt</li>
+      <li>Danach sind 0 Pakete installiert</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Definition</b>Was „brauchbar“ heißt</div>
+  <div class="main">
+    <h2>Der Rekord, sauber definiert</h2>
+    <p>Ein Rekord braucht eine Regel. Quark Linux gilt als brauchbar, wenn die VM alle vier Punkte erfüllt:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Kriterium</th><th>Nachweis</th></tr></thead>
+      <tbody>
+        <tr><td>Startet und liefert eine Shell</td><td>Test „Boot“, 3,6 s</td></tr>
+        <tr><td>Hat Netzwerk (DHCP)</td><td>Test „DHCP“</td></tr>
+        <tr><td>Ist per SSH erreichbar</td><td>Test „SSH-Banner“</td></tr>
+        <tr><td>Kann beliebige Programme nachladen und wieder entfernen</td><td>Test „q jq:jq“ und „Clean-up“</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:1.5rem">Unter diesen vier Bedingungen ist Quark Linux mit 1,6 MB die kleinste VM, die mir bekannt ist. Die Aussage gilt, bis jemand eine kleinere vorlegt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Grenzen</b>Was Quark nicht ist</div>
+  <div class="main">
+    <h2>Wo die Zahl endet</h2>
+    <ul class="limits">
+      <li><b>Verwandte Arbeiten existieren.</b> Tiny Core, iPXE, netboot.xyz und die minimalen Images für Firecracker sind teils ähnlich klein. Sie bieten aber nicht dieselbe Kombination aus SSH und Paketinstallation auf Abruf. Eine systematische Recherche steht noch aus.</li>
+      <li><b>Nur für QEMU <code>microvm</code>.</b> Das Image bootet nicht auf der Standardmaschine <code>pc</code>. Die Option <code>acpi=off</code> ist nötig, sonst sieht der Gast keine Netzwerkkarte.</li>
+      <li><b>Nachladen braucht Internet.</b> <code>q</code> holt Pakete aus dem Alpine-Repository. Ohne Verbindung läuft nur, was schon da ist.</li>
+      <li><b>Kein Produktivsystem.</b> Root hat ein leeres Passwort, erreichbar nur über die lokale Weiterleitung, sofern kein Schlüssel eingebaut wird. Der Kernel ist auf Größe getrimmt, ohne zusätzliche CPU-Schutzmaßnahmen wie Retpoline. Nichts bleibt nach dem Neustart erhalten.</li>
+      <li><b>WLAN ist ungetestet.</b> <code>wifi</code> existiert für echte Hardware mit Treiber, wurde aber nicht geprüft.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="side"><b>Nachbau</b>Alles aus dem Quelltext</div>
+  <div class="main">
+    <h2>Selbst bauen und messen</h2>
+    <div class="term"><pre><span class="d"># bauen: Docker, mehrstufig, Ergebnis in dist/</span>
+<span class="p">$</span> <span class="cmd">docker build --output dist .</span>
+
+<span class="d"># starten: QEMU, 128 MB, SSH auf 127.0.0.1:2222</span>
+<span class="p">$</span> <span class="cmd">pwsh run.ps1</span>
+
+<span class="d"># alle zehn Prüfungen</span>
+<span class="p">$</span> <span class="cmd">pwsh test.ps1</span>
+
+<span class="d"># ohne Skript</span>
+<span class="p">$</span> <span class="cmd">qemu-system-x86_64 -machine microvm,acpi=off -nodefaults -m 128 \
+    -kernel dist/vmlinuz -initrd dist/initramfs.cpio.xz -append console=ttyS0 \
+    -netdev user,id=n,hostfwd=tcp:127.0.0.1:2222-:22 \
+    -device virtio-net-device,netdev=n -display none -serial stdio</span></pre></div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Kleiner geht das nicht? Beweist es.</h2>
+  <p>Die Regel steht oben, die Messung ist reproduzierbar. Wer eine VM mit Netzwerk, SSH und Paketinstallation unter 1,6 MB baut, bekommt den Rekord.</p>
+</div>
+
+<footer>
+  <span>Quark Linux &middot; 1 601 476 Byte</span>
+  <span>Alle Zahlen gemessen am 6. Oktober 2026, außer den gekennzeichneten Richtwerten</span>
+</footer>
+
+</div>

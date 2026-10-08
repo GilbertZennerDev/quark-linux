@@ -1,0 +1,16 @@
+services:
+  quark-linux:
+    image: quark-linux:latest
+    build:
+      context: .
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - default
+      - edge
+
+networks:
+  edge:
+    name: feierblum_default
+    external: true

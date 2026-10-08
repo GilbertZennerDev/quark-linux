@@ -1,0 +1,222 @@
+<title>Quark Linux Rekordakte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Prüfakte. Ein Messprotokoll mit großer Zahl, Maßstab-Balken und einem Stempel. */
+:root {
+  --paper: #e9eef3;
+  --sheet: #f6f8fb;
+  --ink: #12203a;
+  --muted: #55627a;
+  --line: #c3cddb;
+  --stamp: #c4204a;
+  --ok: #1d7a55;
+  --bar: #12203a;
+  --f-display: "Fraunces", Georgia, serif;
+  --f-body: "Instrument Sans", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0c1424; --sheet: #121c32; --ink: #e6ecf7; --muted: #93a2bf;
+    --line: #26344f; --stamp: #ff5c82; --ok: #4fd1a0; --bar: #e6ecf7; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0c1424; --sheet: #121c32; --ink: #e6ecf7; --muted: #93a2bf;
+  --line: #26344f; --stamp: #ff5c82; --ok: #4fd1a0; --bar: #e6ecf7; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.6; padding-inline: 16px; padding-block: 32px 64px; }
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+.sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 4px; padding: clamp(20px, 5vw, 44px); min-width: 0; }
+h1, h2 { font-family: var(--f-display); text-wrap: balance; line-height: 1.1; margin: 0; }
+h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin-bottom: 14px; }
+p { margin: 0 0 12px; max-width: 65ch; }
+.label { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero h1 { font-size: clamp(2.6rem, 9vw, 5rem); font-weight: 800; margin: 10px 0 18px; }
+.big { font-family: var(--f-mono); font-weight: 600; font-size: clamp(1.9rem, 8.5vw, 4rem); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 1; }
+.big small { font-size: 0.4em; color: var(--muted); margin-left: 0.4em; font-weight: 400; }
+.stamp { position: absolute; right: clamp(8px, 3vw, 28px); top: clamp(10px, 3vw, 26px); border: 3px double var(--stamp); color: var(--stamp); font-family: var(--f-mono); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 12px; text-align: center; transform: rotate(7deg); line-height: 1.35; border-radius: 4px; opacity: 0.92; animation: thud 0.5s cubic-bezier(.2,1.6,.4,1) 0.5s backwards; }
+@keyframes thud { from { transform: rotate(7deg) scale(2.2); opacity: 0; } }
+.kids { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--ok); background: var(--paper); border-radius: 0 4px 4px 0; max-width: 60ch; }
+
+/* Urteil */
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.v { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; min-width: 0; }
+.v b { display: block; font-family: var(--f-display); font-size: 1.15rem; margin-bottom: 4px; }
+.v.no b { color: var(--stamp); }
+.v.yes b { color: var(--ok); }
+
+/* Maßstab */
+.scale { display: grid; gap: 14px; margin-top: 18px; }
+.row { display: grid; grid-template-columns: minmax(110px, 170px) 1fr; gap: 12px; align-items: center; }
+.row .name { font-weight: 600; line-height: 1.25; }
+.row .name span { display: block; font-family: var(--f-mono); font-weight: 400; font-size: 0.75rem; color: var(--muted); }
+.track { position: relative; height: 30px; border-bottom: 1px dashed var(--line); min-width: 0; }
+.fill { height: 100%; background: var(--bar); border-radius: 2px; width: var(--w); transform-origin: left; animation: grow 1.2s cubic-bezier(.2,.8,.2,1) backwards; min-width: 3px; }
+.row.me .fill { background: var(--stamp); }
+.row:nth-child(2) .fill { animation-delay: .1s } .row:nth-child(3) .fill { animation-delay: .2s } .row:nth-child(4) .fill { animation-delay: .3s }
+@keyframes grow { from { transform: scaleX(0); } }
+.val { position: absolute; left: calc(var(--w) + 8px); top: 3px; font-family: var(--f-mono); font-size: 0.82rem; white-space: nowrap; }
+.row.big-one .val { left: auto; right: 6px; color: var(--paper); }
+.note { font-size: 0.88rem; color: var(--muted); margin-top: 12px; }
+
+/* Tabelle */
+.tw { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 0.95rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+tr.me td { font-weight: 600; background: var(--paper); }
+.y { color: var(--ok); font-weight: 600; } .n { color: var(--muted); }
+
+/* Inhalt */
+.stack { display: flex; height: 44px; border-radius: 3px; overflow: hidden; margin: 14px 0 8px; border: 1px solid var(--line); }
+.stack i { display: grid; place-items: center; font-style: normal; font-family: var(--f-mono); font-size: 0.74rem; color: var(--paper); }
+.stack .k { flex: 1288336; background: var(--bar); } .stack .r { flex: 313140; background: var(--stamp); color: #fff; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip { font-family: var(--f-mono); font-size: 0.82rem; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; transition: transform .15s, border-color .15s; }
+.chip:hover { transform: translateY(-2px); border-color: var(--stamp); }
+
+/* q-Ablauf */
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 16px 0; counter-reset: s; }
+.step { border: 1px solid var(--line); border-radius: 4px; padding: 12px; font-size: 0.92rem; min-width: 0; }
+.step b { display: block; font-family: var(--f-mono); font-size: 0.78rem; color: var(--stamp); margin-bottom: 4px; }
+code, .cmd { font-family: var(--f-mono); font-size: 0.9em; }
+.cmd { display: block; background: var(--ink); color: var(--paper); padding: 12px 14px; border-radius: 4px; overflow-x: auto; }
+.warn { margin-top: 16px; padding: 14px 16px; border: 1px dashed var(--stamp); border-radius: 4px; }
+
+/* Plan */
+.plan { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.plan li { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 12px 14px; border: 1px solid var(--line); border-radius: 4px; }
+.tag { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; margin-top: 3px; }
+.tag.done { color: var(--ok); border-color: var(--ok); }
+
+/* Satz */
+.quote { font-family: var(--f-display); font-size: clamp(1.15rem, 3vw, 1.45rem); line-height: 1.4; font-weight: 600; padding: 18px 20px; border: 2px solid var(--ink); border-radius: 4px; margin: 10px 0 14px; }
+button { font: inherit; font-family: var(--f-mono); font-size: 0.85rem; background: var(--ink); color: var(--paper); border: 0; border-radius: 4px; padding: 9px 16px; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--stamp); outline-offset: 2px; }
+.never { margin-top: 18px; color: var(--muted); font-size: 0.95rem; }
+footer { text-align: center; color: var(--muted); font-family: var(--f-mono); font-size: 0.75rem; }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; gap: 4px; } .stamp { position: static; display: inline-block; margin-bottom: 8px; } }
+@media (prefers-reduced-motion: reduce) { .stamp, .fill { animation: none; } .chip { transition: none; } }
+</style>
+
+<div class="wrap">
+
+  <header class="sheet hero">
+    <div class="stamp">Geprüft<br>8. Okt 2026</div>
+    <div class="label">Rekordakte · Nr. 1</div>
+    <h1>Quark Linux</h1>
+    <div class="big"><span id="n">1.601.476</span><small>Byte</small></div>
+    <p style="margin-top:14px">Kernel und Startdateien zusammen. Darin läuft ein echtes Linux mit Netzwerk und SSH.</p>
+    <div class="kids"><b>Wie ein Fünfjähriger:</b> Ein einziges Handyfoto ist oft größer als dieses ganze Betriebssystem. Es passt fast auf eine alte Diskette.</div>
+  </header>
+
+  <section class="sheet">
+    <div class="label">Das Urteil</div>
+    <h2>Weltrekord? Nein. Aber etwas Seltenes.</h2>
+    <div class="verdict">
+      <div class="v no"><b>Kein Rekord</b>Es gibt keine offizielle Rekordliste und keinen Guinness-Eintrag für die kleinste Linux-VM.</div>
+      <div class="v no"><b>Nicht die kleinste</b>FLOPPINUX (1.474.560 Byte) und tinyROOT (ca. 1,1 MB) sind kleiner.</div>
+      <div class="v yes"><b>Aber nützlich</b>Nur Quark hat Netzwerk, DHCP und SSH. Die kleineren booten, mehr nicht.</div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Maßstab</div>
+    <h2>Alle Balken im gleichen Maßstab</h2>
+    <div class="scale" role="img" aria-label="Balkendiagramm: tinyROOT 1,1 MB, FLOPPINUX 1,47 MB, Quark Linux 1,6 MB, Tiny Core 17 bis 21 MB">
+      <div class="row"><div class="name">tinyROOT<span>nur booten</span></div><div class="track"><div class="fill" style="--w:5.2%"></div><span class="val" style="--w:5.2%">≈ 1,1 MB</span></div></div>
+      <div class="row"><div class="name">FLOPPINUX 0.3.1<span>nur booten</span></div><div class="track"><div class="fill" style="--w:7%"></div><span class="val" style="--w:7%">1,47 MB</span></div></div>
+      <div class="row me"><div class="name">Quark Linux<span>Netz + SSH</span></div><div class="track"><div class="fill" style="--w:7.6%"></div><span class="val" style="--w:7.6%">1,60 MB</span></div></div>
+      <div class="row big-one"><div class="name">Tiny Core<span>Desktop-Klasse</span></div><div class="track"><div class="fill" style="--w:100%"></div><span class="val" style="--w:100%">17 bis 21 MB</span></div></div>
+    </div>
+    <p class="note">Linearer Maßstab bis 21 MB. Der Quark-Balken ist so kurz, weil Tiny Core über zehnmal größer ist. tinyROOT: Gesamtgröße nicht überprüft.</p>
+    <div class="tw">
+      <table>
+        <tr><th>System</th><th>Größe</th><th>Netzwerk</th><th>SSH</th><th>Programme nachladen</th></tr>
+        <tr><td>tinyROOT</td><td>≈ 1,1 MB</td><td class="n">nein</td><td class="n">nein</td><td class="n">nein</td></tr>
+        <tr><td>FLOPPINUX</td><td>1.474.560 B</td><td class="n">nein</td><td class="n">nein</td><td class="n">nein</td></tr>
+        <tr class="me"><td>Quark Linux</td><td>1.601.476 B</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja, mit q</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Inhalt</div>
+    <h2>Was steckt in den 1,6 MB?</h2>
+    <div class="stack" aria-label="Kernel 1.288.336 Byte, initramfs 313.140 Byte"><i class="k">Kernel 1.288.336</i><i class="r">initramfs</i></div>
+    <p class="note">Der Kernel ist rund 80 % der Datei, die Startdateien (initramfs) 313.140 Byte.</p>
+    <div class="chips">
+      <span class="chip">Linux 6.6</span><span class="chip">BusyBox (statisch)</span><span class="chip">Dropbear SSH</span><span class="chip">DHCP (udhcpc)</span><span class="chip">QEMU microvm</span><span class="chip">virtio-net</span><span class="chip">Boot 4,3 s</span><span class="chip">10 von 10 Tests</span>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Das offene Problem</div>
+    <h2>Der Paketmanager passt noch nicht hinein</h2>
+    <p>Mit <code>q</code> installierst du ein Programm, startest es und wirft es wieder weg. Seit heute lebt der Paketmanager apk nur noch während eines <code>q</code>-Aufrufs.</p>
+    <div class="flow">
+      <div class="step"><b>1 Laden</b>apk (ca. 5 MB) kommt aus dem Netz in den RAM</div>
+      <div class="step"><b>2 Prüfen</b>sha256 muss stimmen</div>
+      <div class="step"><b>3 Installieren</b>Programm und Abhängigkeiten</div>
+      <div class="step"><b>4 Ausführen</b>Programm läuft</div>
+      <div class="step"><b>5 Aufräumen</b>Programm und apk werden gelöscht</div>
+    </div>
+    <span class="cmd">q jq:jq --version</span>
+    <div class="warn"><b>Ehrlich gesagt:</b> Die 5 MB sind nicht in den 1,6 MB enthalten. Dein Ziel, dass der Paketmanager selbst hineinpasst, ist noch nicht erreicht.</div>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Plan</div>
+    <h2>Wie es weitergeht</h2>
+    <ul class="plan">
+      <li><span class="tag done">erledigt</span><span>apk wird nur noch pro <code>q</code>-Aufruf geladen und danach gelöscht.</span></li>
+      <li><span class="tag">als Nächstes</span><span>apk selbst mit <code>-Os</code> bauen und die Größe messen.</span></li>
+      <li><span class="tag">offen</span><span>Eigener kleiner Paketmanager (grob 50 bis 200 KB geschätzt) oder opkg.</span></li>
+      <li><span class="tag">offen</span><span>Kernel auf unter 1,47 MB verkleinern und FLOPPINUX schlagen.</span></li>
+      <li><span class="tag">offen</span><span>Dropbear auf Sicherheit prüfen.</span></li>
+      <li><span class="tag">offen</span><span>Konkurrenzcheck vertiefen, tinyROOT genau messen.</span></li>
+    </ul>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Der Satz zum Weitersagen</div>
+    <h2>Das darfst du behaupten</h2>
+    <div class="quote" id="quote">Linux-6.6-Gast für QEMU microvm mit virtio-Netzwerk, DHCP und Dropbear-SSH: Kernel plus initramfs zusammen 1.601.476 Byte.</div>
+    <button id="copy" type="button">Satz kopieren</button>
+    <p class="never"><b>Nicht sagen:</b> „kleinste Linux-VM der Welt“ (stimmt nicht) und „sicher“ (es gab noch keinen Sicherheitstest).</p>
+  </section>
+
+  <footer>Quark Linux · Stand 8. Oktober 2026 · Quellen: eigene Messung, Perplexity-Recherche</footer>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById('n');
+  var target = 1601476;
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var t0 = performance.now(), dur = 1400;
+    (function tick(t) {
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(target * e).toLocaleString('de-DE');
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  var btn = document.getElementById('copy');
+  btn.addEventListener('click', function () {
+    var txt = document.getElementById('quote').textContent;
+    var done = function () { btn.textContent = 'Kopiert'; setTimeout(function () { btn.textContent = 'Satz kopieren'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('quote'));
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Markiert, mit Strg+C kopieren';
+    };
+    try { navigator.clipboard.writeText(txt).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>

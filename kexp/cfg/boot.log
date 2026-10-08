@@ -1,0 +1,137 @@
+Linux version 6.6.0 (root@d26230f8b6d0) (gcc (Alpine 14.2.0) 14.2.0, GNU ld (GNU Binutils) 2.44) #1 Tue Oct  6 09:25:49 UTC 2026
+Command line: console=ttyS0
+BIOS-provided physical RAM map:
+BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+BIOS-e820: [mem 0x0000000000100000-0x0000000007ffefff] usable
+BIOS-e820: [mem 0x0000000007fff000-0x0000000007ffffff] reserved
+BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+NX (Execute Disable) protection: active
+APIC: Static calls initialized
+tsc: Fast TSC calibration using PIT
+tsc: Detected 3187.210 MHz processor
+last_pfn = 0x7fff max_arch_pfn = 0x400000000
+x86/PAT: PAT support disabled because CONFIG_X86_PAT is disabled in the kernel.
+x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+found SMP MP-table at [mem 0x000f56f0-0x000f56ff]
+RAMDISK: [mem 0x07fa3000-0x07feffff]
+Zone ranges:
+  DMA32    [mem 0x0000000000001000-0x0000000007ffefff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000001000-0x000000000009efff]
+  node   0: [mem 0x0000000000100000-0x0000000007ffefff]
+Initmem setup node 0 [mem 0x0000000000001000-0x0000000007ffefff]
+On node 0, zone DMA32: 1 pages in unavailable ranges
+On node 0, zone DMA32: 97 pages in unavailable ranges
+On node 0, zone DMA32: 1 pages in unavailable ranges
+Intel MultiProcessor Specification v1.4
+MPTABLE: OEM ID: BOCHSCPU
+MPTABLE: Product ID: 0.1         
+MPTABLE: APIC at: 0xFEE00000
+Processor #0 (Bootup-CPU)
+IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+Processors: 1
+[mem 0x08000000-0xfffbffff] available for PCI devices
+Booting paravirtualized kernel on bare hardware
+clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Kernel command line: console=ttyS0
+Dentry cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Inode-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+Built 1 zonelists, mobility grouping on.  Total pages: 31999
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 116892K/130676K available (6144K kernel code, 807K rwdata, 404K rodata, 536K init, 700K bss, 13528K reserved, 0K cma-reserved)
+SLUB: HWalign=64, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS: 4352, nr_irqs: 48, preallocated irqs: 16
+Console: colour *CGA 80x25
+printk: console [ttyS0] enabled
+APIC: Switch to symmetric I/O mode setup
+..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x2df117bccee, max_idle_ns: 440795217383 ns
+Calibrating delay loop (skipped), value calculated using timer frequency.. 6374.42 BogoMIPS (lpj=12748840)
+process: using AMD E400 aware idle routine
+Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+CPU: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Spectre V2 : Kernel not compiled with retpoline; no mitigation available!
+Spectre V2 : Vulnerable
+Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+x86/fpu: x87 FPU will use FXSAVE
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 512 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 512 (order: 0, 4096 bytes, linear)
+Performance Events: PMU not available due to virtualization, using software events only.
+signal: max sigframe size: 1040
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+futex hash table entries: 16 (order: -4, 384 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+clocksource: Switched to clocksource tsc-early
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 1024 (order: 1, 8192 bytes, linear)
+TCP bind hash table entries: 1024 (order: 2, 16384 bytes, linear)
+TCP: Hash tables configured (established 1024 bind 1024)
+UDP hash table entries: 128 (order: 0, 4096 bytes, linear)
+UDP-Lite hash table entries: 128 (order: 0, 4096 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+platform rtc_cmos: registered platform RTC device (no PNP device found)
+Unpacking initramfs...
+workingset: timestamp_bits=62 max_order=15 bucket_order=0
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+i8042: No controller found
+fail to initialize ptp_kvm
+NET: Registered PF_PACKET protocol family
+sched_clock: Marking stable (488422801, 21134580)->(515999017, -6441636)
+Freeing initrd memory: 308K
+Freeing unused kernel image (initmem) memory: 536K
+Write protecting the kernel read-only data: 8192k
+Freeing unused kernel image (rodata/data gap) memory: 1644K
+Run /init as init process
+busybox: /usr/bin/basename: No such file or directory
+busybox: /usr/sbin/chroot: No such file or directory
+busybox: /usr/bin/cut: No such file or directory
+busybox: /usr/bin/dirname: No such file or directory
+busybox: /usr/bin/env: No such file or directory
+busybox: /usr/bin/find: No such file or directory
+busybox: /usr/bin/free: No such file or directory
+busybox: /usr/bin/head: No such file or directory
+busybox: /usr/bin/id: No such file or directory
+busybox: /usr/bin/printf: No such file or directory
+busybox: /usr/bin/setsid: No such file or directory
+busybox: /usr/bin/sha256sum: No such file or directory
+busybox: /usr/bin/sort: No such file or directory
+busybox: /usr/bin/tail: No such file or directory
+busybox: /usr/bin/test: No such file or directory
+busybox: /usr/bin/tr: No such file or directory
+busybox: /usr/bin/wc: No such file or directory
+busybox: /usr/bin/wget: No such file or directory
+busybox: /usr/bin/which: No such file or directory
+busybox: /usr/bin/xargs: No such file or directory
+
+quark-linux  |  q <pkg>[:<bin>] [args]  e.g.  q nano notes.txt
+
+
+BusyBox v1.36.1 (2026-09-30 10:23:44 UTC) built-in shell (ash)
+
+quark# clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2df117bccee, max_idle_ns: 440795217383 ns
+clocksource: Switched to clocksource tsc
+clocksource: timekeeping watchdog on CPU0: Marking clocksource 'tsc' as unstable because the skew is too large:
+clocksource:                       'refined-jiffies' wd_nsec: 512032000 wd_now: fffede80 wd_last: fffede00 mask: ffffffff
+clocksource:                       'tsc' cs_nsec: 913731542 cs_now: 34a81519e cs_last: 29cebd7bb mask: ffffffffffffffff
+clocksource:                       Clocksource 'tsc' skewed 401699542 ns (401 ms) over watchdog 'refined-jiffies' interval of 512032000 ns (512 ms)
+clocksource:                       'tsc' is current clocksource.
+tsc: Marking TSC unstable due to clocksource watchdog
+TSC found unstable after boot, most likely due to broken BIOS. Use 'tsc=unstable'.
+sched_clock: Marking unstable (4004415845, 21136142)<-(4031998685, -6441636)
+clocksource: Not enough CPUs to check clocksource 'tsc'.
+clocksource: Switched to clocksource refined-jiffies

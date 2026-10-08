@@ -1,0 +1,12 @@
+:80 {
+	# TLS happens at the shared edge Caddy (feierblum-caddy-1); this one only
+	# serves the files, and nothing is served without the login.
+	encode zstd gzip
+	basic_auth {
+		gilbert $2a$14$dYq3m1wbocGt8xA1QrCiIOq0Ebb0wR05nz2RewW4O8SaIMCiewXnO
+	}
+	header X-Robots-Tag "noindex, nofollow"
+	header Cache-Control "no-cache"
+	root * /srv
+	file_server
+}
