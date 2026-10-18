@@ -1,0 +1,20 @@
+#!/bin/sh
+# q <pkg>[:<bin>] [args...]  ->  install pkg, run bin (default: pkg), remove pkg
+# q -s <term>                 ->  search packages
+# apk is fetched for this call only and deleted again when q ends.
+Q=/usr/lib/quark
+case "$1" in
+  ''|-h|--help) echo "usage: q <pkg>[:<bin>] [args...]   |   q -s <term>"; exit 2;;
+  -s) shift; $Q/bootstrap || exit 1; apk search --no-cache -q "$@"; rc=$?; rm -f /sbin/apk; exit $rc;;
+esac
+spec=$1; shift
+pkg=${spec%%:*}; bin=${spec#*:}
+while ! mkdir /run/q.lock 2>/dev/null; do sleep 1; done
+trap 'rm -f /sbin/apk; rmdir /run/q.lock 2>/dev/null' EXIT
+$Q/bootstrap || exit 1
+trap '' INT
+$Q/install "$pkg" || exit 1
+trap - INT
+$Q/use "$bin" "$@"; rc=$?
+$Q/remove "$pkg"
+exit $rc

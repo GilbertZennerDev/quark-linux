@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerla VM – woraus bestehen die 203 KiB?</title>
+    <style>
+        :root {
+            --bg: #faf8f3;
+            --fg: #2c2c2c;
+            --accent: #8b7355;
+            --accent-light: #d4c5b0;
+            --success: #6b9d4f;
+            --warning: #c9914f;
+            --info: #5a7f8c;
+            --border: #e0d5c7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #1a1816;
+                --fg: #e8e4df;
+                --accent: #c9b89e;
+                --accent-light: #4a3f35;
+                --success: #8fb850;
+                --warning: #e8a555;
+                --info: #7aa5bc;
+                --border: #3a342f;
+            }
+        }
+        :root[data-theme="dark"] {
+            --bg: #1a1816;
+            --fg: #e8e4df;
+            --accent: #c9b89e;
+            --accent-light: #4a3f35;
+            --success: #8fb850;
+            --warning: #e8a555;
+            --info: #7aa5bc;
+            --border: #3a342f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            padding: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .theme-toggle {
+            background: var(--accent-light);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--fg);
+            transition: background-color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .intro {
+            background: var(--accent-light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .intro h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+        }
+
+        .intro p {
+            margin: 0.5rem 0;
+        }
+
+        .number {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bar-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .bar-label {
+            min-width: 140px;
+            font-weight: 500;
+        }
+
+        .bar-container {
+            flex: 1;
+            background: var(--accent-light);
+            border-radius: 4px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 0.8rem;
+            color: var(--bg);
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: linear-gradient(90deg, var(--info), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .bar-fill.success {
+            background: linear-gradient(90deg, var(--success), #9ed65f);
+        }
+
+        .bar-fill.warning {
+            background: linear-gradient(90deg, var(--warning), #e8a555);
+        }
+
+        .bar-fill.info {
+            background: linear-gradient(90deg, #5a7f8c, #7aa5bc);
+        }
+
+        .bar-size {
+            min-width: 100px;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            background: var(--accent-light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison {
+            background: var(--accent-light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .comparison h3 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-value {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--accent-light);
+            font-size: 0.85rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .bar-label {
+                min-width: 100px;
+                font-size: 0.9rem;
+            }
+
+            .bar-size {
+                min-width: 70px;
+                font-size: 0.8rem;
+            }
+
+            .stat-value {
+                font-size: 1.4rem;
+            }
+
+            .intro {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>🐧 Kerla VM – woraus bestehen die 203 KiB?</h1>
+                <p style="opacity: 0.7; font-size: 0.9rem;">Ein Rust-Kernel mit BusyBox, SSH per q nachladbar</p>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙 Design</button>
+        </header>
+
+        <div class="intro">
+<h2>Die Strategie: winziges Fundament, wächst bei Bedarf</h2>
+<p>Das System besteht nur aus dem <strong>Fundament</strong>: Kernel, Shell, Netzwerk und der Paketmanager <code>q</code>. Das ist gepackt <span class="number">199 028 Bytes</span> groß, also <span class="number">≈ 199 KB</span>. Mehr ist nicht eingebaut.</p>
+<p><strong>Wie ein Lego-Grundbrett:</strong> Das Brett ist klein. Alles andere, zum Beispiel SSH, Editor oder jq, steckt man erst bei Bedarf dazu: <code>q add dropbear</code>. Das System kann so beliebig groß wachsen, aber nur so groß, wie du es brauchst.</p>
+<p><strong>Anspruch:</strong> Ein startbares System mit Shell, Netzwerk und Nachladen von Paketen in 199 KB. Ob es damit das kleinste der Welt ist, ist noch nicht belegt. Der Vergleich steht aus und ist kein Messwert.</p>
+<p><strong>Zwei Zustände derselben Datei:</strong> gepackt 199 028 B (so liegt sie auf der Platte, das zählt) und ausgepackt 466 544 B (so läuft sie).</p>
+</div>
+<div class="stats">
+<div class="stat-box"><div class="stat-label">Endgültiges Paket, gepackt (xz)</div><div class="stat-value" style="color:#16a34a">194 KiB</div><small><strong>199 028 B – das zählt, unter 200 KB!</strong></small></div>
+<div class="stat-box"><div class="stat-label">Ausgepackt</div><div class="stat-value">456 KiB</div><small>466 544 B – so läuft es</small></div>
+<div class="stat-box"><div class="stat-label">Früher (Stufe 1)</div><div class="stat-value">419 KiB</div><small>428 844 B gepackt</small></div>
+</div>
+<div class="section"><h2>Woraus besteht es? (gepackt, 199 028 B)</h2><div class="bar-chart">
+<div class="bar-item"><div class="bar-label">Kernel-Code</div><div class="bar-container"><div class="bar-fill info" style="width:49%;">~95 KiB</div></div><div class="bar-size">~95 KiB</div></div>
+<div class="bar-item"><div class="bar-label">Startdatei (BusyBox + q + init)</div><div class="bar-container"><div class="bar-fill success" style="width:51%;">~100 KiB</div></div><div class="bar-size">~100 KiB</div></div>
+</div><p style="margin-top:1rem;font-size:.9rem;opacity:.8">Der Kernel ist der Bagger, die Startdatei der Werkzeugkasten. Beide sind etwa gleich groß. Die Aufteilung ist gemessen (Startdatei einzeln gepackt: 102 020 B, Rest = Kernel).</p></div>
+<div class="section"><h2>Die Verkleinerung Schritt für Schritt (gepackt)</h2><div class="comparison">
+<div class="comparison-item"><span>Stufe 1: Backtrace-Tabelle verkleinert</span><span class="comparison-value">428 844 B (419 KiB)</span></div>
+<div class="comparison-item"><span>Stufe 2: dropbear aus dem Startpaket</span><span class="comparison-value">278 488 B (272 KiB)</span></div>
+<div class="comparison-item"><span>Stufe 3: BusyBox zugeschnitten</span><span class="comparison-value">207 428 B (203 KiB)</span></div>
+<div class="comparison-item"><span>Stufe 4: q-Befehle + getrandom wieder an</span><span class="comparison-value">208 260 B (203 KiB)</span></div>
+<div class="comparison-item"><span>Stufe 5: Logger zur Compile-Zeit aus</span><span class="comparison-value">200 636 B (196 KiB)</span></div>
+<div class="comparison-item"><span><strong>Stufe 6: BusyBox weiter getrimmt (FERTIG)</strong></span><span class="comparison-value"><strong>199 028 B (194 KiB)</strong></span></div>
+</div><p style="margin-top:1rem;font-size:.9rem;opacity:.8">Stufe 4 ist 832 B größer als Stufe 3, dafür kann dropbear per <code>q add dropbear</code> nachinstalliert werden. Stufe 6 ist der Endstand: alle drei Tests (Nano, q add/ls/del, q add dropbear) bestehen.</p></div>
+<div class="section"><h2>Ausgepackt (466 544 B)</h2><div class="comparison">
+<div class="comparison-item"><span>Kernel-Code (.text)</span><span class="comparison-value">~444 KiB</span></div>
+<div class="comparison-item"><span>Daten + Konstanten</span><span class="comparison-value">~29 KiB + Rest</span></div>
+<div class="comparison-item"><span>Startdatei ganz (cpio)</span><span class="comparison-value">208 896 B (204 KiB)</span></div>
+<div class="comparison-item"><span>davon BusyBox (zugeschnitten)</span><span class="comparison-value">202 464 B (198 KiB)</span></div>
+</div></div>
+<div class="section"><h2>Was q nachlädt (nicht im System, nur bei Bedarf)</h2><div class="comparison">
+<div class="comparison-item"><span>dropbear (SSH) + zlib, skl, utl</span><span class="comparison-value">380 999 B (372 KiB)</span></div>
+<div class="comparison-item"><span>nano (Editor) + ncw, nti</span><span class="comparison-value">343 011 B (335 KiB)</span></div>
+<div class="comparison-item"><span>jq + oniguruma</span><span class="comparison-value">340 111 B (332 KiB)</span></div>
+</div><p style="margin-top:1rem;font-size:.9rem;opacity:.8">Dazu kommt bei jedem das gemeinsame musl (412 252 B, nur einmal). Das sind ungepackte Alpine-Pakete (.apk), nicht mit xz zusammengepackt. Sie zählen nicht zu den 194 KiB. Sie kommen erst aufs System, wenn du sie mit q installierst.</p></div>
+<div class="section"><h2>Alltagsvergleiche</h2><div class="comparison">
+<div class="comparison-item"><span>Dieses ganze System (203 KiB)</span><span class="comparison-value">≈ ein kleines Handyfoto</span></div>
+<div class="comparison-item"><span>Ubuntu zum Vergleich</span><span class="comparison-value">≈ 3 000 MiB, rund 15 000-mal größer</span></div>
+</div></div>
+<div class="footer">
+            <p>Kerla VM — Ein Rust-Kernel mit Linux-API, minimal und schlank</p>
+            <p style="margin-top: 0.5rem;">Messung: 2026-10-10 · Stufe 4 (vdb.elf) · xz --x86 --lzma2=preset=9e</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.dataset.theme === 'dark';
+            html.dataset.theme = isDark ? 'light' : 'dark';
+            localStorage.setItem('theme', html.dataset.theme);
+        }
+
+        // Theme beim Laden wiederherstellen
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            document.documentElement.dataset.theme = savedTheme;
+        } else if (prefersDark) {
+            document.documentElement.dataset.theme = 'dark';
+        }
+    </script>
+</body>
+</html>

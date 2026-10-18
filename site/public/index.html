@@ -4,10 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Quark Linux</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<title>Quark Kerla</title>
 <style>
 /* Layout: Produktseite. Große Zahl oben, Vorteilskarten, Maßstab-Balken, Datenblatt. */
 :root {
@@ -19,9 +16,9 @@
   --accent: #c4204a;
   --ok: #1d7a55;
   --bar: #12203a;
-  --f-display: "Fraunces", Georgia, serif;
-  --f-body: "Instrument Sans", system-ui, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --f-display: Georgia, "Times New Roman", serif;
+  --f-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -69,10 +66,8 @@ code { font-family: var(--f-mono); font-size: 0.9em; }
 .row .name { font-weight: 600; line-height: 1.25; }
 .row .name span { display: block; font-family: var(--f-mono); font-weight: 400; font-size: 0.75rem; color: var(--muted); }
 .track { position: relative; height: 30px; border-bottom: 1px dashed var(--line); min-width: 0; }
-.fill { height: 100%; background: var(--bar); border-radius: 2px; width: var(--w); transform-origin: left; animation: grow 1.2s cubic-bezier(.2,.8,.2,1) backwards; min-width: 3px; }
+.fill { height: 100%; background: var(--bar); border-radius: 2px; width: var(--w); transform-origin: left; min-width: 3px; }
 .row.me .fill { background: var(--accent); }
-.row:nth-child(2) .fill { animation-delay: .1s } .row:nth-child(3) .fill { animation-delay: .2s } .row:nth-child(4) .fill { animation-delay: .3s }
-@keyframes grow { from { transform: scaleX(0); } }
 .val { position: absolute; left: calc(var(--w) + 8px); top: 3px; font-family: var(--f-mono); font-size: 0.82rem; white-space: nowrap; }
 .row.big-one .val { left: auto; right: 6px; color: var(--paper); }
 .note { font-size: 0.88rem; color: var(--muted); margin-top: 12px; }
@@ -101,11 +96,11 @@ tr.me td { font-weight: 600; background: var(--paper); }
 dl.spec { margin: 0; }
 .stack { display: flex; height: 44px; border-radius: 4px; overflow: hidden; margin: 22px 0 8px; border: 1px solid var(--line); }
 .stack i { display: grid; place-items: center; font-style: normal; font-family: var(--f-mono); font-size: 0.74rem; color: var(--paper); }
-.stack .k { flex: 1288336; background: var(--bar); } .stack .r { flex: 313140; background: var(--accent); color: #fff; }
+.stack .k { flex: 494464; background: var(--bar); } .stack .r { flex: 3504424; background: var(--accent); color: #fff; }
 
 footer { text-align: center; color: var(--muted); font-family: var(--f-mono); font-size: 0.75rem; }
 @media (max-width: 520px) { .row { grid-template-columns: 1fr; gap: 4px; } }
-@media (prefers-reduced-motion: reduce) { .fill { animation: none; } .card { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
 </style>
 </head>
 <body>
@@ -113,16 +108,15 @@ footer { text-align: center; color: var(--muted); font-family: var(--f-mono); fo
 <div class="wrap">
 
   <header class="sheet hero">
-    <span class="badge">Eine der kleinsten Linux-VMs</span>
-    <h1>Ein vollständiges Linux in <em>1,6 MB</em>.</h1>
-    <p class="lead">Quark Linux ist eine fertige Mini-VM für alle, die extrem wenig Platz haben. Sie startet in Sekunden, hängt im Netzwerk, lässt sich per SSH steuern und holt Programme nach, wenn du sie brauchst.</p>
-    <div class="big"><span id="n">1.601.476</span><small>Byte, Kernel + Startdateien</small></div>
+    <span class="badge">Quark mit Kerla-Kernel</span>
+    <h1>Ein Linux-Kernel in <em>0,49 MB</em>.</h1>
+    <p class="lead">Quark läuft jetzt auf Kerla, einem kleinen Kernel in Rust, der Linux-Programme ausführt. Gepackt ist er nur 494.464 Byte groß. Die VM geht ins Netz, holt Programme mit <code>q</code> und nimmt Befehle über eine einfache Leitung an.</p>
+    <div class="big">494.464<small>Byte, Kernel gepackt (xz)</small></div>
     <div class="facts">
       <span class="fact"><b>✓</b> Netzwerk mit DHCP</span>
-      <span class="fact"><b>✓</b> SSH-Zugang</span>
       <span class="fact"><b>✓</b> Programme nachinstallieren</span>
-      <span class="fact"><b>✓</b> Start in 4,3 s</span>
-      <span class="fact"><b>✓</b> 10 von 10 Tests</span>
+      <span class="fact"><b>✓</b> Fernzugriff über Leitung</span>
+      <span class="fact"><b>✓</b> 5 von 5 Anwendungsfällen</span>
     </div>
   </header>
 
@@ -130,30 +124,30 @@ footer { text-align: center; color: var(--muted); font-family: var(--f-mono); fo
     <div class="label">Vorteile</div>
     <h2>Klein gebaut, aber nicht abgespeckt</h2>
     <div class="cards">
-      <article class="card"><span class="no">01</span><h3>Winzig</h3><p>Kernel plus Startdateien zusammen unter 1,7 MB. Ein einziges Handyfoto ist oft größer.</p></article>
+      <article class="card"><span class="no">01</span><h3>Winzig</h3><p>Gepackt unter 0,5 MB. Das ist etwa ein Drittel der früheren Linux-Fassung.</p></article>
       <article class="card"><span class="no">02</span><h3>Gleich im Netz</h3><p>Die VM holt sich beim Start selbst eine Adresse per DHCP. Du musst nichts einrichten.</p></article>
-      <article class="card"><span class="no">03</span><h3>Fernsteuerbar per SSH</h3><p>Dropbear ist eingebaut. Du meldest dich an wie bei jedem Server und arbeitest direkt darin.</p></article>
-      <article class="card"><span class="no">04</span><h3>Erweiterbar mit <code>q</code></h3><p>Ein Befehl lädt ein Programm, führt es aus und räumt danach wieder auf. Die VM bleibt klein.</p></article>
-      <article class="card"><span class="no">05</span><h3>Schnell startklar</h3><p>Ab dem Start vergehen etwa 4,3 Sekunden bis zum Login.</p></article>
-      <article class="card"><span class="no">06</span><h3>Getestet</h3><p>Ein automatischer Test prüft Start, Netzwerk, SSH und Paketbefehle. Aktueller Stand: 10 von 10 bestanden.</p></article>
+      <article class="card"><span class="no">03</span><h3>Fernsteuerbar</h3><p>Die VM lauscht auf Port 4444 (<code>nc -l -p 4444 -e sh</code>). Kein SSH nötig, der Kern bleibt klein.</p></article>
+      <article class="card"><span class="no">04</span><h3>Erweiterbar mit <code>q</code></h3><p><code>q add jq</code> lädt ein Programm samt Abhängigkeiten und prüft die Prüfsumme. <code>q del</code> räumt wieder auf.</p></article>
+      <article class="card"><span class="no">05</span><h3>Nur das Nötige</h3><p>Der Kern kommt mit 46 Systemaufrufen aus. SSH und Extras sind Plugins, die man bei Bedarf dazubaut.</p></article>
+      <article class="card"><span class="no">06</span><h3>Getestet</h3><p>Booten, installieren, benutzen, zweites Paket, deinstallieren: 5 von 5 Anwendungsfällen laufen. Drei Anrufe hintereinander wurden beantwortet.</p></article>
     </div>
   </section>
 
   <section class="sheet">
     <div class="label">Im Vergleich</div>
-    <h2>Eine der kleinsten, und sie kann etwas</h2>
-    <p>Andere Mini-Systeme in dieser Größe, die ich kenne, starten nur bis zu einer Eingabezeile. Quark bleibt in derselben Größenklasse und bringt Netzwerk, SSH und Paketbefehle mit.</p>
-    <div class="scale" role="img" aria-label="Balkendiagramm: FLOPPINUX 1,47 MB, Quark Linux 1,6 MB, Tiny Core 17 bis 21 MB">
+    <h2>Klein, und sie kann etwas</h2>
+    <p>Andere Mini-Systeme in dieser Größe, die ich kenne, starten nur bis zu einer Eingabezeile. Quark mit Kerla bleibt darunter und bringt Netzwerk und Paketbefehle mit.</p>
+    <div class="scale" role="img" aria-label="Balkendiagramm: Quark mit Kerla 0,49 MB, FLOPPINUX 1,47 MB, Tiny Core 17 bis 21 MB">
+      <div class="row me"><div class="name">Quark mit Kerla<span>Netzwerk + q, gepackt</span></div><div class="track"><div class="fill" style="--w:2.4%"></div><span class="val" style="--w:2.4%">0,49 MB</span></div></div>
       <div class="row"><div class="name">FLOPPINUX 0.3.1<span>startet bis zur Eingabezeile</span></div><div class="track"><div class="fill" style="--w:7%"></div><span class="val" style="--w:7%">1,47 MB</span></div></div>
-      <div class="row me"><div class="name">Quark Linux<span>Netzwerk + SSH + q</span></div><div class="track"><div class="fill" style="--w:7.6%"></div><span class="val" style="--w:7.6%">1,60 MB</span></div></div>
       <div class="row big-one"><div class="name">Tiny Core<span>Desktop-Klasse</span></div><div class="track"><div class="fill" style="--w:100%"></div><span class="val" style="--w:100%">17 bis 21 MB</span></div></div>
     </div>
-    <p class="note">Gleicher Maßstab bis 21 MB. Der Quark-Balken ist so kurz, weil Tiny Core mehr als zehnmal größer ist. Stand der Recherche: 8. Oktober 2026.</p>
+    <p class="note">Gleicher Maßstab bis 21 MB. Der Quark-Balken ist so kurz, weil Tiny Core vierzigmal größer ist. Die Zahl ist die gepackte Größe, ungepackt hat Kerla 3.998.888 Byte. Stand der Recherche: 8. Oktober 2026.</p>
     <div class="tw">
       <table>
-        <tr><th>System</th><th>Größe</th><th>Netzwerk</th><th>SSH</th><th>Programme nachladen</th></tr>
-        <tr><td>FLOPPINUX</td><td>1.474.560 B</td><td class="n">nein</td><td class="n">nein</td><td class="n">nein</td></tr>
-        <tr class="me"><td>Quark Linux</td><td>1.601.476 B</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja, mit q</td></tr>
+        <tr><th>System</th><th>Größe</th><th>Netzwerk</th><th>Programme nachladen</th></tr>
+        <tr class="me"><td>Quark mit Kerla</td><td>494.464 B (gepackt)</td><td class="y">ja</td><td class="y">ja, mit q</td></tr>
+        <tr><td>FLOPPINUX</td><td>1.474.560 B</td><td class="n">nein</td><td class="n">nein</td></tr>
       </table>
     </div>
   </section>
@@ -161,56 +155,47 @@ footer { text-align: center; color: var(--muted); font-family: var(--f-mono); fo
   <section class="sheet">
     <div class="label">Programme nach Bedarf</div>
     <h2>Eine Zeile, und das Programm ist da</h2>
-    <p>Mit <code>q</code> holst du dir jedes Programm aus dem Alpine-Repository, nur für den Moment, in dem du es brauchst.</p>
-    <span class="cmd">q jq:jq --version</span>
+    <p>Mit <code>q</code> holst du dir Programme aus dem Alpine-Repository, nur für den Moment, in dem du sie brauchst.</p>
+    <span class="cmd">q add jq &amp;&amp; q run jq --version</span>
     <div class="flow">
-      <div class="step"><b>1 Laden</b>Paketmanager und Programm kommen aus dem Netz</div>
-      <div class="step"><b>2 Prüfen</b>Die Prüfsumme muss stimmen</div>
+      <div class="step"><b>1 Laden</b>Programm und Abhängigkeiten kommen aus dem Netz</div>
+      <div class="step"><b>2 Prüfen</b>Die Prüfsumme (sha256) muss stimmen</div>
       <div class="step"><b>3 Ausführen</b>Das Programm läuft</div>
-      <div class="step"><b>4 Aufräumen</b>Programm und Paketmanager werden wieder gelöscht</div>
+      <div class="step"><b>4 Aufräumen</b>Mit <code>q del</code> ist alles wieder weg</div>
     </div>
-    <div class="hint"><b>Gut zu wissen:</b> Der Paketmanager ist nicht in den 1,6 MB enthalten. Er wird nur während eines <code>q</code>-Aufrufs aus dem Netz geladen (etwa 5 MB) und danach wieder entfernt. So bleibt die VM im Ruhezustand bei 1,6 MB.</div>
+    <div class="hint"><b>Gut zu wissen:</b> Die Prüfsumme schützt vor kaputten Downloads. Die Paketliste kommt vom selben Server, einen bösartigen Server wehrt sie nicht ab.</div>
   </section>
 
   <section class="sheet">
     <div class="label">Datenblatt</div>
     <h2>Die Fakten</h2>
     <dl class="spec">
-      <div><dt>Gesamtgröße</dt><dd>1.601.476 Byte</dd></div>
-      <div><dt>Kernel</dt><dd>Linux 6.6</dd></div>
+      <div><dt>Kernel gepackt (xz)</dt><dd>494.464 Byte</dd></div>
+      <div><dt>Kernel ungepackt</dt><dd>3.998.888 Byte</dd></div>
+      <div><dt>Kernel</dt><dd>Kerla (Rust, Linux-ABI)</dd></div>
       <div><dt>Userland</dt><dd>BusyBox (statisch)</dd></div>
-      <div><dt>SSH-Server</dt><dd>Dropbear</dd></div>
-      <div><dt>Netzwerk</dt><dd>virtio-net, DHCP (udhcpc)</dd></div>
+      <div><dt>Fernzugriff</dt><dd>nc auf Port 4444</dd></div>
+      <div><dt>Netzwerk</dt><dd>virtio-net, DHCP</dd></div>
       <div><dt>Plattform</dt><dd>QEMU microvm</dd></div>
-      <div><dt>Startzeit</dt><dd>ca. 4,3 s</dd></div>
-      <div><dt>Tests</dt><dd>10 von 10</dd></div>
+      <div><dt>Systemaufrufe</dt><dd>46</dd></div>
     </dl>
-    <div class="stack" role="img" aria-label="Kernel 1.288.336 Byte, initramfs 313.140 Byte"><i class="k">Kernel 1.288.336 B</i><i class="r">initramfs</i></div>
-    <p class="note">Kernel rund 80 %, Startdateien (initramfs) 313.140 Byte.</p>
+    <div class="stack" role="img" aria-label="Gepackt 494.464 Byte von ungepackt 3.998.888 Byte"><i class="k"></i><i class="r">ungepackt 3.998.888 B</i></div>
+    <p class="note">Der dunkle Streifen links ist die gepackte Größe (494.464 B), die ganze Breite ist ungepackt.</p>
+  </section>
+
+  <section class="sheet">
+    <div class="label">Stand</div>
+    <h2>Was noch fehlt</h2>
+    <div class="hint"><b>Zwischenstand:</b> Ein Entpack-Starter fehlt noch, damit die gepackte Fassung von selbst startet. Bis dahin ist die ungepackte Größe (rund 4,0 MB) die, die tatsächlich bootet. SSH (Dropbear) und ein paar Bequemlichkeiten liegen als Plugins bereit, sind aber nicht Teil des Kerns.</div>
   </section>
 
   <section class="sheet">
     <div class="label">Auf einen Blick</div>
     <h2>Für wen ist das?</h2>
-    <p>Für alle, die ein echtes Linux brauchen und fast keinen Platz haben: als schlanke Test-VM, als kleiner Baustein in einer Build- oder Testumgebung oder als Basis, die man nach Bedarf erweitert.</p>
+    <p>Für alle, die ein echtes Linux-Programmumfeld brauchen und fast keinen Platz haben: als schlanke Test-VM, als kleiner Baustein in einer Build- oder Testumgebung oder als Basis, die man nach Bedarf erweitert.</p>
   </section>
 
-  <footer>Quark Linux · Stand 8. Oktober 2026 · Eigene Messungen</footer>
+  <footer>Quark Kerla · Stand 9. Oktober 2026 · Eigene Messungen · Zwischenstand</footer>
 </div>
-
-<script>
-(function () {
-  var el = document.getElementById('n');
-  var target = 1601476;
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var t0 = performance.now(), dur = 1400;
-    (function tick(t) {
-      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
-      el.textContent = Math.round(target * e).toLocaleString('de-DE');
-      if (p < 1) requestAnimationFrame(tick);
-    })(t0);
-  }
-})();
-</script>
 </body>
 </html>

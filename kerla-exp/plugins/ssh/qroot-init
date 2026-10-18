@@ -1,0 +1,18 @@
+#!/bin/busybox sh
+# quark-linux PID 1
+/bin/busybox mkdir -p /usr/bin /usr/sbin
+/bin/busybox --install -s
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin HOME=/root
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs dev /dev
+mkdir -p /dev/pts /tmp /run /var/tmp
+mount -t devpts devpts /dev/pts
+mount -t tmpfs tmp /tmp
+hostname quark; mkdir -p /etc/dropbear
+ip link set lo up
+( for i in /sys/class/net/*; do n=${i##*/}; [ "$n" = lo ] || { ip link set "$n" up; udhcpc -i "$n" -q -n -s /usr/lib/quark/udhcpc.script >/dev/null 2>&1 && break; }; done
+  mkdir -p /etc/dropbear; dropbear -R -B >/dev/null 2>&1 ) &
+echo
+echo "quark-linux  |  q <pkg>[:<bin>] [args]  e.g.  q nano notes.txt"
+while :; do setsid cttyhack sh -l; done

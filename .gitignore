@@ -1,3 +1,7 @@
 dist/
 
 site/ZUGANG.txt
+
+kerla-exp/archiv-*/
+kerla-exp/out/
+kerla-exp/target/
