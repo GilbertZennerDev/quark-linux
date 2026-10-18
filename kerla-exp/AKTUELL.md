@@ -16,3 +16,6 @@ Kernel 466 856 B (xz --x86 199 672 B), Nano/qdel/qdb je 3/3. Sieben Plugins (jq,
 
 ## Stufe 8 (2026-10-18): kleinster Kernel für alle Plugins
 Kernel `--features plug`: 471.016 B, xz 200.456 B. Voller Plugin-Lauf (plug33) auf diesem Produkt-Kernel komplett OK. Acht Syscalls hinter `plug` (readlink per Weglass-Test nicht nötig); access und rename nötig. Details: `stufen/stufe-8-kleinster-plugin-kernel-2026-10-18/README.md`.
+
+## Stufe 9 (2026-10-18): Busybox ohne Unicode-Tabellen
+Kernel `--features plug` mit schlankem Busybox: 446.440 B, xz **192.020 B** (vorher 200.456). Plugin-Lauf plugbb 21/21 OK. fnmatch/strtod-Ersatz in `out/bbstub.c`. Details: `stufen/stufe-9-busybox-ohne-unicode-2026-10-18/README.md`. Offen: Nano-Test mit nano5, Netzwerk/Syscalls/Dateisystem/Terminal.

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerla Größen-Übersicht</title>
+<style>
+:root{--bg:#faf7f2;--card:#fff;--ink:#2b2622;--mut:#6f665d;--line:#e4ddd2}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--card:#292524;--ink:#f1ece6;--mut:#a8a29e;--line:#44403c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif;padding:24px 16px 60px}
+main{max-width:980px;margin:0 auto}
+h1{font-size:28px;margin:0 0 4px}h2{font-size:20px;margin:0 0 12px}
+.sub{color:var(--mut);margin:0 0 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:20px}
+.row{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.row svg{flex:0 0 auto;width:280px;max-width:100%;height:auto}
+.leg{flex:1 1 260px;margin:0;padding:0;list-style:none}
+.leg li{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--line)}
+.leg li:last-child{border:0}
+.sw{width:14px;height:14px;border-radius:3px;flex:0 0 14px;transform:translateY(2px)}
+.leg b{margin-left:auto;white-space:nowrap}
+.leg small{color:var(--mut)}
+.lohn{display:grid;gap:10px}
+.lohn div{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.nr{font-weight:700;font-size:18px;text-align:center}
+.gain{font-weight:700;white-space:nowrap}
+.t1{border-left:6px solid #2e9e5b}.t2{border-left:6px solid #d99a1b}.t3{border-left:6px solid #c9574a}
+.note{color:var(--mut);font-size:14px}
+.kpis{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.kpi{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi span{display:block;color:var(--mut);font-size:13px}.kpi b{font-size:22px}
+</style>
+</head>
+<body>
+<main>
+<h1>Wo steckt die Größe? Kerla Stufe 8</h1>
+<p class="sub">Stand 18. Oktober 2026 · Kernel mit Plugin-Funktionen (<code>--features plug</code>)</p>
+
+<div class="kpis">
+  <div class="kpi"><span>Kernel ungepackt</span><b>471.016 B</b></div>
+  <div class="kpi"><span>Gepackt (xz)</span><b>200.456 B</b></div>
+  <div class="kpi"><span>Stufe 6 gepackt</span><b>199.028 B</b></div>
+  <div class="kpi"><span>Ziel (Schätzung)</span><b>unter 175 KB</b></div>
+</div>
+
+<section class="card">
+  <h2>1. Der ganze Koffer (gepackt, ca. 200 KB)</h2>
+  <p class="note">Wie ein Koffer mit zwei Fächern: oben der Werkzeugkasten (Busybox), unten der Kernel-Code.</p>
+  <div class="row">
+    <svg id="p1" viewBox="-110 -110 220 220" role="img" aria-label="Tortendiagramm gepackt"></svg>
+    <ul class="leg" id="l1"></ul>
+  </div>
+  <p class="note">Busybox ist gemessen (106 KB gepackt). Der Rest ist der Kernel-Code samt Tabellen und Daten.</p>
+</section>
+
+<section class="card">
+  <h2>2. Der Kernel-Code im Detail (ungepackt, 192 KB)</h2>
+  <p class="note">Größe der Funktionen im Kernel, gemessen mit <code>nm</code>.</p>
+  <div class="row">
+    <svg id="p2" viewBox="-110 -110 220 220" role="img" aria-label="Tortendiagramm Kernel-Code"></svg>
+    <ul class="leg" id="l2"></ul>
+  </div>
+  <p class="note">Das Netzwerk besteht aus zwei Teilen: smoltcp (25 KB) und Kernel mit Treiber (34 KB). Die Funktion <code>process_packets</code> allein hat 18 KB. „Sonstiges“ ist Code, den ich keinem Bereich zugeordnet habe.</p>
+</section>
+
+<section class="card">
+  <h2>3. Wo es sich lohnt (Schätzung, nicht gemessen)</h2>
+  <div class="lohn">
+    <div class="t1"><span class="nr">1</span><span><b>Debug-Ausgaben und Syscall-Zähler im Produkt entfernen</b><br><small>Mess-Hilfen (==OPEN, ==EXEC, ==FAIL, dump_usage) stecken noch drin. Billig und sicher.</small></span><span class="gain">einige KB</span></div>
+    <div class="t1"><span class="nr">2</span><span><b>Busybox weiter beschneiden</b><br><small>ash, tar, wget, gzip: Funktionen abschalten, gzip nur entpacken. 106 KB gepackt sind die Hälfte von allem.</small></span><span class="gain">10–20 KB gepackt</span></div>
+    <div class="t2"><span class="nr">3</span><span><b>Terminal (VGA, vte) entfernen</b><br><small>Wenn nur die serielle Konsole gebraucht wird. 14 KB ungepackt. Test nötig.</small></span><span class="gain">ca. 5 KB gepackt</span></div>
+    <div class="t2"><span class="nr">4</span><span><b>Netzwerk abspecken</b><br><small>DHCP, UDP, Raw-Sockets, accept, Routen weg, feste IP 10.0.2.15. 59 KB Code.</small></span><span class="gain">4–8 KB gepackt</span></div>
+    <div class="t3"><span class="nr">5</span><span><b>Einzelne Syscalls</b><br><small>fstat, mprotect, clock_gettime, rmdir, prctl: noch nicht einzeln geprüft.</small></span><span class="gain">unter 2 KB</span></div>
+    <div class="t3"><span class="nr">6</span><span><b>Rust-Bibliotheken ersetzen</b><br><small>BTreeMap und hashbrown durch Einfacheres. Viel Arbeit, wenig Gewinn.</small></span><span class="gain">wenig</span></div>
+  </div>
+  <p class="note">Grün = zuerst, gelb = danach mit Test, rot = lohnt kaum. Die Zahlen sind Schätzungen. Keiner der Schritte ist ausprobiert.</p>
+</section>
+</main>
+
+<script>
+function pie(svgId, legId, data, unit){
+  var tot = data.reduce(function(a,d){return a+d.v},0), a0 = -Math.PI/2, svg = document.getElementById(svgId), leg = document.getElementById(legId), h='', l='';
+  data.forEach(function(d){
+    var a1 = a0 + d.v/tot*2*Math.PI, large = (a1-a0)>Math.PI?1:0, R=100, r=52;
+    var x0=R*Math.cos(a0),y0=R*Math.sin(a0),x1=R*Math.cos(a1),y1=R*Math.sin(a1);
+    var x2=r*Math.cos(a1),y2=r*Math.sin(a1),x3=r*Math.cos(a0),y3=r*Math.sin(a0);
+    h += '<path d="M'+x0+' '+y0+' A'+R+' '+R+' 0 '+large+' 1 '+x1+' '+y1+' L'+x2+' '+y2+' A'+r+' '+r+' 0 '+large+' 0 '+x3+' '+y3+' Z" fill="'+d.c+'" stroke="var(--card)" stroke-width="2"><title>'+d.n+': '+d.v+' '+unit+'</title></path>';
+    var pc = Math.round(d.v/tot*100);
+    l += '<li><span class="sw" style="background:'+d.c+'"></span><span>'+d.n+(d.s?'<br><small>'+d.s+'</small>':'')+'</span><b>'+d.v.toLocaleString('de-DE')+' '+unit+' · '+pc+' %</b></li>';
+    a0 = a1;
+  });
+  h += '<text x="0" y="-2" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">'+tot.toLocaleString('de-DE')+'</text><text x="0" y="16" text-anchor="middle" font-size="11" fill="currentColor">'+unit+'</text>';
+  svg.innerHTML = h; leg.innerHTML = l;
+}
+pie('p1','l1',[
+  {n:'Busybox (Werkzeugkasten)',s:'cat, echo, gzip, mkdir, rm, sh, sha256sum, tar, test, wget',v:105892,c:'#c9574a'},
+  {n:'Kernel-Code und Rest',s:'Rechnerisch: 200.456 − 105.892',v:94564,c:'#3a7ca5'}
+],'B');
+pie('p2','l2',[
+  {n:'Netzwerk (smoltcp + Treiber)',s:'25.487 + 33.609 B',v:59096,c:'#c9574a'},
+  {n:'Rust-Bibliotheken',s:'Standardbibliothek von Rust (core, alloc und Co.)',v:36173,c:'#d99a1b'},
+  {n:'Syscalls',s:'do_dispatch allein 24,6 KB',v:24803,c:'#3a7ca5'},
+  {n:'Sonstiges',s:'nicht zugeordnet',v:21053,c:'#8d8479'},
+  {n:'Dateisystem',v:17204,c:'#2e9e5b'},
+  {n:'Runtime (Boot, CPU)',v:11842,c:'#7b5ea7'},
+  {n:'Prozess und Speicher',v:11820,c:'#e07b39'},
+  {n:'Terminal (vte, VGA, pty)',v:10061,c:'#2aa5a0'}
+],'B');
+</script>
+</body>
+</html>
