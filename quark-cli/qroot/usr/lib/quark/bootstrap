@@ -1,0 +1,11 @@
+#!/bin/sh
+# bootstrap - fetch the pinned apk.static into RAM for the current q call (image ships without apk; q deletes it again)
+[ -x /sbin/apk ] && exit 0
+read f sum < /etc/quark/apk.pin
+repo=$(head -n1 /etc/apk/repositories)
+mkdir -p /tmp/apk-boot
+wget -q -O /tmp/apk-boot/a.apk "$repo/x86_64/$f" || { echo "q: cannot download $f (network?)" >&2; exit 1; }
+[ "$(sha256sum /tmp/apk-boot/a.apk | cut -d' ' -f1)" = "$sum" ] || { echo "q: checksum mismatch for $f (Alpine may have replaced it; rebuild the image)" >&2; exit 1; }
+tar -xzf /tmp/apk-boot/a.apk -C /tmp/apk-boot sbin/apk.static 2>/dev/null
+mv /tmp/apk-boot/sbin/apk.static /sbin/apk && chmod +x /sbin/apk
+rm -rf /tmp/apk-boot

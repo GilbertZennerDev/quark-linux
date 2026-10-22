@@ -1,0 +1,18 @@
+PATH=/bin
+R=/tmp/r
+t() { if eval "$2"; then echo "OK $1"; else echo "FEHLER $1"; fi; }
+x() { b=$1; L=; [ $b = perl ] && L=:$R/usr/lib/perl5/core_perl/CORE; shift; for d in usr/bin bin usr/sbin; do [ -f $R/$d/$b ] && { $R/lib/ld-musl-x86_64.so.1 --library-path $R/lib:$R/usr/lib$L $R/$d/$b "$@"; return; }; done; echo "kein $b"; return 127; }
+
+export GIT_EXEC_PATH=$R/usr/libexec/git-core MAGIC=$R/usr/share/misc/magic.mgc TERMINFO=$R/etc/terminfo:$R/usr/share/terminfo
+export HOME=/tmp VIMRUNTIME=$R/usr/share/vim/vim91
+echo ==START
+# jedes Paket: add, Funktionstest, del, Restpruefung
+p() { q add $1 || echo "q add $1 schlug fehl"; }
+d() { q del $*; t "$1-weg" '[ ! -e $R/.'$1' ]'; }
+echo "x" > /tmp/in.txt; echo '{"a":[1,2,3]}' > /tmp/in.json
+pl() { . /plug/$1.sh; plugin_env; for k in $plugin_pkg; do q add $k || echo "q add $k schlug fehl"; done; plugin_post; t $1-beweis plugin_proof; for k in $plugin_pkg; do d $k; done; }
+q add ripgrep; q add qshim
+echo hallo > /tmp/rg.txt
+echo "--env"; export LD_PRELOAD=/tmp/r/usr/lib/qshim.so; echo "LD=$LD_PRELOAD"; ls -l /tmp/r/usr/lib/qshim.so
+echo "--rg"; x rg -j1 --no-mmap hallo /tmp/rg.txt; echo "rc=$?"
+echo ==ENDE

@@ -1,0 +1,8 @@
+=== kernel_only
+
+=== Ergebnis Phase 3e
+
+[32;1mVariante   [0m[32;1m OK[0m[32;1m Fehler[0m[32;1m Ende[0m[32;1m Fehlgeschlagen[0m
+[32;1m--------   [0m [32;1m--[0m [32;1m------[0m [32;1m----[0m [32;1m--------------[0m
+kernel_only  0      0 True 
+

@@ -1,0 +1,8 @@
+=== full
+=== baseline
+=== q_only
+[31;1mResourceUnavailable: [0mC:\Dev\my-own-vms\quark-linux\kerla-exp\phase3e-workload-tests.ps1:24[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  24 | [0m     [36;1m$ausgabe = & pwsh -NoProfile -File .\s1.ps1 -Name "p3e_$v" -Zeitl[0m .[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mDer interne Win32-Fehler "Kein Prozess ist am anderen Ende der Pipe." 0xE9 ist beim Festlegen des Konsolenfenstertitels aufgetreten. Wenden Sie sich an den Microsoft-Kundendienst (Customer Support Services, CSS).[0m

@@ -1,0 +1,8 @@
+
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh stat ENOENT
+==FAIL 1 sh stat ENOENT
+==EXEC /bin/fbtest fbtest
+==OPEN 1 fbtest /dev/fb0
+FB: 1024x768 bpp=32 ll=4096 len=3145728
+FB: gezeichnet

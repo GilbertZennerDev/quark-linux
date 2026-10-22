@@ -1,0 +1,3 @@
+#!/bin/sh
+# install <pkg> - add it (and deps) under a per-package virtual so remove leaves nothing
+exec apk add -q --no-progress --initdb --no-cache --virtual ".q-$1" "$1"

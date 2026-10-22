@@ -1,0 +1,1 @@
+apk add -q cpio; mkdir /w2; cd /w2; cpio -id < /x/out/t22.cpio; mkdir -p bin; for a in cp ln printf sed sort tail tr touch grep find xargs test echo basename dirname rmdir chmod env true false date; do [ -e bin/$a ] || ln -s busybox bin/$a; done; cp /x/out/q bin/q; chmod 755 bin/q; cp /x/out/${QS:-q16.sh} q.sh; find . | cpio -o -H newc > /x/out/${QO:-t26.cpio}

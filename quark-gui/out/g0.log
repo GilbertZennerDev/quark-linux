@@ -1,0 +1,41 @@
+
+==FAIL 1 sh prctl ENOSYS
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh rt_sigprocmask ENOSYS
+==FAIL 1 sh rt_sigaction ENOSYS
+==FAIL 1 sh getcwd ENOSYS
+==FAIL 1 sh rt_sigaction ENOSYS
+==FAIL 1 sh rt_sigaction ENOSYS
+==FAIL 1 sh rt_sigaction ENOSYS
+HALLO
+==FAIL 1 sh stat ENOSYS
+==FAIL 1 sh stat ENOSYS
+==FAIL 1 sh stat ENOSYS
+==FAIL 1 sh stat ENOSYS
+==FAIL 1 sh writev ENOSYS
+==FAIL 1 sh writev ENOSYS
+==FAIL 1 sh writev ENOSYS
+==SYSCALLS==SYS 1 write 1
+==SYS 4 stat 4
+==SERR 4 stat 4
+==SYS 9 mmap 4
+==SERR 9 mmap 1
+==SYS 12 brk 2
+==SYS 13 rt_sigaction 4
+==SERR 13 rt_sigaction 4
+==SYS 14 rt_sigprocmask 1
+==SERR 14 rt_sigprocmask 1
+==SYS 20 writev 3
+==SERR 20 writev 3
+==SYS 39 getpid 1
+==SYS 79 getcwd 1
+==SERR 79 getcwd 1
+==SYS 107 geteuid 1
+==SYS 110 getppid 1
+==SYS 157 prctl 1
+==SERR 157 prctl 1
+==SYS 158 arch_prctl 1
+==SYS 218 set_tid_address 1
+==SYS 231 exit_group 1
+==ENDE-SYSCALLS
+double panic!

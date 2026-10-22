@@ -1,0 +1,25 @@
+
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh stat ENOENT
+==FAIL 1 sh stat ENOENT
+==EXEC /bin/desk desk
+==EXEC /bin/sh sh
+==FAIL 1 sh mmap EINVAL
+
+
+BusyBox v1.37.0 (2026-10-18 20:31:21 UTC) built-in shell (ash)
+
+# ==FAIL 2 desk gettid ENOSYS
+==OPEN 2 desk /dev/fb0
+==OPEN 2 desk /dev/input
+==OPEN 2 desk /tmp/.out
+==OPEN 2 desk /dev/null
+==OPEN 2 desk /tmp/.out
+==FAIL 3 desk gettid ENOSYS
+==EXEC /bin/sh sh
+==FAIL 3 sh mmap EINVAL
+==FAIL 3 sh stat ENOENT
+==FAIL 3 sh stat ENOENT
+==FAIL 3 sh stat ENOENT
+==FAIL 3 sh stat ENOENT
+==FAIL 2 desk nanosleep EINTR

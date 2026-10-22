@@ -1,0 +1,1 @@
+apk add -q cpio dropbear; mkdir /w2; cd /w2; cpio -id < /x/out/t22.cpio; mkdir -p bin; cp /x/out/q bin/q; chmod 755 bin/q; dropbearkey -t ed25519 -f dk >/dev/null; cp /x/out/${QS:-q16.sh} q.sh; find . | cpio -o -H newc > /x/out/${QO:-t26.cpio}

@@ -1,0 +1,8 @@
+
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh stat ENOENT
+==FAIL 1 sh stat ENOENT
+==EXEC /bin/desk desk
+==OPEN 1 desk /dev/fb0
+==OPEN 1 desk /dev/input
+DESK: laeuft

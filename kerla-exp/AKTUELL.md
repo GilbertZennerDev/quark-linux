@@ -19,3 +19,11 @@ Kernel `--features plug`: 471.016 B, xz 200.456 B. Voller Plugin-Lauf (plug33) a
 
 ## Stufe 9 (2026-10-18): Busybox ohne Unicode-Tabellen
 Kernel `--features plug` mit schlankem Busybox: 446.440 B, xz **192.020 B** (vorher 200.456). Plugin-Lauf plugbb 21/21 OK. fnmatch/strtod-Ersatz in `out/bbstub.c`. Details: `stufen/stufe-9-busybox-ohne-unicode-2026-10-18/README.md`. Offen: Nano-Test mit nano5, Netzwerk/Syscalls/Dateisystem/Terminal.
+
+## Abschluss 2026-10-20
+Webseite (C:\Dev\WebApps\quark-site\public\index.html) auf Stufe 9 gebracht: 446.440 B ungepackt, 192.020 B gepackt, Plugin-Lauf 21/21. Deploy macht Gilbert (deploy.ps1). Nicht neu gefahren: Nano-Test mit nano5, 54-Pakete-Großtest; ripgrep läuft nicht (Threads).
+
+## Abschluss 2026-10-20 (Nachtrag)
+- Neue Plugins, im Lauf geprüft (Kernel `--features plug`): werkzeuge (tree, file, xxd), editor (nano), monitor (htop) – alle OK, Lager leer danach.
+- Kniffe nur im Plugin, nicht im Kernel: verschachtelte Ordner einzeln mit `mkdir` anlegen (`mkdir -p` klappt nicht); Beweis-Ausgaben mit `grep -q` statt `cut`.
+- Offen: ripgrep (`plugins/q-plugins/offen/`). Rust ruft beim Start `poll`, Kerla meldet ENOSYS -> Abbruch. `LD_PRELOAD` wird vom Lader hier nicht geladen. Ersatz-`libgcc_s.so.1` in /lib stoppt den Absturz, exportiert aber die `_Unwind_*`-Funktionen nicht (versteckt). Weg: Wrapper für `_Unwind_*` oder `poll` als Kernel-Stub (EINVAL).

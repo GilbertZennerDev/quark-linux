@@ -1,0 +1,64 @@
+#!/bin/sh
+# q: schlanker Paketmanager. q add|del <paket> | q run <paket> [args] | q ls
+B=http://10.0.2.2:8000
+R=/tmp/r
+get() {
+ [ -f $R/.$1 ] && return 0
+ eval "w=\$$1"
+ set -- $1 $w
+ n=$1; w=$2
+ [ -n "$w" ] || { echo "q: unbekannt: $n"; exit 1; }
+ wget -q -O /tmp/$n.apk $B/$n.apk || { echo "q: Download $n fehlt"; exit 1; }
+ set -- $(sha256sum /tmp/$n.apk)
+ [ "$1" = "$w" ] || { echo "q: Pruefsumme falsch: $n"; exit 1; }
+ gzip -dc /tmp/$n.apk | tar xvf - -C $R > $R/.$n
+ rm -f /tmp/$n.apk
+}
+case $1 in
+add)
+ mkdir $R 2>/dev/null
+ wget -q -O /tmp/idx $B/idx || { echo "q: Liste fehlt"; exit 1; }
+ . /tmp/idx
+ p=$2
+ eval "d=\$$p"
+ [ -n "$d" ] || { echo "q: unbekannt: $p"; exit 1; }
+ set -- $d
+ shift
+ for f in "$@" $p; do get $f; done
+ echo "q: $p da";;
+del)
+ p=$2
+ [ -f $R/.$p ] || { echo "q: $p nicht da"; exit 1; }
+ wget -q -O /tmp/idx $B/idx || { echo "q: Liste fehlt"; exit 1; }
+ . /tmp/idx
+ eval "d=\$$p"
+ set -- $d
+ shift
+ ds="$@"
+ for f in $(cat $R/.$p); do
+  if [ -L $R/$f ] || [ ! -d $R/$f ]; then rm -f $R/$f; fi
+ done
+ rm -f $R/.$p
+ for x in $ds; do
+  u=0
+  for m in $R/.[a-z]*; do
+   [ -f $m ] || continue
+   n=${m#$R/.}
+   eval "e=\$$n"
+   case " $e " in *" $x "*) u=1;; esac
+  done
+  if [ $u = 0 ]; then
+   for f in $(cat $R/.$x); do
+    if [ -L $R/$f ] || [ ! -d $R/$f ]; then rm -f $R/$f; fi
+   done
+   rm -f $R/.$x
+  fi
+ done
+ echo "q: $p weg";;
+ls)
+ for m in $R/.[a-z]*; do [ -f $m ] && echo ${m#$R/.}; done;;
+run)
+ p=$2; shift; shift
+ $R/lib/ld-musl-x86_64.so.1 --library-path $R/lib:$R/usr/lib $R/usr/bin/$p "$@";;
+*) echo "q add|del|run <paket> | q ls";;
+esac

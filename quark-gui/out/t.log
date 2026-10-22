@@ -1,0 +1,16 @@
+
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh execve ENOENT
+==FAIL 1 sh execve ENOENT
+==FAIL 1 sh execve ENOENT
+==FAIL 1 sh execve ENOENT
+==EXEC /bin/sh sh
+==FAIL 1 sh mmap EINVAL
+
+
+BusyBox v1.37.0 (2026-10-18 20:31:21 UTC) built-in shell (ash)
+
+# ==OPEN 2 sh /dev/null
+sh: can't open '/dev/null': Invalid argument
+==FAIL 1 sh read EINTR
+==FAIL 1 sh rt_sigreturn EINTR

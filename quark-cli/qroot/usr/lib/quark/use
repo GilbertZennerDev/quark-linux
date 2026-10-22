@@ -1,0 +1,4 @@
+#!/bin/sh
+# use <bin> [args...] - run the freshly installed program
+which "$1" >/dev/null || { echo "q: '$1' not found; try q <pkg>:<bin>" >&2; exit 127; }
+"$@"

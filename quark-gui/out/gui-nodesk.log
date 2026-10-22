@@ -1,0 +1,496 @@
+
+==FAIL 1 sh mmap EINVAL
+==FAIL 1 sh stat ENOENT
+==FAIL 1 sh stat ENOENT
+==EXEC /bin/q q
+==FAIL 2 q mmap EINVAL
+==OPEN 2 q /bin/q
+==OPEN 2 q /dev/null
+==FAIL 3 q execve ENOENT
+==FAIL 3 q execve ENOENT
+==FAIL 3 q execve ENOENT
+==FAIL 3 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 3 wget mmap EINVAL
+==FAIL 3 wget ioctl ENOTTY
+==OPEN 3 wget /tmp/idx
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/idx
+==FAIL 2 q stat ENOENT
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 4 wget mmap EINVAL
+==FAIL 4 wget ioctl ENOTTY
+==OPEN 4 wget /tmp/musl.apk
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 5 q /tmp/musl.apk
+==FAIL 5 q ioctl ENOTTY
+==FAIL 2 q read EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/musl.tar
+==FAIL 6 q execve ENOENT
+==FAIL 6 q execve ENOENT
+==FAIL 6 q execve ENOENT
+==FAIL 6 q execve ENOENT
+==EXEC /bin/gzip gzip
+==FAIL 6 gzip mmap EINVAL
+==OPEN 6 gzip /tmp/musl.apk
+==FAIL 6 gzip ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 7 q execve ENOENT
+==FAIL 7 q execve ENOENT
+==FAIL 7 q execve ENOENT
+==FAIL 7 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 7 tar mmap EINVAL
+==OPEN 7 tar /tmp/musl.tar
+==FAIL 7 tar unlink ENOENT
+==OPEN 7 tar .SIGN.RSA.alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+==FAIL 7 tar unlink ENOENT
+==OPEN 7 tar .PKGINFO
+==FAIL 7 tar mkdir EEXIST
+==FAIL 7 tar unlink ENOENT
+==OPEN 7 tar lib/ld-musl-x86_64.so.1
+==FAIL 7 tar mkdir EEXIST
+==FAIL 7 tar unlink ENOENT
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/r/.musl
+==FAIL 8 q execve ENOENT
+==FAIL 8 q execve ENOENT
+==FAIL 8 q execve ENOENT
+==FAIL 8 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 8 tar mmap EINVAL
+==OPEN 8 tar /tmp/musl.tar
+==FAIL 8 tar ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q stat ENOENT
+==FAIL 10 q execve ENOENT
+==FAIL 10 q execve ENOENT
+==FAIL 10 q execve ENOENT
+==FAIL 10 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 10 wget mmap EINVAL
+==FAIL 10 wget ioctl ENOTTY
+==OPEN 10 wget /tmp/ncw.apk
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 11 q /tmp/ncw.apk
+==FAIL 11 q ioctl ENOTTY
+==FAIL 2 q read EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/ncw.tar
+==FAIL 12 q execve ENOENT
+==FAIL 12 q execve ENOENT
+==FAIL 12 q execve ENOENT
+==FAIL 12 q execve ENOENT
+==EXEC /bin/gzip gzip
+==FAIL 12 gzip mmap EINVAL
+==OPEN 12 gzip /tmp/ncw.apk
+==FAIL 12 gzip ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 13 q execve ENOENT
+==FAIL 13 q execve ENOENT
+==FAIL 13 q execve ENOENT
+==FAIL 13 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 13 tar mmap EINVAL
+==OPEN 13 tar /tmp/ncw.tar
+==OPEN 13 tar .SIGN.RSA.alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+==OPEN 13 tar .PKGINFO
+==FAIL 13 tar mkdir EEXIST
+==FAIL 13 tar mkdir EEXIST
+==FAIL 13 tar mkdir EEXIST
+==FAIL 13 tar unlink ENOENT
+==FAIL 13 tar mkdir EEXIST
+==FAIL 13 tar mkdir EEXIST
+==FAIL 13 tar unlink ENOENT
+==OPEN 13 tar usr/lib/libncursesw.so.6.5
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/r/.ncw
+==FAIL 14 q execve ENOENT
+==FAIL 14 q execve ENOENT
+==FAIL 14 q execve ENOENT
+==FAIL 14 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 14 tar mmap EINVAL
+==OPEN 14 tar /tmp/ncw.tar
+==FAIL 14 tar ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q stat ENOENT
+==FAIL 16 q execve ENOENT
+==FAIL 16 q execve ENOENT
+==FAIL 16 q execve ENOENT
+==FAIL 16 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 16 wget mmap EINVAL
+==FAIL 16 wget ioctl ENOTTY
+==OPEN 16 wget /tmp/nti.apk
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 17 q /tmp/nti.apk
+==FAIL 17 q ioctl ENOTTY
+==FAIL 2 q read EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/nti.tar
+==FAIL 18 q execve ENOENT
+==FAIL 18 q execve ENOENT
+==FAIL 18 q execve ENOENT
+==FAIL 18 q execve ENOENT
+==EXEC /bin/gzip gzip
+==FAIL 18 gzip mmap EINVAL
+==OPEN 18 gzip /tmp/nti.apk
+==FAIL 18 gzip ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 19 q execve ENOENT
+==FAIL 19 q execve ENOENT
+==FAIL 19 q execve ENOENT
+==FAIL 19 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 19 tar mmap EINVAL
+==OPEN 19 tar /tmp/nti.tar
+==OPEN 19 tar .SIGN.RSA.alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+==OPEN 19 tar .PKGINFO
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/a/alacritty
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/a/ansi
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/d/dumb
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/g/gnome
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/g/gnome-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/k/konsole
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/k/konsole-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/k/konsole-linux
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/l/linux
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/p/putty
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/p/putty-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/r/rxvt
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/r/rxvt-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/screen
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/screen-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-0.6
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-0.7
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-0.8
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-0.8.5
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-16color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/st-direct
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/s/sun
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/terminator
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/terminology
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/terminology-0.6.1
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/terminology-1.0.0
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/terminology-1.8.1
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/tmux
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/t/tmux-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vt100
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vt102
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vt220
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vt52
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vte
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/v/vte-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/x/xterm
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/x/xterm-256color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/x/xterm-color
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar mkdir EEXIST
+==FAIL 19 tar unlink ENOENT
+==OPEN 19 tar etc/terminfo/x/xterm-xfree86
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/r/.nti
+==FAIL 20 q execve ENOENT
+==FAIL 20 q execve ENOENT
+==FAIL 20 q execve ENOENT
+==FAIL 20 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 20 tar mmap EINVAL
+==OPEN 20 tar /tmp/nti.tar
+==FAIL 20 tar ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 2 q stat ENOENT
+==FAIL 22 q execve ENOENT
+==FAIL 22 q execve ENOENT
+==FAIL 22 q execve ENOENT
+==FAIL 22 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 22 wget mmap EINVAL
+==FAIL 22 wget ioctl ENOTTY
+==OPEN 22 wget /tmp/nano.apk
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 23 q /tmp/nano.apk
+==FAIL 23 q ioctl ENOTTY
+==FAIL 2 q read EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/nano.tar
+==FAIL 24 q execve ENOENT
+==FAIL 24 q execve ENOENT
+==FAIL 24 q execve ENOENT
+==FAIL 24 q execve ENOENT
+==EXEC /bin/gzip gzip
+==FAIL 24 gzip mmap EINVAL
+==OPEN 24 gzip /tmp/nano.apk
+==FAIL 24 gzip ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==FAIL 25 q execve ENOENT
+==FAIL 25 q execve ENOENT
+==FAIL 25 q execve ENOENT
+==FAIL 25 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 25 tar mmap EINVAL
+==OPEN 25 tar /tmp/nano.tar
+==OPEN 25 tar .SIGN.RSA.alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub
+==OPEN 25 tar .PKGINFO
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar unlink ENOENT
+==OPEN 25 tar etc/nanorc
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar unlink ENOENT
+==OPEN 25 tar usr/bin/nano
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar mkdir EEXIST
+==FAIL 25 tar unlink ENOENT
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD
+==OPEN 2 q /tmp/r/.nano
+==FAIL 26 q execve ENOENT
+==FAIL 26 q execve ENOENT
+==FAIL 26 q execve ENOENT
+==FAIL 26 q execve ENOENT
+==EXEC /bin/tar tar
+==FAIL 26 tar mmap EINVAL
+==OPEN 26 tar /tmp/nano.tar
+==FAIL 26 tar ioctl ENOTTY
+==FAIL 2 q wait4 EINTR
+==FAIL 2 q rt_sigreturn EINTR
+==FAIL 2 q wait4 ECHILD

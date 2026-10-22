@@ -1,0 +1,1028 @@
+0000000000000000 a GS_RSP0
+0000000000000008 a GS_RSP3
+0000000000000010 a INTERRUPT_HANDLER_SIZE
+ffff800000100000 A KERNEL_BASE
+ffff800000000000 A VMA_OFFSET
+ffff800000109dfb 0000000000000026 t <kerla_kernel::fs::initramfs::InitramFs as kerla_kernel::fs::file_system::FileSystem>::root_dir
+ffff80000010bc15 0000000000000131 t <kerla_kernel::fs::procfs::metrics::MetricsFile as kerla_kernel::fs::inode::FileLike>::read
+ffff80000010bbd8 000000000000003d t <kerla_kernel::fs::procfs::metrics::MetricsFile as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000010bd46 0000000000000014 t <kerla_kernel::fs::procfs::metrics::MetricsFile as kerla_kernel::fs::inode::FileLike>::write
+ffff800000128ca6 0000000000000085 t <smoltcp::storage::assembler::AssemblerIter as core::iter::traits::iterator::Iterator>::next
+ffff8000001284ab 000000000000003e t <core::ops::range::Range<usize> as bitvec::slice::api::BitSliceIndex<T,O>>::index_mut
+ffff8000001251ff 0000000000000075 t <buddy_system_allocator::LockedHeapWithRescue<_> as core::alloc::global::GlobalAlloc>::alloc
+ffff800000125338 0000000000000100 t <buddy_system_allocator::LockedHeapWithRescue<_> as core::alloc::global::GlobalAlloc>::dealloc
+ffff8000001284e9 0000000000000041 t <bitvec::ptr::range::BitPtrRange<M,T,O> as core::iter::traits::iterator::Iterator>::next
+ffff800000128d61 000000000000015d t <core::iter::adapters::filter::Filter<I,P> as core::iter::traits::iterator::Iterator>::next
+ffff80000010136e 0000000000000024 t <core::iter::adapters::peekable::Peekable<I> as core::iter::traits::iterator::Iterator>::next
+ffff80000012f5a7 0000000000000226 t virtio_net::VirtioNet::handle_irq
+ffff80000012f7ec 0000000000000463 t virtio_net::VirtioNet::new
+ffff80000012f2ee 0000000000000006 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::enable_queue
+ffff80000012f2de 0000000000000010 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::notify_queue
+ffff80000012f2ba 0000000000000010 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::select_queue
+ffff80000012f2ca 000000000000000e t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::queue_max_size
+ffff80000012f2d8 0000000000000006 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::set_queue_size
+ffff80000012f26a 000000000000000f t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::read_isr_status
+ffff80000012f279 000000000000000d t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::read_device_status
+ffff80000012f25d 000000000000000d t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::read_device_config8
+ffff80000012f286 0000000000000018 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::write_device_status
+ffff80000012f29e 000000000000000c t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::read_device_features
+ffff80000012f2f4 0000000000000014 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::set_queue_desc_paddr
+ffff80000012f2aa 0000000000000010 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::write_driver_features
+ffff80000012f308 0000000000000006 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::set_queue_device_paddr
+ffff80000012f255 0000000000000008 t <virtio::transports::virtio_pci_legacy::VirtioLegacyPci as virtio::transports::VirtioTransport>::is_modern
+ffff80000012f45c 000000000000000f t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::enable_queue
+ffff80000012f443 0000000000000019 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::notify_queue
+ffff80000012f41c 000000000000000d t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::select_queue
+ffff80000012f429 000000000000000d t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::queue_max_size
+ffff80000012f436 000000000000000d t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::set_queue_size
+ffff80000012f3af 000000000000000e t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::read_isr_status
+ffff80000012f3bd 000000000000000c t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::read_device_status
+ffff80000012f39f 0000000000000010 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::read_device_config8
+ffff80000012f3c9 000000000000000d t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::write_device_status
+ffff80000012f3d6 0000000000000022 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::read_device_features
+ffff80000012f46b 0000000000000013 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::set_queue_desc_paddr
+ffff80000012f3f8 0000000000000024 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::write_driver_features
+ffff80000012f491 0000000000000013 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::set_queue_device_paddr
+ffff80000012f47e 0000000000000013 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::set_queue_driver_paddr
+ffff80000012f397 0000000000000008 t <virtio::transports::virtio_pci_modern::VirtioModernPci as virtio::transports::VirtioTransport>::is_modern
+ffff800000101392 000000000000002c t <alloc::collections::vec_deque::VecDeque<T,A> as core::ops::index::IndexMut<usize>>::index_mut
+ffff8000001013be 000000000000002c t <alloc::collections::vec_deque::VecDeque<T,A> as core::ops::index::IndexMut<usize>>::index_mut
+ffff8000001013ea 0000000000000049 t <core::iter::adapters::flatten::FlattenCompat<I,U> as core::iter::traits::iterator::Iterator>::fold::flatten::{{closure}}
+ffff800000101433 00000000000000d0 t kerla_utils::ring_buffer::RingBuffer<T,_>::push_slice
+ffff800000101503 0000000000000020 t kerla_utils::ring_buffer::RingBuffer<T,_>::push
+ffff800000101523 0000000000000060 t kerla_utils::ring_buffer::RingBuffer<T,_>::pop_slice
+ffff8000001285b9 000000000000031e t kerla_utils::bitmap_allocator::BitMapAllocator::alloc_pages
+ffff800000101583 0000000000000075 t kerla_utils::once::Once<T>::init
+ffff800000122b27 000000000000000e t kerla_kernel::idle_thread
+ffff80000010920d 00000000000000a0 t kerla_kernel::user_buffer::UserBufReader::read_bytes
+ffff8000001092ad 00000000000000a1 t kerla_kernel::user_buffer::UserBufWriter::write_bytes
+ffff80000010934e 000000000000001f t kerla_kernel::user_buffer::UserBufWriter::write
+ffff80000010936d 0000000000000020 t kerla_kernel::user_buffer::UserBufWriter::write
+ffff80000010938d 000000000000001f t kerla_kernel::user_buffer::UserBufWriter::write
+ffff8000001093d8 00000000000000b5 t kerla_kernel::user_buffer::UserCStr::new
+ffff800000173e00 0000000000000180 b kerla_kernel::deferred_job::GLOBAL_QUEUE
+ffff800000122aa3 0000000000000084 t kerla_kernel::interval_work
+ffff800000175608 0000000000000010 b kerla_kernel::INITIAL_ROOT_FS
+ffff80000010afb8 00000000000000ab t kerla_kernel::fs::opened_file::OpenedFile::read
+ffff80000010b063 00000000000000ab t kerla_kernel::fs::opened_file::OpenedFile::write
+ffff80000010af7b 000000000000003d t kerla_kernel::fs::opened_file::OpenedFile::options
+ffff80000010adfa 0000000000000055 t kerla_kernel::fs::opened_file::PathComponent::new_anonymous
+ffff80000010ae4f 000000000000012c t kerla_kernel::fs::opened_file::PathComponent::resolve_absolute_path
+ffff80000010b273 000000000000036c t kerla_kernel::fs::opened_file::OpenedFileTable::open_with_fixed_fd
+ffff80000010b10e 0000000000000030 t kerla_kernel::fs::opened_file::OpenedFileTable::get
+ffff80000010b185 00000000000000ee t kerla_kernel::fs::opened_file::OpenedFileTable::open
+ffff80000010b13e 0000000000000047 t kerla_kernel::fs::opened_file::OpenedFileTable::close
+ffff80000010b5df 000000000000006c t kerla_kernel::fs::opened_file::OpenedFileTable::alloc_fd
+ffff80000010b7e0 0000000000000035 t kerla_kernel::fs::path::Path::components
+ffff80000010b72e 00000000000000b2 t kerla_kernel::fs::path::Path::is_absolute
+ffff80000010b815 00000000000002e0 t kerla_kernel::fs::path::Path::parent_and_basename
+ffff80000010b64b 00000000000000e3 t kerla_kernel::fs::path::Path::new
+ffff800000173fa8 0000000000000010 b kerla_kernel::fs::devfs::SERIAL_TTY
+ffff8000001094d9 0000000000000053 t kerla_kernel::fs::devfs::tty::Tty::input_char::{{closure}}
+ffff800000173fb8 0000000000000010 b kerla_kernel::fs::devfs::PTMX
+ffff800000173f80 0000000000000010 b kerla_kernel::fs::devfs::DEV_FS
+ffff800000173f90 0000000000000018 b kerla_kernel::fs::devfs::NULL_FILE
+ffff80000010a1ad 0000000000000035 t kerla_kernel::fs::inode::INode::stat
+ffff80000010a1a0 000000000000000d t kerla_kernel::fs::inode::Symlink::fsync
+ffff80000010a008 0000000000000018 t kerla_kernel::fs::inode::FileLike::getpeername
+ffff80000010a020 0000000000000018 t kerla_kernel::fs::inode::FileLike::getpeername
+ffff80000010a038 0000000000000018 t kerla_kernel::fs::inode::FileLike::getpeername
+ffff800000109f90 0000000000000014 t kerla_kernel::fs::inode::FileLike::bind
+ffff800000109fa4 0000000000000014 t kerla_kernel::fs::inode::FileLike::bind
+ffff800000109fb8 0000000000000014 t kerla_kernel::fs::inode::FileLike::bind
+ffff800000109e21 0000000000000011 t kerla_kernel::fs::inode::FileLike::open
+ffff800000109e32 0000000000000011 t kerla_kernel::fs::inode::FileLike::open
+ffff800000109e43 0000000000000011 t kerla_kernel::fs::inode::FileLike::open
+ffff800000109ef0 0000000000000014 t kerla_kernel::fs::inode::FileLike::poll
+ffff800000109f04 0000000000000014 t kerla_kernel::fs::inode::FileLike::poll
+ffff800000109f18 0000000000000014 t kerla_kernel::fs::inode::FileLike::poll
+ffff800000109f68 0000000000000014 t kerla_kernel::fs::inode::FileLike::read
+ffff800000109f7c 0000000000000014 t kerla_kernel::fs::inode::FileLike::read
+ffff800000109e54 0000000000000018 t kerla_kernel::fs::inode::FileLike::stat
+ffff800000109e6c 0000000000000018 t kerla_kernel::fs::inode::FileLike::stat
+ffff800000109e84 0000000000000018 t kerla_kernel::fs::inode::FileLike::stat
+ffff80000010a050 000000000000000d t kerla_kernel::fs::inode::FileLike::fsync
+ffff80000010a05d 000000000000000d t kerla_kernel::fs::inode::FileLike::fsync
+ffff800000109f2c 0000000000000014 t kerla_kernel::fs::inode::FileLike::ioctl
+ffff800000109f40 0000000000000014 t kerla_kernel::fs::inode::FileLike::ioctl
+ffff800000109f54 0000000000000014 t kerla_kernel::fs::inode::FileLike::ioctl
+ffff80000010a06a 0000000000000019 t kerla_kernel::fs::inode::FileLike::accept
+ffff80000010a083 0000000000000019 t kerla_kernel::fs::inode::FileLike::accept
+ffff80000010a09c 0000000000000019 t kerla_kernel::fs::inode::FileLike::accept
+ffff800000109fcc 0000000000000014 t kerla_kernel::fs::inode::FileLike::listen
+ffff800000109fe0 0000000000000014 t kerla_kernel::fs::inode::FileLike::listen
+ffff800000109ff4 0000000000000014 t kerla_kernel::fs::inode::FileLike::listen
+ffff80000010a0f1 0000000000000014 t kerla_kernel::fs::inode::FileLike::sendto
+ffff80000010a105 0000000000000014 t kerla_kernel::fs::inode::FileLike::sendto
+ffff80000010a119 0000000000000014 t kerla_kernel::fs::inode::FileLike::sendto
+ffff80000010a0b5 0000000000000014 t kerla_kernel::fs::inode::FileLike::connect
+ffff80000010a0c9 0000000000000014 t kerla_kernel::fs::inode::FileLike::connect
+ffff80000010a0dd 0000000000000014 t kerla_kernel::fs::inode::FileLike::connect
+ffff800000109e9c 000000000000001c t kerla_kernel::fs::inode::FileLike::readlink
+ffff800000109eb8 000000000000001c t kerla_kernel::fs::inode::FileLike::readlink
+ffff800000109ed4 000000000000001c t kerla_kernel::fs::inode::FileLike::readlink
+ffff80000010a12d 0000000000000019 t kerla_kernel::fs::inode::FileLike::recvfrom
+ffff80000010a146 0000000000000019 t kerla_kernel::fs::inode::FileLike::recvfrom
+ffff80000010a15f 0000000000000019 t kerla_kernel::fs::inode::FileLike::recvfrom
+ffff80000010a178 0000000000000014 t kerla_kernel::fs::inode::Directory::create_symlink
+ffff80000010a18c 0000000000000014 t kerla_kernel::fs::inode::Directory::unlink
+ffff80000010a3db 000000000000009c t kerla_kernel::fs::mount::RootFs::lookup_dir
+ffff80000010a518 0000000000000083 t kerla_kernel::fs::mount::RootFs::lookup_path
+ffff80000010a477 00000000000000a1 t kerla_kernel::fs::mount::RootFs::lookup_inode
+ffff80000010a73e 00000000000006bc t kerla_kernel::fs::mount::RootFs::do_lookup_path
+ffff80000010a59b 00000000000000ce t kerla_kernel::fs::mount::RootFs::lookup_path_at
+ffff80000010a669 00000000000000d5 t kerla_kernel::fs::mount::RootFs::lookup_parent_path_at
+ffff80000010a1e2 00000000000001eb t kerla_kernel::fs::mount::RootFs::mount
+ffff80000010a3cd 000000000000000e t kerla_kernel::fs::mount::RootFs::lookup
+ffff80000010c9c9 000000000000007c t kerla_kernel::fs::tmpfs::TmpSymlink::new
+ffff80000016ccb8 0000000000000008 d kerla_kernel::fs::tmpfs::alloc_inode_no::NEXT_INODE_NO
+ffff80000010bdb0 00000000000000a3 t kerla_kernel::fs::tmpfs::Dir::new
+ffff80000010be53 00000000000000be t kerla_kernel::fs::tmpfs::Dir::add_file
+ffff80000010bd5a 0000000000000030 t kerla_kernel::fs::tmpfs::TmpFs::new
+ffff800000174000 0000000000000010 b kerla_kernel::fs::tmpfs::TMP_FS
+ffff800000173fe8 0000000000000018 b kerla_kernel::fs::procfs::METRICS_FILE
+ffff800000173fd8 0000000000000010 b kerla_kernel::fs::procfs::PROC_FS
+ffff800000173fc8 0000000000000010 b kerla_kernel::fs::initramfs::INITRAM_FS
+ffff80000010997f 000000000000002d t kerla_kernel::fs::initramfs::parse_hex_field
+ffff80000010cda3 00000000000000b6 t kerla_kernel::mm::vm::Vm::add_vm_area
+ffff80000010ce59 000000000000023b t kerla_kernel::mm::vm::Vm::remove_range
+ffff80000010d094 0000000000000038 t kerla_kernel::mm::vm::Vm::is_free_vaddr_range
+ffff800000174010 0000000000000020 b kerla_kernel::net::tcp_socket::INUSE_ENDPOINTS
+ffff800000174048 0000000000000008 b kerla_kernel::net::tcp_socket::READ_BYTES_TOTAL
+ffff800000174038 0000000000000008 b kerla_kernel::net::tcp_socket::PASSIVE_OPENS_TOTAL
+ffff800000174040 0000000000000008 b kerla_kernel::net::tcp_socket::WRITTEN_BYTES_TOTAL
+ffff80000010d0cc 000000000000009b t kerla_kernel::net::tcp_socket::get_ready_backlog_index
+ffff800000174030 0000000000000008 b kerla_kernel::net::tcp_socket::NEXT_PORT
+ffff80000010d459 00000000000001d8 t kerla_kernel::net::tcp_socket::TcpSocket::refill_backlog_sockets
+ffff80000010d167 00000000000002f2 t kerla_kernel::net::tcp_socket::TcpSocket::new
+ffff800000174050 0000000000000020 b kerla_kernel::net::udp_socket::INUSE_ENDPOINTS
+ffff8000001743c8 0000000000000048 b kerla_kernel::net::DHCP_CLIENT
+ffff800000174410 0000000000000002 b kerla_kernel::net::DHCP_ENABLED
+ffff800000174448 0000000000000018 b kerla_kernel::net::ETHERNET_DRIVER
+ffff800000174080 0000000000000280 b kerla_kernel::net::RX_PACKET_QUEUE
+ffff800000114176 000000000000007d t kerla_kernel::net::parse_ipv4_addr
+ffff80000010fa59 000000000000471d t kerla_kernel::net::process_packets
+ffff800000174418 0000000000000030 b kerla_kernel::net::SOCKET_WAIT_QUEUE
+ffff800000174300 0000000000000028 b kerla_kernel::net::SOCKETS
+ffff800000174328 00000000000000a0 b kerla_kernel::net::INTERFACE
+ffff80000011d498 000000000000004c t kerla_kernel::tty::line_discipline::LineDiscipline::foreground_process_group
+ffff80000011d4e4 0000000000000059 t kerla_kernel::tty::line_discipline::LineDiscipline::set_foreground_process_group
+ffff80000011d53d 000000000000046a t kerla_kernel::tty::line_discipline::LineDiscipline::read
+ffff800000175580 0000000000000088 b kerla_kernel::tty::pty::PTY_INDEX_TABLE
+ffff800000174460 0000000000000030 b kerla_kernel::pipe::PIPE_WAIT_QUEUE
+ffff800000174490 0000000000000030 b kerla_kernel::poll::POLL_WAIT_QUEUE
+ffff800000175570 0000000000000008 b kerla_kernel::timer::MONOTONIC_TICKS
+ffff800000175578 0000000000000008 b kerla_kernel::timer::WALLCLOCK_TICKS
+ffff80000016d730 0000000000000020 d kerla_kernel::timer::TIMERS
+ffff800000171d80 0000000000002020 b kerla_kernel::logger::KERNEL_LOG_BUF
+ffff8000001171aa 0000000000000131 t kerla_kernel::random::read_secure_random
+ffff8000001172db 00000000000000da t kerla_kernel::random::read_secure_random::{{closure}}
+ffff800000175618 0000000000000001 b kerla_kernel::random::read_secure_random::{{closure}}::ONCE
+ffff800000114da3 0000000000000036 t kerla_kernel::process::init_stack::push_usize_to_stack
+ffff800000114dd9 00000000000000b9 t kerla_kernel::process::init_stack::push_auxv_entry_to_stack
+ffff8000001170ff 00000000000000ab t kerla_kernel::process::wait_queue::WaitQueue::wake_all
+ffff800000169018 0000000000000008 r kerla_kernel::process::IDLE_THREAD
+ffff800000116cc3 0000000000000036 t kerla_kernel::process::process_group::ProcessGroup::add
+ffff800000116774 000000000000054f t kerla_kernel::process::process_group::ProcessGroup::new
+ffff800000116cf9 0000000000000068 t kerla_kernel::process::process_group::ProcessGroup::signal
+ffff8000001744e8 0000000000000020 b kerla_kernel::process::process_group::PROCESS_GROUPS
+ffff800000174540 0000000000000030 b kerla_kernel::process::JOIN_WAIT_QUEUE
+ffff800000116ddd 0000000000000322 t kerla_kernel::process::switch::switch
+ffff800000169010 0000000000000008 r kerla_kernel::process::CURRENT
+ffff800000114c2e 0000000000000175 t kerla_kernel::process::cmdline::Cmdline::set_by_argv
+ffff8000001744e0 0000000000000008 b kerla_kernel::process::process::FORK_TOTAL
+ffff800000115750 0000000000000012 t kerla_kernel::process::process::setup_userspace
+ffff80000016d0e8 0000000000000020 d kerla_kernel::process::process::EXITED_PROCESSES
+ffff800000115762 0000000000001012 t kerla_kernel::process::process::do_setup_userspace
+ffff80000011568b 0000000000000009 t kerla_kernel::process::process::Process::exit_group
+ffff8000001156a0 0000000000000066 t kerla_kernel::process::process::Process::send_signal
+ffff800000114f12 000000000000002c t kerla_kernel::process::process::Process::process_group
+ffff800000115694 000000000000000c t kerla_kernel::process::process::Process::exit_by_signal
+ffff800000115706 000000000000004a t kerla_kernel::process::process::Process::has_pending_signals
+ffff8000001151b9 00000000000000b6 t kerla_kernel::process::process::Process::get_opened_file_by_fd
+ffff800000114ed2 0000000000000040 t kerla_kernel::process::process::Process::vm
+ffff80000011526f 000000000000041c t kerla_kernel::process::process::Process::exit
+ffff800000114f3e 000000000000005d t kerla_kernel::process::process::Process::state
+ffff800000115121 0000000000000098 t kerla_kernel::process::process::Process::resume
+ffff800000114e92 0000000000000040 t kerla_kernel::process::process::Process::cmdline
+ffff800000114f9b 0000000000000186 t kerla_kernel::process::process::Process::set_state
+ffff8000001744c0 0000000000000020 b kerla_kernel::process::process::PROCESSES
+ffff80000016d108 0000000000000004 d kerla_kernel::process::process::alloc_pid::NEXT_PID
+ffff800000174508 0000000000000038 b kerla_kernel::process::SCHEDULER
+ffff800000116d61 000000000000007c t kerla_kernel::process::scheduler::Scheduler::enqueue
+ffff800000174570 0000000000000800 b kerla_kernel::syscalls::SYS_COUNTS
+ffff8000001173b5 000000000000009d t kerla_kernel::syscalls::resolve_path
+ffff800000117452 0000000000006015 t kerla_kernel::syscalls::SyscallHandler::do_dispatch
+ffff80000017561c 0000000000000001 b kerla_kernel::syscalls::SyscallHandler::do_dispatch::{{closure}}::ONCE
+ffff80000017561a 0000000000000001 b kerla_kernel::syscalls::SyscallHandler::do_dispatch::{{closure}}::ONCE
+ffff80000017561d 0000000000000001 b kerla_kernel::syscalls::SyscallHandler::do_dispatch::{{closure}}::ONCE
+ffff80000017561e 0000000000000001 b kerla_kernel::syscalls::SyscallHandler::do_dispatch::{{closure}}::ONCE
+ffff80000017561b 0000000000000001 b kerla_kernel::syscalls::SyscallHandler::do_dispatch::{{closure}}::ONCE
+ffff80000011d467 0000000000000031 t kerla_kernel::syscalls::syscall_name_by_number
+ffff800000175619 0000000000000001 b kerla_kernel::syscalls::socket::<impl kerla_kernel::syscalls::SyscallHandler>::sys_socket::{{closure}}::ONCE
+ffff800000174d70 0000000000000800 b kerla_kernel::syscalls::SYS_ERRS
+ffff80000016cf98 0000000000000020 d kerla_kernel::interrupt::IRQ_VECTORS
+ffff800000122daa 0000000000000045 t <alloc::vec::Vec<T,A> as alloc::vec::spec_extend::SpecExtend<&T,core::slice::iter::Iter<T>>>::spec_extend
+ffff800000129b13 0000000000000019 t <(core::ops::range::Bound<T>,core::ops::range::Bound<T>) as core::ops::range::RangeBounds<T>>::start_bound
+ffff800000129b2c 000000000000001b t <(core::ops::range::Bound<T>,core::ops::range::Bound<T>) as core::ops::range::RangeBounds<T>>::end_bound
+ffff80000012662c 00000000000000fa t kerla_runtime::page_allocator::free_pages
+ffff800000125881 00000000000000d2 t kerla_runtime::page_allocator::alloc_pages
+ffff800000175a80 0000000000000008 b kerla_runtime::page_allocator::NUM_FREE_PAGES
+ffff800000175a88 0000000000000008 b kerla_runtime::page_allocator::NUM_TOTAL_PAGES
+ffff800000126726 00000000000000f3 t kerla_runtime::page_allocator::alloc_pages_owned
+ffff800000125953 0000000000000024 t kerla_runtime::page_allocator::num_pages_to_order
+ffff800000126819 000000000000013b t kerla_runtime::page_allocator::init
+ffff800000175930 0000000000000150 b kerla_runtime::page_allocator::ZONES
+ffff800000125795 00000000000000ec t kerla_runtime::global_allocator::expand_kernel_heap
+ffff80000016e898 0000000000000130 d kerla_runtime::global_allocator::ALLOCATOR
+ffff800000169020 0000000000000040 R kerla_runtime::x64::gdt::GDT
+ffff800000169060 0000000000001000 R kerla_runtime::x64::idt::IDT
+ffff80000016a060 0000000000002068 R kerla_runtime::x64::tss::TSS
+ffff800000175a90 00000000000005a0 b kerla_runtime::x64::vga::TERMINAL_PARSER
+ffff800000126ad3 0000000000000166 t kerla_runtime::x64::vga::init
+ffff80000016e820 0000000000000028 d kerla_runtime::x64::vga::CONSOLE
+ffff80000012569d 000000000000005b t kerla_runtime::x64::vga::Console::draw_banner
+ffff800000125671 000000000000002c t kerla_runtime::x64::vga::Console::move_cursor
+ffff8000001255de 0000000000000093 t kerla_runtime::x64::vga::Console::scroll
+ffff800000125b2f 000000000000015a t kerla_runtime::x64::vga::printchar
+ffff80000016e7b0 0000000000000010 d kerla_runtime::x64::apic::APIC
+ffff800000127063 00000000000002f3 t kerla_runtime::x64::boot::common_setup
+ffff800000127015 000000000000004e t kerla_runtime::x64::boot::init_pic
+ffff800000127386 000000000000004e t kerla_runtime::x64::ioapic::enable_irq
+ffff800000127356 0000000000000030 t kerla_runtime::x64::ioapic::IoApic::write_iored_tbl
+ffff80000016e7c0 0000000000000010 d kerla_runtime::x64::ioapic::IO_APIC
+ffff800000127f80 0000000000000088 t kerla_runtime::x64::paging::free_table
+ffff800000128008 0000000000000126 t kerla_runtime::x64::paging::duplicate_table
+ffff80000012812e 00000000000000fa t kerla_runtime::x64::paging::PageTable::map_user_page
+ffff8000001273d4 0000000000000027 t kerla_runtime::x64::serial::SerialPort::initialize
+ffff800000125b03 000000000000002c t kerla_runtime::x64::serial::SerialPort::print_char
+ffff8000001261c7 0000000000000015 t kerla_runtime::x64::serial::SerialPort::send_char
+ffff800000126a86 000000000000004d t kerla_runtime::x64::serial::early_init
+ffff800000126fd7 000000000000003e t kerla_runtime::x64::serial::init
+ffff8000001273fb 0000000000000048 t kerla_runtime::x64::bootinfo::process_memory_map_entry
+ffff800000126c74 0000000000000363 t kerla_runtime::x64::bootinfo::parse
+ffff800000127443 000000000000077a t kerla_runtime::x64::bootinfo::Cmdline::parse
+ffff800000169000 0000000000000010 R kerla_runtime::x64::cpu_local::CPU_LOCAL_HEAD_SPACE
+ffff800000125a90 0000000000000011 t kerla_runtime::print::get_printer
+ffff80000016e780 0000000000000010 d kerla_runtime::print::DEBUG_PRINTER
+ffff800000125520 0000000000000011 t kerla_runtime::print::get_debug_printer
+ffff800000125aa1 0000000000000017 t kerla_runtime::print::set_debug_printer
+ffff80000016e770 0000000000000010 d kerla_runtime::print::PRINTER
+ffff800000125ab8 000000000000000a t kerla_runtime::print::Printer::print_str
+ffff8000001015f8 000000000000000a t kerla_runtime::print::Printer::print_str
+ffff8000001261dc 000000000000000a t kerla_runtime::print::Printer::print_str
+ffff800000125531 0000000000000006 t kerla_runtime::print::Printer::print_str
+ffff80000012628a 000000000000033a t kerla_runtime::logger::set_log_filter
+ffff800000126c39 000000000000003b t kerla_runtime::logger::init
+ffff80000016e790 0000000000000020 d kerla_runtime::logger::LOGGER
+ffff80000016e888 0000000000000010 d kerla_runtime::HANDLER
+ffff800000126227 000000000000003c t kerla_runtime::address::UserVAddr::read_bytes
+ffff800000126263 0000000000000027 t kerla_runtime::address::UserVAddr::write_bytes
+ffff800000101602 0000000000000043 t kerla_runtime::address::UserVAddr::read
+ffff800000101645 0000000000000029 t kerla_runtime::address::UserVAddr::read
+ffff80000010166e 000000000000000d t kerla_runtime::address::UserVAddr::write
+ffff80000010167b 000000000000000d t kerla_runtime::address::UserVAddr::write
+ffff800000127f0b 000000000000005b t kerla_runtime::handler
+ffff800000101688 000000000000004b t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff800000125977 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001016d3 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff800000101730 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff80000010178d 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001017ea 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff800000101847 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001018a4 000000000000004b t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff800000126954 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001269b1 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001018ef 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff80000010194c 000000000000004a t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff800000124faa 000000000000005d t kerla_runtime::spinlock::SpinLock<T>::lock
+ffff8000001259d4 00000000000000bc t kerla_runtime::backtrace::backtrace
+ffff8000001231f4 0000000000000024 t atomic_refcell::AtomicBorrowRef::check_overflow
+ffff800000101996 0000000000000042 t atomic_refcell::AtomicBorrowRef::try_new
+ffff8000001019d8 000000000000002f t atomic_refcell::AtomicRefCell<T>::borrow
+ffff800000101a07 0000000000000039 t atomic_refcell::AtomicRefCell<T>::borrow
+ffff800000125438 0000000000000053 t crossbeam_utils::atomic::atomic_cell::atomic_load
+ffff80000012548b 0000000000000047 t crossbeam_utils::atomic::atomic_cell::atomic_store
+ffff800000101a40 0000000000000048 t crossbeam_utils::atomic::atomic_cell::AtomicCell<T>::load
+ffff800000101a88 0000000000000052 t crossbeam_utils::atomic::atomic_cell::AtomicCell<T>::store
+ffff800000175628 0000000000000308 b crossbeam_utils::atomic::atomic_cell::lock::LOCKS
+ffff800000101ada 000000000000003d t crossbeam_utils::atomic::seq_lock::SeqLock::write
+ffff800000124f57 0000000000000053 t crossbeam_utils::atomic::seq_lock::SeqLock::write
+ffff800000101b17 000000000000002c t crossbeam_utils::backoff::Backoff::spin
+ffff800000101b43 000000000000003d t crossbeam_utils::backoff::Backoff::snooze
+ffff8000001233eb 0000000000000044 t compiler_builtins::mem::impls::compare_bytes::{{closure}}
+ffff80000012342f 0000000000000046 t compiler_builtins::mem::impls::compare_bytes::{{closure}}
+ffff800000123475 0000000000000029 t compiler_builtins::mem::impls::compare_bytes::{{closure}}
+ffff800000123393 0000000000000045 t compiler_builtins::mem::impls::compare_bytes::{{closure}}
+ffff800000123313 0000000000000076 t compiler_builtins::mem::memcmp
+ffff800000125274 00000000000000c4 t buddy_system_allocator::Heap<_>::alloc
+ffff800000101b80 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101b9a 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101bb4 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101bce 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101be8 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c02 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c1c 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c36 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c50 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c6a 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c84 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101c9e 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101cb8 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101cd2 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101cec 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101d06 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101d20 000000000000001a t <T as core::any::Any>::type_id
+ffff800000101d3a 000000000000001a t <T as core::any::Any>::type_id
+ffff800000176030 0000000000000008 b log::STATE
+ffff800000167902 0000000000001000 r vte::table::STATE_CHANGES
+ffff800000125c89 000000000000017f t vte::Parser::process_utf8
+ffff800000125e08 000000000000036d t vte::Parser::perform_action
+ffff800000126175 0000000000000052 t vte::params::Params::push
+ffff80000013015a 0000000000000010 t x86::controlregs::xcr0
+ffff800000124806 0000000000000428 t <str as core::fmt::Debug>::fmt
+ffff800000128b0f 000000000000001f t <&T as core::fmt::Debug>::fmt
+ffff8000001244fc 0000000000000160 t <&T as core::fmt::Display>::fmt
+ffff800000101d54 000000000000000a t <bool as core::ops::bit::BitOr>::bitor
+ffff800000101d5e 000000000000000a t <bool as core::ops::bit::BitAnd>::bitand
+ffff800000101d68 000000000000000c t <usize as core::ops::bit::BitOr>::bitor
+ffff800000101d74 000000000000000c t <usize as core::ops::bit::BitAnd>::bitand
+ffff8000001294f4 000000000000001d t <u8 as core::slice::cmp::SliceOrd>::compare
+ffff80000012a156 0000000000000010 t core::cmp::PartialOrd::ge
+ffff80000012a146 0000000000000010 t core::cmp::PartialOrd::gt
+ffff80000012a134 0000000000000012 t core::cmp::PartialOrd::le
+ffff80000012a124 0000000000000010 t core::cmp::PartialOrd::lt
+ffff800000127d86 000000000000000a t core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+ffff800000101d80 000000000000000a t core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+ffff800000129b47 0000000000000010 t core::cmp::impls::<impl core::cmp::PartialOrd<&B> for &A>::gt
+ffff800000123782 000000000000005c t core::fmt::PostPadding::write
+ffff800000123d9a 0000000000000089 t core::fmt::num::GenericRadix::fmt_int
+ffff800000124f32 0000000000000025 t core::fmt::num::imp::<impl core::fmt::Display for i32>::fmt
+ffff800000123a57 0000000000000012 t core::fmt::num::imp::<impl core::fmt::Display for u32>::fmt
+ffff800000123e23 0000000000000013 t core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt
+ffff800000123cc6 00000000000000d4 t core::fmt::num::imp::fmt_u64
+ffff800000101d8a 00000000000000ea t core::fmt::num::<impl core::fmt::Debug for usize>::fmt
+ffff800000124f26 000000000000000c t core::fmt::num::<impl core::fmt::LowerHex for i32>::fmt
+ffff800000101e74 000000000000002b t core::fmt::Write::write_char
+ffff8000001254d2 0000000000000026 t core::fmt::Write::write_char
+ffff800000101e9f 0000000000000014 t core::fmt::Write::write_fmt
+ffff800000125537 0000000000000014 t core::fmt::Write::write_fmt
+ffff800000124409 0000000000000014 t core::fmt::Write::write_fmt
+ffff800000123005 0000000000000014 t core::fmt::Write::write_fmt
+ffff80000012380e 000000000000020d t core::fmt::write
+ffff80000012465c 00000000000001aa t core::fmt::builders::DebugStruct::field
+ffff8000001240e8 0000000000000059 t core::fmt::builders::DebugStruct::finish
+ffff800000123a1b 000000000000003c t core::fmt::getcount
+ffff800000123c6d 0000000000000059 t core::fmt::Formatter::pad_integral::write_prefix
+ffff800000123a69 0000000000000204 t core::fmt::Formatter::pad_integral
+ffff800000123703 000000000000007f t core::fmt::Formatter::padding
+ffff800000101eb3 0000000000000054 t core::mem::drop
+ffff800000101f07 000000000000000a t core::mem::drop
+ffff800000129896 000000000000000d t core::mem::swap
+ffff800000124d9f 00000000000000df t core::num::<impl usize>::from_str_radix
+ffff800000124e7e 00000000000000a8 t core::num::<impl core::str::traits::FromStr for u8>::from_str
+ffff800000128c83 0000000000000023 t core::ops::range::RangeInclusive<Idx>::contains
+ffff80000012f538 0000000000000027 t core::ops::function::FnOnce::call_once{{vtable.shim}}
+ffff800000101f11 000000000000000a t core::ops::function::FnOnce::call_once{{vtable.shim}}
+ffff800000123389 000000000000000a t core::ops::function::FnOnce::call_once
+ffff8000001233d8 0000000000000013 t core::ops::function::FnOnce::call_once
+ffff8000001234a8 0000000000000009 t core::ops::function::FnOnce::call_once
+ffff800000101f1b 0000000000000022 t core::ptr::drop_in_place<kerla_runtime::spinlock::SpinLockGuard<kerla_kernel::fs::tmpfs::DirInner>>
+ffff80000012edc8 0000000000000037 t core::ptr::drop_in_place<smoltcp::storage::packet_buffer::PacketBuffer<smoltcp::wire::ip::Endpoint>>
+ffff800000101f3d 0000000000000026 t core::ptr::drop_in_place<[core::option::Option<kerla_kernel::fs::opened_file::LocalOpenedFile>]>
+ffff80000012f7cd 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<virtio_net::VirtioNet>>>
+ffff800000101f63 0000000000000016 t core::ptr::drop_in_place<core::result::Result<kerla_kernel::fs::inode::INode,kerla_kernel::result::Error>>
+ffff800000101f79 0000000000000018 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::mm::vm::Vm>>>
+ffff800000101f91 0000000000000021 t core::ptr::drop_in_place<alloc::raw_vec::RawVec<core::option::Option<kerla_runtime::address::UserVAddr>>>
+ffff800000101fb2 0000000000000012 t core::ptr::drop_in_place<core::option::Option<alloc::sync::Arc<kerla_kernel::process::process::Process>>>
+ffff800000101fc4 0000000000000021 t core::ptr::drop_in_place<alloc::raw_vec::RawVec<alloc::sync::Arc<kerla_kernel::process::process::Process>>>
+ffff800000101fe5 0000000000000018 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::pipe::PipeInner>>>
+ffff800000101ffd 0000000000000018 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::fs::mount::RootFs>>>
+ffff800000102015 0000000000000018 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::process::process_group::ProcessGroup>>>
+ffff80000010202d 0000000000000025 t core::ptr::drop_in_place<alloc::sync::Weak<kerla_runtime::spinlock::SpinLock<kerla_kernel::process::process_group::ProcessGroup>>>
+ffff800000102052 0000000000000012 t core::ptr::drop_in_place<core::option::Option<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::mm::vm::Vm>>>>
+ffff80000012f7e2 000000000000000a t core::ptr::drop_in_place<<virtio_net::VirtioNetProber as kerla_api::driver::DeviceProber>::probe_pci::{{closure}}>
+ffff800000102064 0000000000000012 t core::ptr::drop_in_place<core::option::Option<alloc::sync::Arc<kerla_runtime::spinlock::SpinLock<kerla_kernel::process::process_group::ProcessGroup>>>>
+ffff800000129866 000000000000000e t core::ptr::swap_nonoverlapping
+ffff800000102076 0000000000000012 t core::ptr::drop_in_place<alloc::boxed::Box<crossbeam_queue::seg_queue::Block<alloc::boxed::Box<dyn core::ops::function::FnOnce<()>+Output = ()+core::marker::Send>>>>
+ffff800000102088 0000000000000013 t core::ptr::drop_in_place<core::iter::adapters::zip::Zip<core::slice::iter::Iter<kerla_kernel::process::init_stack::Auxv>,alloc::vec::into_iter::IntoIter<core::option::Option<kerla_runtime::address::UserVAddr>>>>
+ffff80000010209b 0000000000000011 t core::ptr::drop_in_place<core::option::Option<alloc::boxed::Box<crossbeam_queue::seg_queue::Block<alloc::boxed::Box<dyn core::ops::function::FnOnce<()>+Output = ()+core::marker::Send>>>>>
+ffff8000001020ac 0000000000000006 t core::ptr::drop_in_place<usize>
+ffff800000129874 0000000000000022 t core::ptr::swap_nonoverlapping_simple_untyped
+ffff8000001020b2 0000000000000020 t core::ptr::swap_nonoverlapping_simple_untyped
+ffff8000001020d2 0000000000000006 t core::ptr::drop_in_place<kerla_kernel::ApiOps>
+ffff800000123019 0000000000000014 t core::ptr::drop_in_place<alloc::string::String>
+ffff8000001265c4 000000000000005e t core::ptr::drop_in_place<log_filter::LogFilter>
+ffff80000012f4de 000000000000003c t core::ptr::drop_in_place<virtio::device::Virtio>
+ffff8000001020d8 0000000000000081 t core::ptr::drop_in_place<smoltcp::socket::Socket>
+ffff800000102159 0000000000000047 t core::ptr::drop_in_place<kerla_kernel::mm::vm::Vm>
+ffff8000001021a0 00000000000000b0 t core::ptr::drop_in_place<kerla_kernel::fs::tmpfs::Dir>
+ffff800000102250 000000000000000a t core::ptr::drop_in_place<kerla_kernel::tty::pty::Ptmx>
+ffff80000010225a 0000000000000015 t core::ptr::drop_in_place<kerla_kernel::fs::tmpfs::File>
+ffff80000010226f 00000000000001d1 t core::ptr::drop_in_place<smoltcp::iface::route::Routes>
+ffff800000102440 0000000000000038 t core::ptr::drop_in_place<kerla_kernel::fs::inode::INode>
+ffff800000102478 0000000000000070 t core::ptr::drop_in_place<kerla_kernel::pipe::PipeReader>
+ffff8000001024e8 0000000000000070 t core::ptr::drop_in_place<kerla_kernel::pipe::PipeWriter>
+ffff800000102558 00000000000000a7 t core::ptr::drop_in_place<kerla_kernel::fs::mount::RootFs>
+ffff8000001025ff 0000000000000012 t core::ptr::drop_in_place<kerla_kernel::mm::vm::VmAreaType>
+ffff800000102611 0000000000000018 t core::ptr::drop_in_place<kerla_kernel::tty::pty::PtySlave>
+ffff800000102629 000000000000000a t core::ptr::drop_in_place<kerla_kernel::fs::devfs::tty::Tty>
+ffff800000102633 000000000000006f t core::ptr::drop_in_place<kerla_kernel::tty::pty::PtyMaster>
+ffff8000001026a2 000000000000003b t core::ptr::drop_in_place<kerla_kernel::fs::tmpfs::TmpFsINode>
+ffff8000001026dd 0000000000000014 t core::ptr::drop_in_place<kerla_kernel::fs::tmpfs::TmpSymlink>
+ffff8000001026f1 0000000000000026 t core::ptr::drop_in_place<[kerla_kernel::mm::vm::VmArea]>
+ffff800000102717 000000000000000a t core::ptr::drop_in_place<kerla_kernel::fs::initramfs::InitramFs>
+ffff80000012ec60 0000000000000012 t core::ptr::drop_in_place<smoltcp::storage::assembler::Assembler>
+ffff800000102721 00000000000000eb t core::ptr::drop_in_place<kerla_kernel::net::tcp_socket::TcpSocket>
+ffff80000010280c 0000000000000049 t core::ptr::drop_in_place<kerla_kernel::arch::x64::process::Process>
+ffff800000102855 0000000000000096 t core::ptr::drop_in_place<kerla_kernel::fs::initramfs::InitramFsDir>
+ffff8000001028eb 0000000000000045 t core::ptr::drop_in_place<kerla_kernel::fs::initramfs::InitramFsINode>
+ffff800000102930 0000000000000056 t core::ptr::drop_in_place<kerla_kernel::process::wait_queue::WaitQueue>
+ffff800000102986 0000000000000014 t core::ptr::drop_in_place<kerla_kernel::fs::initramfs::InitramFsSymlink>
+ffff80000010299a 000000000000003a t core::ptr::drop_in_place<kerla_kernel::fs::opened_file::OpenedFileTable>
+ffff8000001029d4 0000000000000037 t core::ptr::drop_in_place<kerla_kernel::tty::line_discipline::LineDiscipline>
+ffff80000012edad 000000000000001b t core::ptr::drop_in_place<smoltcp::storage::ring_buffer::RingBuffer<u8>>
+ffff800000102a0b 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::fs::tmpfs::Dir>>
+ffff80000012f24f 0000000000000006 t core::ptr::drop_in_place<virtio::transports::virtio_pci_legacy::VirtioLegacyPci>
+ffff800000102a20 000000000000001e t core::ptr::drop_in_place<alloc::raw_vec::RawVec<kerla_kernel::mm::vm::VmArea>>
+ffff800000102a3e 000000000000005c t core::ptr::drop_in_place<alloc::vec::Vec<kerla_kernel::user_buffer::UserCStr>>
+ffff800000102a9a 0000000000000026 t core::ptr::drop_in_place<managed::slice::ManagedSlice<smoltcp::wire::ip::Cidr>>
+ffff800000102ac0 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::process::process::Process>>
+ffff800000102ad5 0000000000000011 t core::ptr::drop_in_place<core::option::Option<kerla_kernel::fs::tmpfs::TmpFsINode>>
+ffff800000102ae6 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::net::tcp_socket::TcpSocket>>
+ffff800000102afb 0000000000000027 t core::ptr::drop_in_place<alloc::sync::Weak<kerla_kernel::process::process::Process>>
+ffff800000102b22 000000000000001f t core::ptr::drop_in_place<alloc::sync::Arc<dyn kerla_kernel::fs::inode::FileLike>>
+ffff800000102b41 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::fs::initramfs::InitramFsDir>>
+ffff800000102b56 0000000000000018 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::fs::opened_file::OpenedFile>>
+ffff800000102b6e 0000000000000015 t core::ptr::drop_in_place<alloc::sync::Arc<kerla_kernel::fs::opened_file::PathComponent>>
+ffff800000102b83 0000000000000011 t core::ptr::drop_in_place<core::option::Option<kerla_kernel::fs::initramfs::InitramFsINode>>
+ffff800000102b94 0000000000000013 t core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<kerla_runtime::address::UserVAddr>>
+ffff800000102ba7 0000000000000026 t core::ptr::drop_in_place<[alloc::sync::Arc<kerla_kernel::process::process::Process>]>
+ffff800000102bcd 0000000000000026 t core::ptr::drop_in_place<[alloc::sync::Arc<kerla_kernel::net::tcp_socket::TcpSocket>]>
+ffff800000102bf3 0000000000000012 t core::ptr::drop_in_place<core::option::Option<kerla_kernel::fs::opened_file::LocalOpenedFile>>
+ffff80000012554b 0000000000000020 t core::str::<impl str>::starts_with
+ffff8000001288f6 0000000000000037 t core::str::<impl str>::strip_prefix
+ffff800000127c55 000000000000000d t core::str::<impl str>::parse
+ffff800000102c05 0000000000000032 t core::str::<impl str>::split
+ffff800000127bbd 0000000000000063 t core::str::iter::SplitInternal<P>::next
+ffff800000102c37 0000000000000063 t core::str::iter::SplitInternal<P>::next
+ffff800000102c9a 000000000000002d t core::str::iter::SplitInternal<P>::get_end
+ffff800000102cc7 000000000000000a t core::str::traits::<impl core::cmp::PartialEq for str>::eq
+ffff800000102cd1 0000000000000026 t core::str::traits::<impl core::ops::index::Index<I> for str>::index
+ffff800000102cf7 000000000000001d t core::str::traits::<impl core::ops::index::Index<I> for str>::index
+ffff800000124c2e 000000000000009a t core::str::pattern::TwoWaySearcher::maximal_suffix
+ffff800000124cc8 00000000000000d7 t core::str::pattern::TwoWaySearcher::reverse_maximal_suffix
+ffff8000001241ee 00000000000001c1 t core::str::converts::from_utf8
+ffff800000124141 00000000000000ad t core::char::EscapeUnicode::new
+ffff800000102d14 00000000000000a1 t core::char::methods::<impl char>::encode_utf8
+ffff8000001244ce 000000000000002e t core::char::methods::<impl char>::to_digit
+ffff800000102db5 0000000000000051 t core::hash::BuildHasher::hash_one
+ffff800000102e06 0000000000000051 t core::hash::BuildHasher::hash_one
+ffff800000102e57 0000000000000051 t core::hash::BuildHasher::hash_one
+ffff800000102ea8 000000000000002b t core::hash::BuildHasher::hash_one
+ffff800000102ed3 00000000000000eb t core::hash::impls::<impl core::hash::Hash for str>::hash
+ffff800000102fbe 000000000000000a t core::hash::impls::<impl core::hash::Hash for &T>::hash
+ffff8000001290b7 000000000000002b t core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::range::RangeInclusive<A>>::next
+ffff800000102fc8 0000000000000042 t core::iter::adapters::peekable::Peekable<I>::peek
+ffff800000129585 00000000000002e1 t core::slice::<impl [T]>::rotate_left
+ffff8000001288d7 000000000000001f t core::slice::<impl [T]>::starts_with
+ffff800000123808 0000000000000006 t core::slice::<impl [T]>::copy_from_slice::len_mismatch_fail
+ffff8000001293a3 000000000000011b t core::slice::sort::insertion_sort_shift_left
+ffff8000001240c6 0000000000000022 t core::slice::memchr::memchr_naive
+ffff800000123fee 00000000000000d8 t core::slice::memchr::memchr_aligned
+ffff80000010300a 0000000000000032 t core::slice::memchr::memchr
+ffff800000167460 0000000000000084 r core::unicode::unicode_data::grapheme_extend::SHORT_OFFSET_RUNS
+ffff8000001674e4 00000000000002d7 r core::unicode::unicode_data::grapheme_extend::OFFSETS
+ffff80000012441d 00000000000000b1 t core::unicode::printable::check
+ffff80000013016a 0000000000000012 t core::core_arch::x86::xsave::_xgetbv
+ffff80000013017c 0000000000000010 t core::core_arch::x86::xsave::_xsetbv
+ffff80000013018c 0000000000000016 t core::core_arch::x86::rdrand::_rdrand16_step
+ffff80000010303c 000000000000000f t core::core_arch::x86_64::xsave::_xsave64
+ffff80000010304b 000000000000000f t core::core_arch::x86_64::xsave::_xrstor64
+ffff80000010305a 0000000000000034 t spin::once::Once<T,R>::poll
+ffff80000010308e 0000000000000037 t spin::once::Once<T,R>::poll
+ffff80000012b51b 0000000000000039 t <T as core::convert::Into<U>>::into
+ffff8000001030c5 0000000000000063 t <char as core::str::pattern::Pattern>::into_searcher
+ffff8000001237de 000000000000002a t <usize as core::iter::traits::accum::Sum>::sum
+ffff800000103128 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103138 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103148 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103158 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103168 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103178 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103188 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103198 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031a8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031b8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031c8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031d8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031e8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff8000001031f8 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103208 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103218 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103228 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff800000103238 0000000000000010 t <T as kerla_utils::downcast::Downcastable>::as_any
+ffff80000012303d 00000000000000ea t <alloc::string::String as core::fmt::Write>::write_char
+ffff80000012302d 0000000000000010 t <alloc::string::String as core::fmt::Write>::write_str
+ffff80000012994f 000000000000002f t <smoltcp::wire::ip::Cidr as core::cmp::Ord>::cmp
+ffff800000175620 0000000000000008 b ahash::random_state::RAND_SOURCE
+ffff800000122d7d 000000000000002d t ahash::random_state::RandomState::from_keys::{{closure}}
+ffff800000103248 0000000000000073 t alloc::collections::btree::map::BTreeMap<K,V,A>::get
+ffff8000001032bb 00000000000004a6 t alloc::collections::btree::map::BTreeMap<K,V,A>::insert
+ffff800000103761 00000000000003a8 t alloc::collections::btree::set::BTreeSet<T,A>::insert
+ffff800000103b09 0000000000000066 t alloc::collections::btree::set::BTreeSet<T,A>::contains
+ffff800000128f2c 0000000000000051 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>::push
+ffff80000012936f 000000000000000d t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::Leaf>::new_leaf
+ffff800000103b6f 0000000000000022 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>::correct_childrens_parent_links
+ffff800000129349 0000000000000026 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>::correct_childrens_parent_links
+ffff800000128fbd 0000000000000072 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>::push
+ffff800000129ba9 000000000000005d t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::Internal>::from_new_internal
+ffff800000103b91 000000000000005d t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::Internal>::from_new_internal
+ffff800000129056 0000000000000061 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::Internal>::from_new_internal
+ffff800000103bee 0000000000000054 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::Internal>::from_new_internal
+ffff800000103c42 0000000000000090 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>::choose_parent_kv
+ffff800000103cd2 0000000000000043 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Dying,K,V,alloc::collections::btree::node::marker::LeafOrInternal>::deallocate_and_ascend
+ffff800000129fb7 0000000000000047 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Dying,K,V,alloc::collections::btree::node::marker::LeafOrInternal>::deallocate_and_ascend
+ffff800000128f7d 0000000000000040 t alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Owned,K,V,alloc::collections::btree::node::marker::LeafOrInternal>::push_internal_level
+ffff800000129e8a 0000000000000052 t alloc::collections::btree::node::slice_insert
+ffff800000129cda 000000000000005d t alloc::collections::btree::node::slice_insert
+ffff800000129edc 0000000000000061 t alloc::collections::btree::node::slice_insert
+ffff800000103d15 00000000000000c3 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000129f3d 000000000000007a t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000129d37 0000000000000078 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000103dd8 0000000000000076 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000129c06 00000000000000d4 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000103e4e 00000000000000e3 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000129dd2 00000000000000b8 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000103f31 00000000000000c2 t alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Internal>,alloc::collections::btree::node::marker::Edge>::insert_fit
+ffff800000103ff3 0000000000000026 t alloc::collections::btree::node::LeafNode<K,V>::new
+ffff80000012937c 0000000000000027 t alloc::collections::btree::node::LeafNode<K,V>::new
+ffff800000129daf 0000000000000023 t alloc::collections::btree::node::LeafNode<K,V>::new
+ffff800000104019 0000000000000021 t alloc::collections::btree::node::LeafNode<K,V>::new
+ffff80000012902f 0000000000000027 t alloc::collections::btree::node::InternalNode<K,V>::new
+ffff80000010403a 0000000000000026 t alloc::collections::btree::node::InternalNode<K,V>::new
+ffff800000129b86 0000000000000023 t alloc::collections::btree::node::InternalNode<K,V>::new
+ffff800000104060 0000000000000023 t alloc::collections::btree::node::InternalNode<K,V>::new
+ffff8000001290e2 0000000000000267 t alloc::collections::btree::node::BalancingContext<K,V>::bulk_steal_left
+ffff800000104083 00000000000001c4 t alloc::collections::btree::node::BalancingContext<K,V>::bulk_steal_left
+ffff800000104247 00000000000001c2 t alloc::collections::btree::node::BalancingContext<K,V>::bulk_steal_right
+ffff800000104409 0000000000000220 t alloc::collections::btree::node::BalancingContext<K,V>::merge_tracking_child_edge
+ffff800000104629 0000000000000556 t alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
+ffff800000104b7f 0000000000000081 t alloc::collections::btree::search::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,alloc::collections::btree::node::marker::LeafOrInternal>>::search_tree
+ffff8000001298a3 00000000000000ac t alloc::collections::btree::search::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,alloc::collections::btree::node::marker::LeafOrInternal>>::search_tree
+ffff800000129a08 0000000000000082 t alloc::collections::btree::search::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,Type>>::find_key_index
+ffff800000129a8a 0000000000000089 t alloc::collections::btree::search::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,Type>>::find_lower_bound_index
+ffff80000012997e 000000000000008a t alloc::collections::btree::search::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,Type>>::find_upper_bound_index
+ffff800000128efc 0000000000000030 t alloc::collections::btree::navigate::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,alloc::collections::btree::node::marker::LeafOrInternal>>::last_leaf_edge
+ffff800000128d2b 0000000000000022 t alloc::collections::btree::navigate::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,alloc::collections::btree::node::marker::LeafOrInternal>>::first_leaf_edge
+ffff800000104c00 0000000000000022 t alloc::collections::btree::navigate::<impl alloc::collections::btree::node::NodeRef<BorrowType,K,V,alloc::collections::btree::node::marker::LeafOrInternal>>::first_leaf_edge
+ffff800000104c22 000000000000005a t alloc::collections::vec_deque::VecDeque<T,A>::as_mut_slices
+ffff800000104c7c 000000000000008c t alloc::collections::vec_deque::VecDeque<T,A>::grow
+ffff800000104d08 000000000000008c t alloc::collections::vec_deque::VecDeque<T,A>::grow
+ffff800000104d94 0000000000000051 t alloc::collections::vec_deque::VecDeque<T,A>::swap
+ffff800000104de5 0000000000000086 t alloc::collections::vec_deque::VecDeque<T,A>::truncate
+ffff800000104e6b 000000000000004f t alloc::collections::vec_deque::VecDeque<T,A>::push_back
+ffff800000104eba 0000000000000046 t alloc::vec::Vec<T>::with_capacity
+ffff800000104f00 0000000000000045 t alloc::vec::Vec<T>::with_capacity
+ffff800000104f45 0000000000000052 t alloc::vec::Vec<T,A>::push
+ffff800000104f97 0000000000000042 t alloc::vec::Vec<T,A>::push
+ffff800000104fd9 000000000000004f t alloc::vec::Vec<T,A>::push
+ffff800000105028 000000000000004e t alloc::vec::Vec<T,A>::push
+ffff800000105076 0000000000000036 t alloc::vec::Vec<T,A>::push
+ffff8000001050ac 0000000000000036 t alloc::vec::Vec<T,A>::push
+ffff8000001050e2 0000000000000036 t alloc::vec::Vec<T,A>::push
+ffff800000105118 0000000000000024 t alloc::vec::Vec<T,A>::retain::{{closure}}
+ffff80000010513c 0000000000000029 t alloc::vec::Vec<T,A>::retain::{{closure}}
+ffff800000122def 0000000000000031 t alloc::vec::Vec<T,A>::reserve
+ffff800000105165 0000000000000031 t alloc::vec::Vec<T,A>::reserve
+ffff800000105196 0000000000000063 t alloc::vec::from_elem
+ffff8000001051f9 0000000000000021 t alloc::sync::Arc<T>::decrement_strong_count
+ffff80000010521a 0000000000000032 t alloc::sync::Arc<T>::new
+ffff80000010524c 0000000000000032 t alloc::sync::Arc<T>::new
+ffff80000010527e 000000000000003d t alloc::sync::Arc<T>::new
+ffff8000001052bb 0000000000000032 t alloc::sync::Arc<T>::new
+ffff8000001052ed 000000000000003d t alloc::sync::Arc<T>::new
+ffff80000010532a 000000000000003d t alloc::sync::Arc<T>::new
+ffff80000012fff2 000000000000002f t alloc::sync::Arc<T>::new
+ffff800000105367 000000000000003d t alloc::sync::Arc<T>::new
+ffff8000001053a4 0000000000000034 t alloc::sync::Arc<T>::new
+ffff8000001053d8 0000000000000032 t alloc::sync::Arc<T>::new
+ffff80000010540a 0000000000000044 t alloc::sync::Arc<T>::new
+ffff80000010544e 000000000000002c t alloc::sync::Arc<T,A>::downgrade
+ffff80000010547a 0000000000000021 t alloc::sync::Arc<T,A>::drop_slow
+ffff80000010549b 000000000000035d t alloc::sync::Arc<T,A>::drop_slow
+ffff8000001057f8 000000000000003c t alloc::sync::Arc<T,A>::drop_slow
+ffff80000012f4a4 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105834 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff80000010586e 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff8000001058a8 0000000000000040 t alloc::sync::Arc<T,A>::drop_slow
+ffff8000001058e8 0000000000000021 t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105909 000000000000003c t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105945 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff80000010597f 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff8000001059b9 000000000000006e t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105a27 0000000000000057 t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105a7e 0000000000000071 t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105aef 0000000000000040 t alloc::sync::Arc<T,A>::drop_slow
+ffff80000012ee2f 0000000000000071 t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105b2f 000000000000003c t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105b6b 000000000000003a t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105ba5 0000000000000021 t alloc::sync::Arc<T,A>::drop_slow
+ffff800000105bc6 0000000000000029 t alloc::sync::Weak<T,A>::upgrade
+ffff800000105bef 000000000000001b t alloc::alloc::exchange_malloc
+ffff80000012f231 000000000000001e t alloc::alloc::exchange_malloc
+ffff800000128ec8 0000000000000016 t alloc::alloc::alloc
+ffff800000122f7b 000000000000005c t alloc::alloc::Global::alloc_impl
+ffff800000128d4d 0000000000000014 t alloc::slice::stable_sort::{{closure}}
+ffff80000012319d 000000000000004d t alloc::slice::<impl [T]>::to_vec_in
+ffff800000122ebb 00000000000000c0 t alloc::raw_vec::finish_grow
+ffff800000123144 000000000000004d t alloc::raw_vec::RawVec<T,A>::allocate_in
+ffff800000105c0a 00000000000000b4 t alloc::raw_vec::RawVec<T,A>::grow_amortized
+ffff800000122e20 000000000000009b t alloc::raw_vec::RawVec<T,A>::grow_amortized
+ffff80000012892d 00000000000000a2 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105cbe 00000000000000a3 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105d61 00000000000000a2 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000122fe3 0000000000000022 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105e03 00000000000000a5 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000129ffe 00000000000000ab t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105ea8 0000000000000022 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff80000012eea0 00000000000000a5 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105eca 00000000000000a3 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000105f6d 00000000000000a5 t alloc::raw_vec::RawVec<T,A>::reserve_for_push
+ffff800000123191 000000000000000c t alloc::raw_vec::RawVec<T,A>::with_capacity_in
+ffff8000001231ea 000000000000000a t <alloc::string::String as core::clone::Clone>::clone
+ffff8000001294be 0000000000000036 t <smoltcp::wire::ip::Address as core::cmp::Ord>::cmp
+ffff80000012e2fc 000000000000005f t <smoltcp::wire::ip::Repr as core::clone::Clone>::clone
+ffff800000106012 0000000000000011 t <alloc::alloc::Global as core::alloc::Allocator>::deallocate
+ffff800000106023 000000000000001a t <alloc::alloc::Global as core::alloc::Allocator>::allocate
+ffff800000122fd7 000000000000000c t <alloc::alloc::Global as core::alloc::Allocator>::allocate
+ffff800000128ebe 000000000000000a t <alloc::alloc::Global as core::alloc::Allocator>::allocate
+ffff80000011ed5f 000000000000025a t <kerla_kernel::Handler as kerla_runtime::Handler>::handle_irq
+ffff80000011f32f 0000000000000670 t <kerla_kernel::Handler as kerla_runtime::Handler>::handle_syscall
+ffff80000011efb9 0000000000000177 t <kerla_kernel::Handler as kerla_runtime::Handler>::handle_timer_irq
+ffff80000011e9ec 0000000000000373 t <kerla_kernel::Handler as kerla_runtime::Handler>::handle_console_rx
+ffff80000011f130 00000000000001ff t <kerla_kernel::Handler as kerla_runtime::Handler>::handle_page_fault
+ffff800000122b35 000000000000023a t <kerla_kernel::result::Errno as core::fmt::Debug>::fmt
+ffff80000010c98e 000000000000003b t <kerla_kernel::fs::tmpfs::Dir as core::fmt::Debug>::fmt
+ffff80000011e9b1 000000000000003b t <kerla_kernel::tty::pty::Ptmx as core::fmt::Debug>::fmt
+ffff80000012556b 0000000000000073 t <kerla_runtime::x64::vga::Console as vte::Perform>::print
+ffff800000129b57 000000000000002f t <smoltcp::wire::ip::Cidr as core::cmp::PartialOrd>::partial_cmp
+ffff80000010cd68 000000000000003b t <kerla_kernel::fs::tmpfs::File as core::fmt::Debug>::fmt
+ffff800000114bf3 000000000000003b t <kerla_kernel::pipe::PipeReader as core::fmt::Debug>::fmt
+ffff8000001146d0 000000000000003b t <kerla_kernel::pipe::PipeWriter as core::fmt::Debug>::fmt
+ffff80000010603d 0000000000000014 t <alloc::sync::Arc<T,A> as core::clone::Clone>::clone
+ffff8000001243af 000000000000005a t <core::fmt::builders::PadAdapter as core::fmt::Write>::write_char
+ffff800000123e36 0000000000000197 t <core::fmt::builders::PadAdapter as core::fmt::Write>::write_str
+ffff800000106051 0000000000000019 t <core::option::Option<T> as core::clone::Clone>::clone
+ffff800000127f66 0000000000000006 t <kerla_runtime::NopHandler as kerla_runtime::Handler>::handle_irq
+ffff800000127f78 0000000000000008 t <kerla_runtime::NopHandler as kerla_runtime::Handler>::handle_syscall
+ffff800000127f6c 0000000000000006 t <kerla_runtime::NopHandler as kerla_runtime::Handler>::handle_timer_irq
+ffff800000127f72 0000000000000006 t <kerla_runtime::NopHandler as kerla_runtime::Handler>::handle_page_fault
+ffff80000012577b 000000000000001a t <vte::VtUtf8Receiver<P> as utf8parse::Receiver>::codepoint
+ffff80000011e60b 000000000000006b t <kerla_kernel::tty::pty::PtySlave as core::fmt::Debug>::fmt
+ffff80000012852a 000000000000001d t bitvec::ptr::single::BitPtr<wyz::comu::Mut,T,O>::replace
+ffff80000010606a 000000000000000e t bitvec::array::BitArray<A,O>::as_bitslice
+ffff800000128460 000000000000004b t bitvec::index::BitEnd<R>::span
+ffff800000106078 00000000000002fb t bitvec::slice::specialization::lsb0::<impl bitvec::slice::BitSlice<T>>::sp_bitop_assign
+ffff800000106373 0000000000000041 t bitvec::slice::BitSlice<T,O>::set
+ffff800000128547 0000000000000072 t bitvec::slice::api::<impl bitvec::slice::BitSlice<T,O>>::fill
+ffff8000001063b4 0000000000000052 t bitvec::domain::Domain<M,T,O>::partial_head
+ffff800000106406 000000000000004e t bitvec::domain::Domain<M,T,O>::partial_tail
+ffff800000128356 000000000000004c t bitvec::domain::Domain<M,T,O>::partial_tail
+ffff800000128283 00000000000000b1 t bitvec::domain::Domain<M,T,O>::new
+ffff800000128334 0000000000000022 t bitvec::domain::Domain<M,T,O>::empty
+ffff8000001283de 0000000000000082 t bitvec::domain::Domain<M,T,O>::major
+ffff800000106454 0000000000000082 t bitvec::domain::Domain<M,T,O>::major
+ffff8000001283a2 000000000000003c t bitvec::domain::Domain<M,T,O>::minor
+ffff8000001064d6 000000000000001a t bitvec::domain::Domain<M,T,O>::spanning
+ffff80000012f30e 0000000000000089 t virtio::transports::virtio_pci_modern::get_bar_for_cfg_type
+ffff80000012f105 0000000000000010 t virtio::device::Virtio::is_modern
+ffff80000012ef92 0000000000000173 t virtio::device::VirtQueue::enqueue
+ffff80000012ef45 000000000000002f t <alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
+ffff80000010952c 000000000000006e t <kerla_kernel::fs::devfs::tty::Tty as core::fmt::Debug>::fmt
+ffff80000011e2f0 000000000000006b t <kerla_kernel::tty::pty::PtyMaster as core::fmt::Debug>::fmt
+ffff80000012a166 000000000000003a t <core::option::Option<T> as core::cmp::PartialOrd>::partial_cmp
+ffff80000010ca95 000000000000003b t <kerla_kernel::fs::tmpfs::TmpSymlink as core::fmt::Debug>::fmt
+ffff800000123fcd 0000000000000021 t <[A] as core::slice::cmp::SlicePartialEq<B>>::equal
+ffff8000001064f0 000000000000001b t <alloc::sync::Arc<T,A> as core::ops::deref::Deref>::deref
+ffff80000011f99f 000000000000009e t <kerla_kernel::ApiOps as kerla_api::kernel_ops::KernelOps>::attach_irq
+ffff80000011fa3d 0000000000000092 t <kerla_kernel::ApiOps as kerla_api::kernel_ops::KernelOps>::register_ethernet_driver
+ffff80000011facf 0000000000000349 t <kerla_kernel::ApiOps as kerla_api::kernel_ops::KernelOps>::receive_etherframe_packet
+ffff8000001254f8 0000000000000028 t <kerla_runtime::print::PrinterWrapper as core::fmt::Write>::write_str
+ffff800000130021 0000000000000010 t <virtio_net::VirtioNetDriver as kerla_api::driver::Driver>::name
+ffff80000010650b 000000000000014c t <ahash::random_state::RandomState as core::default::Default>::default
+ffff80000010bb93 000000000000000a t <kerla_kernel::fs::path::PathBuf as core::ops::deref::Deref>::deref
+ffff800000106657 00000000000000c4 t <bitvec::slice::BitSlice<T> as bitvec::field::BitField>::load_le
+ffff80000010948d 000000000000003b t <kerla_kernel::fs::devfs::null::NullFile as core::fmt::Debug>::fmt
+ffff80000012f51a 000000000000001e t <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+ffff80000012ef74 000000000000001e t <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+ffff800000128ede 000000000000001e t <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+ffff800000123127 000000000000001d t <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+ffff80000010ef66 000000000000003b t <kerla_kernel::net::tcp_socket::TcpSocket as core::fmt::Debug>::fmt
+ffff80000010f9cf 000000000000003b t <kerla_kernel::net::udp_socket::UdpSocket as core::fmt::Debug>::fmt
+ffff8000001093ac 000000000000002c t <kerla_kernel::user_buffer::UserBufWriter as core::fmt::Write>::write_str
+ffff80000012b8a7 000000000000005f t <smoltcp::wire::ip::Protocol as core::convert::From<u8>>::from
+ffff800000109cd9 0000000000000067 t <kerla_kernel::fs::initramfs::InitramFsDir as core::fmt::Debug>::fmt
+ffff800000129511 000000000000002e t <smoltcp::socket::raw::RawSocket as smoltcp::socket::AnySocket>::downcast
+ffff80000012956d 0000000000000018 t <smoltcp::socket::tcp::TcpSocket as smoltcp::socket::AnySocket>::downcast
+ffff80000012953f 000000000000002e t <smoltcp::socket::udp::UdpSocket as smoltcp::socket::AnySocket>::downcast
+ffff800000109a3c 0000000000000067 t <kerla_kernel::fs::initramfs::InitramFsFile as core::fmt::Debug>::fmt
+ffff80000010fa1e 000000000000003b t <kerla_kernel::net::unix_socket::UnixSocket as core::fmt::Debug>::fmt
+ffff800000130031 0000000000000129 t <virtio_net::VirtioNetProber as kerla_api::driver::DeviceProber>::probe_virtio_mmio
+ffff80000012f55f 0000000000000048 t <virtio_net::VirtioNetProber as kerla_api::driver::DeviceProber>::probe_virtio_mmio::{{closure}}
+ffff80000012fde0 0000000000000212 t <virtio_net::VirtioNetProber as kerla_api::driver::DeviceProber>::probe_pci
+ffff80000012a0a9 000000000000007b t managed::map::binary_search_by_key
+ffff80000012a1a0 00000000000009b2 t managed::map::ManagedMap<K,V>::insert
+ffff80000010671b 00000000000005f0 t smoltcp::dhcp::clientv4::Client::egress::{{closure}}
+ffff80000012b2e4 000000000000002b t smoltcp::wire::ip::Cidr::contains_addr
+ffff80000012b408 0000000000000018 t smoltcp::wire::ip::Repr::emit
+ffff80000012b32e 00000000000000da t smoltcp::wire::ip::Repr::lower
+ffff80000012e386 000000000000002b t smoltcp::wire::ip::Repr::dst_addr
+ffff80000012e35b 000000000000002b t smoltcp::wire::ip::Repr::src_addr
+ffff80000012b2c1 0000000000000023 t smoltcp::wire::ip::Address::is_unicast
+ffff80000012b30f 000000000000001f t smoltcp::wire::ip::Endpoint::is_specified
+ffff80000012b62c 00000000000000a4 t smoltcp::wire::ip::checksum::pseudo_header
+ffff80000012b592 000000000000006b t smoltcp::wire::ip::checksum::data
+ffff80000012b5fd 000000000000002f t smoltcp::wire::ip::checksum::combine
+ffff800000106d0b 00000000000000b5 t smoltcp::wire::arp::Repr::emit
+ffff80000012be18 0000000000000019 t smoltcp::wire::tcp::Repr::buffer_len
+ffff80000012bdb7 0000000000000061 t smoltcp::wire::tcp::Repr::header_len
+ffff80000012bc09 00000000000001ae t smoltcp::wire::tcp::TcpOption::emit
+ffff80000012b977 0000000000000035 t smoltcp::wire::udp::Packet<T>::new_checked
+ffff80000012bad6 0000000000000133 t smoltcp::wire::udp::Repr::emit
+ffff80000012b9ac 000000000000012a t smoltcp::wire::udp::Repr::parse
+ffff80000012b507 0000000000000014 t smoltcp::wire::ipv4::Packet<T>::header_len
+ffff800000106dc0 0000000000000019 t smoltcp::wire::ipv4::Packet<T>::header_len
+ffff80000012b6e2 0000000000000048 t smoltcp::wire::ipv4::Packet<T>::new_checked
+ffff80000012b554 000000000000003e t smoltcp::wire::ipv4::Packet<T>::fill_checksum
+ffff80000012b880 0000000000000011 t smoltcp::wire::ipv4::Packet<T>::dst_addr
+ffff80000012b891 0000000000000016 t smoltcp::wire::ipv4::Packet<T>::protocol
+ffff80000012b86f 0000000000000011 t smoltcp::wire::ipv4::Packet<T>::src_addr
+ffff80000012b82f 0000000000000040 t smoltcp::wire::ipv4::Packet<&T>::payload
+ffff80000012b420 00000000000000e7 t smoltcp::wire::ipv4::Repr::emit
+ffff80000012b72a 0000000000000105 t smoltcp::wire::ipv4::Repr::parse
+ffff80000012b6d0 0000000000000012 t smoltcp::wire::ipv4::Address::from_bytes
+ffff80000012be31 00000000000001b3 t smoltcp::wire::dhcpv4::DhcpOption::emit
+ffff80000012bfe4 00000000000000cf t smoltcp::wire::dhcpv4::Repr::buffer_len
+ffff80000012b906 0000000000000023 t smoltcp::wire::icmpv4::Packet<T>::msg_type
+ffff80000012b929 000000000000002d t smoltcp::wire::icmpv4::Packet<&T>::data
+ffff80000012b956 0000000000000021 t smoltcp::wire::icmpv4::Packet<&mut T>::data_mut
+ffff800000106dd9 000000000000001f t smoltcp::wire::ethernet::Frame<T>::dst_addr
+ffff800000106df8 0000000000000020 t smoltcp::wire::ethernet::Frame<T>::src_addr
+ffff800000106e18 000000000000001d t smoltcp::wire::ethernet::Frame<&T>::payload
+ffff80000012b2a4 000000000000001d t smoltcp::wire::ethernet::Address::from_bytes
+ffff80000012cf08 0000000000000c45 t smoltcp::iface::route::Routes::add_default_ipv4_route
+ffff80000012db4d 0000000000000765 t smoltcp::iface::route::Routes::lookup
+ffff800000106e35 0000000000000023 t smoltcp::iface::ethernet::InterfaceInner::has_ip_addr
+ffff80000012eabc 0000000000000047 t smoltcp::iface::ethernet::InterfaceInner::has_neighbor
+ffff80000012e583 00000000000000d8 t smoltcp::iface::ethernet::InterfaceInner::icmpv4_reply
+ffff80000012e561 0000000000000022 t smoltcp::iface::ethernet::InterfaceInner::is_unicast_v4
+ffff80000012e3b1 0000000000000051 t smoltcp::iface::ethernet::InterfaceInner::check_ip_addrs
+ffff80000012e9c7 000000000000004d t smoltcp::iface::ethernet::InterfaceInner::in_same_network
+ffff80000012e435 0000000000000013 t smoltcp::iface::ethernet::InterfaceInner::is_broadcast_v4
+ffff80000012e448 0000000000000119 t smoltcp::iface::ethernet::InterfaceInner::is_subnet_broadcast
+ffff80000012ea14 00000000000000a8 t smoltcp::iface::ethernet::InterfaceInner::route
+ffff800000106e58 00000000000009df t smoltcp::iface::ethernet::InterfaceInner::dispatch
+ffff800000107837 000000000000023a t smoltcp::iface::ethernet::Interface<DeviceT>::poll_at::{{closure}}
+ffff800000107a71 000000000000001d t smoltcp::iface::ethernet::Interface<DeviceT>::ipv4_addr
+ffff80000012e2b2 000000000000004a t smoltcp::iface::ethernet::IpPacket::ip_repr
+ffff80000012c0b3 0000000000000d14 t smoltcp::iface::neighbor::Cache::fill
+ffff80000012cdc7 0000000000000141 t smoltcp::iface::neighbor::Cache::lookup
+ffff80000012ecda 00000000000000d3 t smoltcp::socket::set::Set::add::put
+ffff800000107a8e 000000000000002a t smoltcp::socket::set::Set::get
+ffff800000107ab8 0000000000000029 t smoltcp::socket::set::Set::get
+ffff80000012eb03 000000000000001f t smoltcp::socket::tcp::Timer::should_retransmit
+ffff80000012e955 0000000000000036 t smoltcp::socket::tcp::TcpSocket::ack_to_transmit
+ffff80000012ec72 0000000000000068 t smoltcp::socket::tcp::TcpSocket::seq_to_transmit
+ffff80000012e98b 000000000000003c t smoltcp::socket::tcp::TcpSocket::window_to_update
+ffff80000012e65b 00000000000000bc t smoltcp::socket::tcp::TcpSocket::reply
+ffff80000012eb22 000000000000013e t smoltcp::socket::tcp::TcpSocket::reset
+ffff80000012e717 000000000000023e t smoltcp::socket::tcp::TcpSocket::ack_reply
+ffff800000107ae1 0000000000000034 t smoltcp::socket::Socket::meta_mut
+ffff80000012aed2 000000000000005f t smoltcp::storage::ring_buffer::RingBuffer<T>::dequeue_many
+ffff80000012af31 000000000000007a t smoltcp::storage::ring_buffer::RingBuffer<T>::enqueue_many
+ffff80000012afab 0000000000000067 t smoltcp::storage::ring_buffer::RingBuffer<T>::get_unallocated
+ffff80000012ae48 0000000000000045 t smoltcp::storage::ring_buffer::RingBuffer<T>::enqueue_one_with
+ffff80000012ae8d 0000000000000045 t smoltcp::storage::ring_buffer::RingBuffer<T>::enqueue_one_with
+ffff80000012ae12 0000000000000036 t smoltcp::storage::ring_buffer::RingBuffer<T>::contiguous_window
+ffff80000012b1d3 0000000000000068 t smoltcp::storage::packet_buffer::PacketBuffer<H>::dequeue_padding
+ffff80000012b23b 0000000000000069 t smoltcp::storage::packet_buffer::PacketBuffer<H>::dequeue_padding
+ffff800000107b15 0000000000000089 t smoltcp::storage::packet_buffer::PacketBuffer<H>::new
+ffff80000012b012 00000000000000de t smoltcp::storage::packet_buffer::PacketBuffer<H>::enqueue
+ffff80000012b0f0 00000000000000e3 t smoltcp::storage::packet_buffer::PacketBuffer<H>::enqueue
+ffff80000012adc2 0000000000000050 t smoltcp::storage::assembler::Assembler::remove_contig_at
+ffff80000012ad50 0000000000000072 t smoltcp::storage::assembler::Assembler::new
+ffff800000107b9e 0000000000000018 t <arrayvec::array_string::ArrayString<_> as core::fmt::Debug>::fmt
+ffff8000001256f8 0000000000000083 t <core::str::iter::Chars as core::iter::traits::iterator::Iterator>::next
+ffff800000123569 000000000000019a t <core::str::iter::Chars as core::iter::traits::iterator::Iterator>::count
+ffff800000107bb6 00000000000000df t <core::str::pattern::CharSearcher as core::str::pattern::Searcher>::next_match
+ffff800000127c62 0000000000000124 t <core::str::pattern::CharSearcher as core::str::pattern::Searcher>::next_match
+ffff800000125104 0000000000000030 t <kerla_api::kernel_ops::NopOps as kerla_api::kernel_ops::KernelOps>::attach_irq
+ffff8000001250d4 0000000000000030 t <kerla_api::kernel_ops::NopOps as kerla_api::kernel_ops::KernelOps>::register_ethernet_driver
+ffff8000001098c6 000000000000003b t <kerla_kernel::fs::devfs::urandom::URandomFile as core::fmt::Debug>::fmt
+ffff800000109d90 000000000000006b t <kerla_kernel::fs::initramfs::InitramFsSymlink as core::fmt::Debug>::fmt
+ffff80000011e676 00000000000002e7 t <kerla_kernel::tty::pty::Ptmx as kerla_kernel::fs::inode::FileLike>::open
+ffff80000011e9a0 0000000000000011 t <kerla_kernel::tty::pty::Ptmx as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000011e99a 0000000000000006 t <kerla_kernel::tty::pty::Ptmx as kerla_kernel::fs::inode::FileLike>::read
+ffff80000011e95d 000000000000003d t <kerla_kernel::tty::pty::Ptmx as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000010bb9d 000000000000003b t <kerla_kernel::fs::procfs::metrics::MetricsFile as core::fmt::Debug>::fmt
+ffff80000010c833 000000000000015b t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::create_dir
+ffff80000010c423 0000000000000195 t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::create_file
+ffff80000010c705 000000000000012e t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::create_symlink
+ffff80000010c282 00000000000001a1 t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::link
+ffff80000010c229 0000000000000059 t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::stat
+ffff80000010bf11 00000000000000cc t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::lookup
+ffff80000010c5b8 000000000000014d t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::unlink
+ffff80000010bfdd 000000000000024c t <kerla_kernel::fs::tmpfs::Dir as kerla_kernel::fs::inode::Directory>::readdir
+ffff80000010cbc8 00000000000000b4 t <kerla_kernel::fs::tmpfs::File as kerla_kernel::fs::inode::FileLike>::read
+ffff80000010cad0 00000000000000a9 t <kerla_kernel::fs::tmpfs::File as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000010cc7c 00000000000000ec t <kerla_kernel::fs::tmpfs::File as kerla_kernel::fs::inode::FileLike>::write
+ffff80000010cb79 000000000000004f t <kerla_kernel::fs::tmpfs::File as kerla_kernel::fs::inode::FileLike>::truncate
+ffff800000126622 000000000000000a t <kerla_runtime::page_allocator::OwnedPages as core::ops::drop::Drop>::drop
+ffff800000114b7f 0000000000000074 t <kerla_kernel::pipe::PipeReader as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000011475c 0000000000000423 t <kerla_kernel::pipe::PipeReader as kerla_kernel::fs::inode::FileLike>::read
+ffff80000011470b 000000000000003d t <kerla_kernel::pipe::PipeReader as kerla_kernel::fs::inode::FileLike>::stat
+ffff800000114748 0000000000000014 t <kerla_kernel::pipe::PipeReader as kerla_kernel::fs::inode::FileLike>::write
+ffff80000011466d 0000000000000063 t <kerla_kernel::pipe::PipeWriter as kerla_kernel::fs::inode::FileLike>::poll
+ffff8000001141f3 000000000000047a t <kerla_kernel::pipe::PipeWriter as kerla_kernel::fs::inode::FileLike>::write
+ffff8000001090b1 0000000000000128 t <kerla_kernel::logger::LoggedPrinter as kerla_runtime::print::Printer>::print_bytes
+ffff80000012edff 0000000000000030 t <smoltcp::socket::set::Iter as core::iter::traits::iterator::Iterator>::next
+ffff80000011e594 0000000000000077 t <kerla_kernel::tty::pty::PtySlave as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000011e35b 0000000000000075 t <kerla_kernel::tty::pty::PtySlave as kerla_kernel::fs::inode::FileLike>::read
+ffff80000011e546 000000000000003d t <kerla_kernel::tty::pty::PtySlave as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000011e583 0000000000000011 t <kerla_kernel::tty::pty::PtySlave as kerla_kernel::fs::inode::FileLike>::ioctl
+ffff80000011e3d0 0000000000000176 t <kerla_kernel::tty::pty::PtySlave as kerla_kernel::fs::inode::FileLike>::write
+ffff80000012fc4f 0000000000000051 t <virtio_net::VirtioNetDriver as kerla_api::driver::net::EthernetDriver>::mac_addr
+ffff80000012fca0 0000000000000140 t <virtio_net::VirtioNetDriver as kerla_api::driver::net::EthernetDriver>::transmit
+ffff8000001234b1 00000000000000b8 t <core::str::iter::CharIndices as core::iter::traits::iterator::Iterator>::next
+ffff8000001097d8 000000000000001b t <kerla_kernel::fs::devfs::tty::Tty as kerla_kernel::fs::inode::FileLike>::read
+ffff80000010979b 000000000000003d t <kerla_kernel::fs::devfs::tty::Tty as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000010959a 0000000000000201 t <kerla_kernel::fs::devfs::tty::Tty as kerla_kernel::fs::inode::FileLike>::ioctl
+ffff8000001097f3 00000000000000d3 t <kerla_kernel::fs::devfs::tty::Tty as kerla_kernel::fs::inode::FileLike>::write
+ffff80000011e245 00000000000000ab t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000011d9a7 000000000000040c t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::read
+ffff80000011e208 000000000000003d t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000011e1f7 0000000000000011 t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::ioctl
+ffff80000011ddb3 00000000000003d5 t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::write
+ffff80000011e188 000000000000006f t <kerla_kernel::tty::pty::PtyMaster as kerla_kernel::fs::inode::FileLike>::write::{{closure}}
+ffff80000010ca45 0000000000000025 t <kerla_kernel::fs::tmpfs::TmpSymlink as kerla_kernel::fs::inode::Symlink>::stat
+ffff80000010ca6a 000000000000002b t <kerla_kernel::fs::tmpfs::TmpSymlink as kerla_kernel::fs::inode::Symlink>::linked_to
+ffff80000012e402 0000000000000033 t <smoltcp::socket::set::IterMut as core::iter::traits::iterator::Iterator>::next
+ffff8000001091d9 0000000000000034 t <kerla_kernel::result::Error as core::convert::From<smoltcp::Error>>::from
+ffff800000125007 000000000000004b t arrayvec::arrayvec_impl::ArrayVecImpl::clear
+ffff8000001289cf 0000000000000140 t <core::str::iter::Split<P> as core::iter::traits::iterator::Iterator>::next
+ffff800000127c20 0000000000000035 t <core::str::iter::SplitN<P> as core::iter::traits::iterator::Iterator>::next
+ffff800000107c95 0000000000000035 t <core::str::iter::SplitN<P> as core::iter::traits::iterator::Iterator>::next
+ffff800000107cca 0000000000000078 t <hashbrown::raw::RawIter<T> as core::iter::traits::iterator::Iterator>::next
+ffff800000107d42 0000000000000075 t <hashbrown::raw::RawIter<T> as core::iter::traits::iterator::Iterator>::next
+ffff800000107db7 0000000000000078 t <hashbrown::raw::RawIter<T> as core::iter::traits::iterator::Iterator>::next
+ffff800000107e2f 000000000000001a t <hashbrown::map::Iter<K,V> as core::iter::traits::iterator::Iterator>::next
+ffff800000109959 0000000000000026 t <kerla_kernel::fs::devfs::DevFs as kerla_kernel::fs::file_system::FileSystem>::root_dir
+ffff80000010bd8a 0000000000000026 t <kerla_kernel::fs::tmpfs::TmpFs as kerla_kernel::fs::file_system::FileSystem>::root_dir
+ffff8000001261e6 0000000000000041 t <kerla_runtime::x64::serial::Serial0Printer as kerla_runtime::print::Printer>::print_bytes
+ffff800000125ac2 0000000000000041 t <kerla_runtime::x64::serial::Serial1Printer as kerla_runtime::print::Printer>::print_bytes
+ffff8000001094c8 0000000000000011 t <kerla_kernel::fs::devfs::null::NullFile as kerla_kernel::fs::inode::FileLike>::read
+ffff80000010baf5 000000000000009e t <kerla_kernel::fs::path::Components as core::iter::traits::iterator::Iterator>::next
+ffff800000122d6f 000000000000000e t <ahash::random_state::DefaultRandomSource as ahash::random_state::RandomSource>::gen_hasher_seed
+ffff800000107e49 000000000000000d t <ahash::random_state::DefaultRandomSource as ahash::random_state::RandomSource>::get_fixed_seeds
+ffff800000107e56 0000000000000016 t <hashbrown::map::Values<K,V> as core::iter::traits::iterator::Iterator>::next
+ffff80000010dfaf 00000000000000fa t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::getpeername
+ffff80000010deb5 00000000000000fa t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::getsockname
+ffff80000010dd8a 0000000000000080 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::bind
+ffff80000010ee3b 000000000000012b t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000010e833 0000000000000500 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::read
+ffff80000010e682 00000000000001b1 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::write
+ffff80000010d6ca 00000000000006c0 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::accept
+ffff80000010d631 0000000000000099 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::listen
+ffff80000010ed33 0000000000000030 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::sendto
+ffff80000010e0a9 00000000000005d9 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::connect
+ffff80000010ed63 00000000000000d8 t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::recvfrom
+ffff80000010de0a 00000000000000ab t <kerla_kernel::net::tcp_socket::TcpSocket as kerla_kernel::fs::inode::FileLike>::shutdown
+ffff80000010efa1 00000000000001d2 t <kerla_kernel::net::udp_socket::UdpSocket as kerla_kernel::fs::inode::FileLike>::bind
+ffff80000010f93a 0000000000000095 t <kerla_kernel::net::udp_socket::UdpSocket as kerla_kernel::fs::inode::FileLike>::poll
+ffff80000010f173 00000000000001c8 t <kerla_kernel::net::udp_socket::UdpSocket as kerla_kernel::fs::inode::FileLike>::sendto
+ffff80000010f33b 00000000000005ff t <kerla_kernel::net::udp_socket::UdpSocket as kerla_kernel::fs::inode::FileLike>::recvfrom
+ffff800000107e6c 0000000000000046 t <core::slice::iter::Split<T,P> as core::iter::traits::iterator::Iterator>::next
+ffff800000109cbd 000000000000001c t <kerla_kernel::fs::initramfs::InitramFsDir as kerla_kernel::fs::inode::Directory>::create_dir
+ffff800000109ac8 0000000000000014 t <kerla_kernel::fs::initramfs::InitramFsDir as kerla_kernel::fs::inode::Directory>::link
+ffff800000109aa3 0000000000000025 t <kerla_kernel::fs::initramfs::InitramFsDir as kerla_kernel::fs::inode::Directory>::stat
+ffff800000109c01 00000000000000bc t <kerla_kernel::fs::initramfs::InitramFsDir as kerla_kernel::fs::inode::Directory>::lookup
+ffff800000109adc 0000000000000125 t <kerla_kernel::fs::initramfs::InitramFsDir as kerla_kernel::fs::inode::Directory>::readdir
+ffff8000001099ac 0000000000000057 t <kerla_kernel::fs::initramfs::InitramFsFile as kerla_kernel::fs::inode::FileLike>::read
+ffff800000109a17 0000000000000025 t <kerla_kernel::fs::initramfs::InitramFsFile as kerla_kernel::fs::inode::FileLike>::stat
+ffff800000109a03 0000000000000014 t <kerla_kernel::fs::initramfs::InitramFsFile as kerla_kernel::fs::inode::FileLike>::write
+ffff80000010fa0a 0000000000000014 t <kerla_kernel::net::unix_socket::UnixSocket as kerla_kernel::fs::inode::FileLike>::connect
+ffff800000109d40 0000000000000025 t <kerla_kernel::fs::initramfs::InitramFsSymlink as kerla_kernel::fs::inode::Symlink>::stat
+ffff800000109d65 000000000000002b t <kerla_kernel::fs::initramfs::InitramFsSymlink as kerla_kernel::fs::inode::Symlink>::linked_to
+ffff80000012ab52 00000000000001fe t <alloc::collections::btree::map::BTreeMap<K,V,A> as core::ops::drop::Drop>::drop
+ffff80000010993e 000000000000001b t <kerla_kernel::fs::devfs::urandom::URandomFile as kerla_kernel::fs::inode::FileLike>::read
+ffff800000109901 000000000000003d t <kerla_kernel::fs::devfs::urandom::URandomFile as kerla_kernel::fs::inode::FileLike>::stat
+ffff80000012f1d6 0000000000000010 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::enable_queue
+ffff80000012f1c7 000000000000000f t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::notify_queue
+ffff80000012f19d 000000000000000f t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::select_queue
+ffff80000012f1ac 000000000000000c t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::queue_max_size
+ffff80000012f1b8 000000000000000f t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::set_queue_size
+ffff80000012f12a 0000000000000012 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::read_isr_status
+ffff80000012f13c 000000000000000c t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::read_device_status
+ffff80000012f115 0000000000000015 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::read_device_config8
+ffff80000012f148 0000000000000010 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::write_device_status
+ffff80000012f158 0000000000000024 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::read_device_features
+ffff80000012f1e6 0000000000000019 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::set_queue_desc_paddr
+ffff80000012f17c 0000000000000021 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::write_driver_features
+ffff80000012f1ff 0000000000000019 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::set_queue_device_paddr
+ffff80000012f218 0000000000000019 t <virtio::transports::virtio_mmio::VirtioMmio as virtio::transports::VirtioTransport>::set_queue_driver_paddr
+ffff800000107eb2 0000000000000032 t hashbrown::map::HashMap<K,V>::new
+ffff800000107ee4 0000000000000011 t hashbrown::map::HashMap<K,V,S,A>::contains_key
+ffff800000107ef5 0000000000000170 t hashbrown::map::HashMap<K,V,S,A>::insert
+ffff800000108065 0000000000000139 t hashbrown::map::HashMap<K,V,S,A>::insert
+ffff80000010819e 000000000000004d t hashbrown::map::HashMap<K,V,S,A>::get_inner
+ffff8000001081eb 0000000000000394 t hashbrown::raw::RawTable<T,A>::reserve_rehash
+ffff80000010857f 000000000000037a t hashbrown::raw::RawTable<T,A>::reserve_rehash
+ffff8000001088f9 000000000000036b t hashbrown::raw::RawTable<T,A>::reserve_rehash
+ffff800000108c64 0000000000000021 t hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}
+ffff800000108c85 0000000000000023 t hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}
+ffff800000108ca8 000000000000001f t hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}
+ffff800000108cc7 0000000000000050 t hashbrown::raw::RawTable<T,A>::find
+ffff800000108d17 000000000000004f t hashbrown::raw::RawTable<T,A>::find
+ffff800000108d66 0000000000000053 t hashbrown::raw::RawTable<T,A>::find
+ffff800000108db9 0000000000000030 t hashbrown::raw::RawTable<T,A>::find::{{closure}}
+ffff800000108de9 0000000000000034 t hashbrown::raw::RawTable<T,A>::find::{{closure}}
+ffff800000108e1d 0000000000000037 t hashbrown::raw::RawTable<T,A>::find::{{closure}}
+ffff800000108e54 0000000000000025 t hashbrown::raw::RawTable<T,A>::find::{{closure}}
+ffff800000108e79 000000000000002c t hashbrown::raw::RawTable<T,A>::find::{{closure}}
+ffff800000108ea5 00000000000000fe t hashbrown::raw::RawTableInner<A>::find_inner
+ffff800000108fa3 000000000000002a t hashbrown::raw::RawTableInner<A>::free_buckets
+ffff800000108fcd 0000000000000048 t hashbrown::raw::RawTableInner<A>::find_insert_slot
+ffff800000109015 000000000000006f t hashbrown::raw::RawTableInner<A>::new_uninitialized
+ffff800000109084 000000000000002d t hashbrown::raw::RawTableInner<A>::record_item_insert_at
+ffff800000125079 000000000000005b t kerla_api::kernel_ops::kernel_ops
+ffff80000016e708 0000000000000010 d kerla_api::kernel_ops::OPS
+ffff80000016e6b8 0000000000000020 d kerla_api::driver::DEVICE_PROBERS
+ffff800000125052 0000000000000027 t kerla_api::driver::net::register_ethernet_driver
+ffff8000001251de 0000000000000021 t kerla_api::driver::pci::PciBus::read8
+ffff8000001251b0 000000000000002e t kerla_api::driver::pci::PciBus::read32
+ffff800000125134 0000000000000036 t kerla_api::driver::pci::PciConfig::bar
+ffff80000012516a 0000000000000046 t kerla_api::driver::pci::PciDevice::enable_bus_master
+ffff800000128b2e 0000000000000020 t raw_cpuid::native_cpuid::cpuid_count
+ffff800000128c3f 0000000000000044 t raw_cpuid::CpuId::leaf_is_supported
+ffff800000128b4e 00000000000000f1 t raw_cpuid::CpuId::new
+000000000018d000 B __boot_stack
+ffff80000016eca0 D __bsp_cpu_local
+ffff800000171d68 D __bsp_cpu_local_end
+ffff800000171d80 B __bss
+ffff800000176039 B __bss_end
+ffff800000169000 R __cpu_local
+ffff80000016c0c8 R __cpu_local_end
+00000000000030c8 A __cpu_local_size
+0000000000100000 T __kernel_image
+000000000018d000 B __kernel_image_end
+0000000000179000 B __kernel_pd
+0000000000178000 B __kernel_pdpt
+0000000000177000 B __kernel_pml4
+ffff800000176038 0000000000000001 b __rust_no_alloc_shim_is_unstable
+ffff8000001301a8 R __symbol_table
+0000000000100034 T boot
+000000000010007c t boot32
+0000000000100160 T boot_gdtr
+ffff80000011fe18 0000000000002c8b T boot_kernel
+ffff800000126a0e 0000000000000078 T bsp_early_init
+00000000001000b1 t construct_page_table
+ffff80000010133c T copy_from_user
+ffff80000010133c T copy_to_user
+ffff800000100289 T do_switch_thread
+0000000000100124 t enable_long_mode
+ffff800000100274 T forked_child_entry
+0000000000100170 t gdt
+0000000000100190 t gdt_end
+ffff8000001002db t halt
+ffff8000001012d0 t handler_start
+0000000000000100 a i
+0000000000100010 t info_request
+000000000010001c t info_request_end
+ffff8000001012e0 t interrupt_common
+ffff8000001002e0 T interrupt_handlers
+ffff800000100238 T kthread_entry
+ffff8000001002a6 t long_mode
+0000000000100190 t long_mode_in_low_address
+ffff80000012349e 000000000000000a t memcmp
+ffff800000123218 0000000000000034 t memcpy
+ffff80000012324c 000000000000007d t memmove
+ffff8000001232c9 000000000000004a t memset
+ffff800000101364 T memset_user
+0000000000100000 t multiboot2_header
+0000000000100028 t multiboot2_header_end
+0000000000100028 t multiboot_header
+000000000010009e t protected_mode
+ffff8000001002b5 t setup_ap
+ffff8000001002b7 t setup_bsp
+ffff800000101343 T strncpy_from_user
+0000000000100069 t swtich_back_to_32bit
+ffff8000001001c0 T syscall_entry
+ffff800000101340 T usercopy1
+ffff80000010134b T usercopy2
+ffff800000101368 T usercopy3
+ffff800000100241 T userland_entry
+000000000010010f t write_pd_entry
+00000000001000ec t write_pdpt_entry
+ffff800000127d90 000000000000017b T x64_handle_interrupt
+ffff800000128228 000000000000005b T x64_handle_syscall

@@ -1,0 +1,1 @@
+apk add -q cpio; mkdir /w2; cd /w2; cpio -id < /x/out/t22.cpio; mkdir -p bin; cp /x/out/q bin/q; chmod 755 bin/q; cp /x/out/busybox.new bin/busybox; chmod 755 bin/busybox; ln -sf busybox bin/nc; cp /x/out/${QS:-uc6.sh} q.sh; find . | cpio -o -H newc > /x/out/${QO:-uc6.cpio}

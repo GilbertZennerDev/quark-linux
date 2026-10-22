@@ -1,0 +1,71 @@
+=== uc0 : nur booten (Basis)
+1/4 Python-Server auf Port 8000 pruefen ...
+2/4 cpio bauen (Docker) ...
+1436 blocks
+1439 blocks
+3/4 alte QEMU beenden, Kernel bauen, VM starten ...
+   Gesamtdauer: 22 s
+4/4 Auswertung
+
+[7mOK:[0m 0   FEHLER: 0
+=== uc1 : installieren (q add)
+1/4 Python-Server auf Port 8000 pruefen ...
+2/4 cpio bauen (Docker) ...
+1436 blocks
+1439 blocks
+3/4 alte QEMU beenden, Kernel bauen, VM starten ...
+   Gesamtdauer: 22 s
+4/4 Auswertung
+[7mOK:[0m 1   FEHLER: 0
+=== uc2 : installieren + Programm benutzen
+1/4 Python-Server auf Port 8000 pruefen ...
+2/4 cpio bauen (Docker) ...
+1436 blocks
+1439 blocks
+3/4 alte QEMU beenden, Kernel bauen, VM starten ...
+   Gesamtdauer: 25 s
+4/4 Auswertung
+[7mOK:[0m 1   FEHLER: 0
+=== uc3 : zweimal installieren + zweites Paket
+1/4 Python-Server auf Port 8000 pruefen ...
+2/4 cpio bauen (Docker) ...
+1436 blocks
+1439 blocks
+3/4 alte QEMU beenden, Kernel bauen, VM starten ...
+   Gesamtdauer: 65 s
+4/4 Auswertung
+[7mOK:[0m 1   FEHLER: 0
+=== uc4 : installieren + deinstallieren
+1/4 Python-Server auf Port 8000 pruefen ...
+2/4 cpio bauen (Docker) ...
+1436 blocks
+1439 blocks
+3/4 alte QEMU beenden, Kernel bauen, VM starten ...
+   Gesamtdauer: 21 s
+4/4 Auswertung
+[7mOK:[0m 1   FEHLER: 0
+
+=== Syscalls je Use Case
+uc0  nur booten (Basis)                       18 Syscall-Arten
+uc1  installieren (q add)                     41 Syscall-Arten
+uc2  installieren + Programm benutzen         45 Syscall-Arten
+uc3  zweimal installieren + zweites Paket     41 Syscall-Arten
+uc4  installieren + deinstallieren            42 Syscall-Arten
+
+=== Nur zum BOOTEN (uc0)
+arch_prctl brk close execve exit_group fcntl getcwd geteuid getpid getppid mmap open prctl rt_sigaction rt_sigprocmask set_tid_address stat write
+
+=== Zusaetzlich fuers INSTALLIEREN (uc1 minus uc0)
+chdir chmod chown connect dup2 fork ftruncate getuid ioctl lseek lstat mkdir munmap pipe readv rt_sigreturn socket symlink umask unlink utimensat wait4 writev
+
+=== Zusaetzlich bei Programm-Benutzen / 2x / Deinstallieren (gegenueber uc1)
+uc2: fstat getdents64 getrandom mprotect
+uc3: 
+uc4: getdents64
+
+=== KERN = Vereinigung aller Use Cases: 45 Syscalls
+arch_prctl brk chdir chmod chown close connect dup2 execve exit_group fcntl fork fstat ftruncate getcwd getdents64 geteuid getpid getppid getrandom getuid ioctl lseek lstat mkdir mmap mprotect munmap open pipe prctl readv rt_sigaction rt_sigprocmask rt_sigreturn set_tid_address socket stat symlink umask unlink utimensat wait4 write writev
+
+=== Im Kernel eingebaut, aber von KEINEM Use Case gebraucht (Streichkandidaten)
+accept access bind clock_gettime exit fsync getpeername getpgid getsockname getsockopt gettid kill link linkat listen nanosleep poll read readlink reboot recvfrom recvmsg select sendto setgid setgroups setpgid setsid setuid shutdown syslog uname utimes
+

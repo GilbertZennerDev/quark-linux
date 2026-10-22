@@ -1,0 +1,11 @@
+-rwxr-xr-x 1 root root 2320656 Oct 20 00:10 /x/out/pn1.elf
+kex_exchange_identification: read: Software caused connection abort
+banner exchange: Connection to 127.0.0.1 port 20022: Software caused connection abort
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==FAIL 4 q execve ENOENT
+==EXEC /bin/wget wget
+==FAIL 4 wget mmap EINVAL
+==FAIL 4 wget ioctl ENOTTY
+==OPEN 4 wget /tmp/musl.apk
